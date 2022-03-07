@@ -99,6 +99,19 @@ export const constantRoutes = [
   },
 
   {
+    path: '/correct',
+    component: Layout,
+    children: [
+      {
+        path: 'correct',
+        name: 'Correct',
+        component: () => import('@/views/correct/index'),
+        meta: { title: '批改试卷', icon: 'el-icon-finished' }
+      }
+    ]
+  },
+
+  {
     path: '/personal',
     component: Layout,
     children: [

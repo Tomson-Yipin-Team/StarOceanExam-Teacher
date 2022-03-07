@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-alert title="成功提示的文案" type="success" />
+    <el-alert v-if="false" title="成功提示的文案" type="success" />
     <el-table
       :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
       style="width: 100%"
@@ -10,7 +10,6 @@
       <el-table-column label="名称" prop="name" align="center" />
       <el-table-column label="发布人" prop="origin" align="center" width="100" />
       <el-table-column label="参加人数" prop="join" align="center" width="100" />
-      <!--    <el-table-column label="状态" prop="status" align="center" width="100"/>-->
       <el-table-column label="状态" width="100" align="center">
         <template #default="scope">
           <el-popover effect="light" trigger="hover" placement="top">
