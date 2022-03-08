@@ -1,4 +1,5 @@
 <template class="user-card">
+  <!--TODO: 更改图标样式-->
   <div>
     <!--卡片-->
     <el-card class="box-card">
@@ -17,18 +18,19 @@
           {{ user.role }}
         </div>
         <div class="user-info-header">
-          <!--          TODO: 更改图标-->
           <i class="el-icon-user" /><span>个人简介:</span>
         </div>
         <div class="user-intro">
+          <!--          TODO: 修改逻辑实现简介数据互通-->
           {{ user.intro }}
         </div>
         <div class="user-info-header">
           <i class="el-icon-user" />
           <span>社交方式:</span>
         </div>
-        <div class="user-social">
-          <svg-icon icon-class="wechat" />
+        <div>
+          <span class="user-social-icon"><svg-icon icon-class="wechat" /></span>
+          <span class="user-social-text">郁闷的酱油瓶</span>
         </div>
 
       </div>
@@ -80,5 +82,12 @@ export default {
 
 .user-intro{
   height: 50px;
+}
+
+.user-social-icon{
+  font-size:25px
+}
+.user-social-text{
+  margin-left:10px
 }
 </style>
