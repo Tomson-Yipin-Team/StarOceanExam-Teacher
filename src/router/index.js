@@ -71,7 +71,7 @@ export const constantRoutes = [
       {
         path: 'create',
         name: 'Create',
-        component: () => import('@/views/examination/create'),
+        component: () => import('@/views/examination/index'),
         meta: { title: '创建试卷', icon: 'edit' }
       }
     ]
