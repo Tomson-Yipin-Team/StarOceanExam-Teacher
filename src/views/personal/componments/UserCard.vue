@@ -12,7 +12,7 @@
           <el-avatar shape="circle" :size="100" :fit="fit" :src="url" />
         </div>
         <div class="user-name">
-          <span id="user-name">{{ user.name }}</span>
+          <span id="user-name">{{ $store.state.user.name }}</span>
         </div>
         <div class="user-role">
           {{ user.role }}
@@ -21,7 +21,7 @@
           <i class="el-icon-user" /><span>个人简介:</span>
         </div>
         <div class="user-intro">
-          <!--          TODO: 修改逻辑实现简介数据互通-->
+          <!--          TODO: 添加vuex实现简介数据互通-->
           {{ user.intro }}
         </div>
         <div class="user-info-header">

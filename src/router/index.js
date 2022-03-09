@@ -71,8 +71,15 @@ export const constantRoutes = [
       {
         path: 'create',
         name: 'Create',
-        component: () => import('@/views/examination/index'),
+        component: () => import('@/views/examination/edit/index'),
         meta: { title: '创建试卷', icon: 'edit' }
+      },
+      {
+        path: 'edit',
+        name: 'Edit',
+        component: () => import('@/views/examination/edit/createExam/index.vue'),
+        meta: { title: '编辑试卷', icon: 'edit' },
+        hidden: true
       }
     ]
   },
@@ -87,13 +94,13 @@ export const constantRoutes = [
         path: 'joined',
         name: 'Joined',
         component: () => import('@/views/classroom/joined/index'),
-        meta: { title: '已加入班级', icon: 'education' }
+        meta: { title: '已创建班级', icon: 'education' }
       },
       {
         path: 'join',
         name: 'Join',
         component: () => import('@/views/classroom/join/index'),
-        meta: { title: '寻找班级', icon: 'peoples' }
+        meta: { title: '创建班级', icon: 'peoples' }
       }
     ]
   },

@@ -41,7 +41,7 @@
         <el-radio-group v-model="form.resource">
           <el-radio label="智能组卷" />
           <el-radio label="人工组卷" />
-           <el-radio label="半智能组卷" />
+          <el-radio label="半智能组卷" />
         </el-radio-group>
       </el-form-item>
       <el-form-item label="组卷批注">
@@ -49,7 +49,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">开始创建试卷</el-button>
-        <el-button @click="onCancel">取消</el-button>
+        <el-button @click="onCancel">重置</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -57,6 +57,7 @@
 
 <script>
 export default {
+  name: 'Create',
   data() {
     return {
       form: {
@@ -74,15 +75,19 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$message({
+      this.$notify({
+        title: '提示',
         message: '正在创建试卷',
-        type: 'success'
+        position: 'bottom-right',
+        type: 'warning'
       })
     },
     onCancel() {
-      this.$message({
-        message: '正在取消',
-        type: 'warning'
+      this.$notify({
+        title: '警告',
+        message: '信息已重置',
+        position: 'bottom-right',
+        type: 'error'
       })
     }
   }

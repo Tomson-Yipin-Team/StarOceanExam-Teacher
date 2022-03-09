@@ -1,11 +1,12 @@
 <template>
   <div class="dashboard-editor-container">
+
     <!--TODO: 更换图标-->
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
 
-    <el-row>
+    <el-card>
       <announcement />
-    </el-row>
+    </el-card>
 
   </div>
 </template>
