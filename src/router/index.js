@@ -75,10 +75,16 @@ export const constantRoutes = [
         meta: { title: '创建试卷', icon: 'edit' }
       },
       {
-        path: 'edit',
-        name: 'Edit',
-        component: () => import('@/views/examination/edit/createExam/index.vue'),
-        meta: { title: '编辑试卷', icon: 'edit' },
+        path: 'exam-db',
+        name: 'ExamDB',
+        component: () => import('@/views/examination/examdb/index.vue'),
+        meta: { title: '题库', icon: 'edit' }
+      },
+      {
+        path: 'exam-upload',
+        name: 'ExamUpload',
+        component: () => import('@/views/examination/upload/index.vue'),
+        meta: { title: '上传试卷' },
         hidden: true
       }
     ]

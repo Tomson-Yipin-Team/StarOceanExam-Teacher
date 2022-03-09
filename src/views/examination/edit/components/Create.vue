@@ -4,12 +4,25 @@
       <el-form-item label="考试名称">
         <el-input v-model="form.name" />
       </el-form-item>
+
       <el-form-item label="试卷类型">
         <el-select v-model="form.region" placeholder="请选择试卷类型">
           <el-option label="A卷" value="shanghai" />
           <el-option label="B卷" value="beijing" />
         </el-select>
       </el-form-item>
+
+      <el-form-item label="课程">
+        <el-select v-model="value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
+
       <el-form-item label="考试时间">
         <el-col :span="6">
           <el-date-picker v-model="form.date1" type="date" placeholder="选择考试日期" style="width: 100%;" />
@@ -23,11 +36,12 @@
           <el-time-picker v-model="form.date3" type="fixed-time" placeholder="选择考试开始时间" style="width: 100%;" />
         </el-col>
       </el-form-item>
+
       <el-form-item label="是否允许工具箱">
         <el-switch v-model="form.delivery" />
       </el-form-item>
 
-      <el-form-item label="允许使用的功能">
+      <el-form-item v-if="form.delivery" label="功能">
 
         <el-checkbox-group v-model="form.type">
           <el-checkbox label="铅笔批注" name="type" />
@@ -37,19 +51,8 @@
         </el-checkbox-group>
       </el-form-item>
 
-      <el-form-item label="组卷方式">
-        <el-radio-group v-model="form.resource">
-          <el-radio label="智能组卷" />
-          <el-radio label="人工组卷" />
-          <el-radio label="半智能组卷" />
-        </el-radio-group>
-      </el-form-item>
       <el-form-item label="组卷批注">
         <el-input v-model="form.desc" type="textarea" />
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit">开始创建试卷</el-button>
-        <el-button @click="onCancel">重置</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -70,25 +73,15 @@ export default {
         type: [],
         resource: '',
         desc: ''
-      }
-    }
-  },
-  methods: {
-    onSubmit() {
-      this.$notify({
-        title: '提示',
-        message: '正在创建试卷',
-        position: 'bottom-right',
-        type: 'warning'
-      })
-    },
-    onCancel() {
-      this.$notify({
-        title: '警告',
-        message: '信息已重置',
-        position: 'bottom-right',
-        type: 'error'
-      })
+      },
+      options: [{
+        value: '1',
+        label: '英语'
+      }, {
+        value: '2',
+        label: '数学'
+      }],
+      value: ''
     }
   }
 }
