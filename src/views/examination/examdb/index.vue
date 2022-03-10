@@ -5,7 +5,7 @@
         <el-card>
           <el-row>
             <el-button type="danger" plain @click="clearFilter">清除所有过滤器</el-button>
-            <el-button type="primary">导入试卷 <i class="el-icon-upload" /></el-button>
+            <el-button type="primary" @click="toCreate">导入试卷 <i class="el-icon-upload" /></el-button>
           </el-row>
           <el-table
             ref="filterTable"
@@ -109,6 +109,9 @@ export default {
     filterHandler(value, row, column) {
       const property = column['property']
       return row[property] === value
+    },
+    toCreate() {
+      this.$router.push('/examination/exam-upload')
     }
   }
 }
