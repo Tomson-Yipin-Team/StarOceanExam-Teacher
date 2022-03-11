@@ -59,7 +59,6 @@
                 <el-row type="flex" justify="center">
                   <el-button type="text" size="small">分享此题库</el-button>
                 </el-row>
-
               </template>
             </el-table-column>
           </el-table>

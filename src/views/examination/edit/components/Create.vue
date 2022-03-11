@@ -22,6 +22,16 @@
           />
         </el-select>
       </el-form-item>
+            <el-form-item label="开考班级">
+        <el-select v-model="value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
 
       <el-form-item label="考试时间">
         <el-col :span="6">
@@ -33,7 +43,7 @@
         </el-col>
         <el-col :span="2" class="line">-</el-col>
         <el-col :span="4">
-          <el-time-picker v-model="form.date3" type="fixed-time" placeholder="选择考试开始时间" style="width: 100%;" />
+          <el-time-picker v-model="form.date3" type="fixed-time" placeholder="选择考试结束时间" style="width: 100%;" />
         </el-col>
       </el-form-item>
 
