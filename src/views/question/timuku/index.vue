@@ -6,7 +6,7 @@
           <el-row>
             <el-button type="danger" plain @click="clearFilter">清除所有过滤器</el-button>
             <el-button type="primary" @click="toCreate">添加题目 <i class="el-icon-upload" /></el-button>
-             <el-button icon="el-icon-circle-plus" type="primary">添加题型</el-button>
+            <el-button icon="el-icon-circle-plus" type="primary">添加题型</el-button>
           </el-row>
           <el-table
             ref="filterTable"
@@ -29,21 +29,17 @@
               :filter-method="filterHandler"
             />
             <el-table-column
-              prop="date"
+              prop="totalNumber"
               label="试题数量"
-              width="150"
-              sortable
             />
             <el-table-column
-              prop="name"
+              prop="rest"
               label="未使用的试题数量（未被学生做过）"
-              sortable
             />
             <el-table-column
               prop="origin"
               label="试卷构成"
               width="180"
-              sortable
             />
             <el-table-column
               align="center"
@@ -54,7 +50,7 @@
               <template>
                 <el-row type="flex" justify="center">
                   <el-button type="text" size="small">查看该题库</el-button>
-                   <el-button type="text" size="small">删除该题库</el-button>
+                  <el-button type="text" size="small">删除该题库</el-button>
                 </el-row>
                 <el-row type="flex" justify="center">
                   <el-button type="text" size="small">分享此题库</el-button>
@@ -75,61 +71,61 @@ export default {
       tableData: [{
         id: '1',
         subject: '听力',
-        date: '105',
-        name: '42',
+        totalNumber: '105',
+        rest: '42',
         origin: '查看'
       }, {
         id: '2',
         subject: '单项选择',
-        date: '807',
-        name: '301',
+        totalNumber: '807',
+        rest: '301',
         origin: '查看'
       }, {
         id: '3',
         subject: '完型填空',
-        date: '104',
-        name: '9',
+        totalNumber: '104',
+        rest: '9',
         origin: '查看'
       }, {
         id: '4',
         subject: '十五选十',
-        date: '88',
-        name: '44',
+        totalNumber: '88',
+        rest: '44',
         origin: '查看'
       },
       {
         id: '5',
         subject: '段落信息匹配',
-        date: '62',
-        name: '21',
+        totalNumber: '62',
+        rest: '21',
         origin: '查看'
       },
       {
         id: '6',
         subject: '阅读理解',
-        date: '533',
-        name: '115',
+        totalNumber: '533',
+        rest: '115',
         origin: '查看'
       },
       {
         id: '7',
         subject: '句子翻译',
-        date: '78',
-        name: '45',
+        totalNumber: '78',
+        rest: '45',
         origin: '查看'
       },
       {
         id: '8',
         subject: '任务型阅读',
-        date: '67',
-        name: '44',
+        totalNumber: '67',
+        rest: '44',
         origin: '查看'
       },
       {
         id: '9',
         subject: '书面表达',
-        date: '68',
-        name: '32',
+        totalNumber: '68',
+        rest: '32',
         origin: '查看'
       }]
     }
@@ -146,7 +142,7 @@ export default {
       return row[property] === value
     },
     toCreate() {
-      this.$router.push('/examination/exam-upload')
+      this.$router.push('/question/create-question')
     }
   }
 }

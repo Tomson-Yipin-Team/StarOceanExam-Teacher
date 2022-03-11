@@ -73,21 +73,26 @@ export const constantRoutes = [
         name: 'Create',
         component: () => import('@/views/examination/edit/index'),
         meta: { title: '卷库', icon: 'edit' }
-      },
-      {
-        path: 'exam-db',
-        name: 'ExamDB',
-        component: () => import('@/views/examination/examdb/index.vue'),
-        meta: { title: '题库', icon: 'edit' }
-      },
-      {
-        path: 'exam-upload',
-        name: 'ExamUpload',
-        component: () => import('@/views/examination/upload/index.vue'),
-        meta: { title: '上传试卷' },
-        hidden: true
       }
     ]
+  },
+
+  {
+    path: '/question',
+    component: Layout,
+    redirect: '/question/question-database',
+    meta: { title: '管理题目', icon: 'list' },
+    children: [{
+      path: 'question-database',
+      name: 'QuestionDB',
+      component: () => import('@/views/question/timuku/index.vue'),
+      meta: { title: '题库', icon: 'edit' }
+    }, {
+      path: 'create-question',
+      name: 'CreateQuestion',
+      component: () => import('@/views/question/upload/index.vue'),
+      meta: { title: '上传题目', icon: 'edit' }
+    }]
   },
 
   {

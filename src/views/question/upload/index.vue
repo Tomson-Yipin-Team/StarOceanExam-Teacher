@@ -2,7 +2,7 @@
   <div>
     <el-row class="container">
       <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22" :offset="1">
-        <PaperStatus />
+        <PaperStatus :sub-id="id" :sub-name="name" />
       </el-col>
     </el-row>
     <el-row class="container">
@@ -11,6 +11,7 @@
       </el-col>
       <el-col :xs="22" :sm="22" :md="15" :lg="15" :xl="15" :offset="1">
         <upload />
+        <Files class="app-container"/>
       </el-col>
     </el-row>
   </div>
@@ -18,20 +19,24 @@
 
 <script>
 
-import QuestionCategory from '@/views/examination/upload/components/QuestionCategory'
-import Upload from '@/views/examination/upload/components/Upload'
-import PaperStatus from '@/views/examination/upload/components/PaperStatus'
+import QuestionCategory from './components/QuestionCategory'
+import Upload from './components/Upload'
+import PaperStatus from './components/PaperStatus'
+import Files from './components/Files'
 
 export default {
   name: 'Index',
   components: {
     QuestionCategory,
     Upload,
-    PaperStatus
+    PaperStatus,
+    Files
   },
   data() {
     return {
-      questionCategory: ''
+      questionCategory: '',
+      id: '',
+      name: ''
     }
   },
   methods: {
@@ -46,5 +51,10 @@ export default {
 <style scoped>
 .container{
   margin-top: 20px;
+}
+.app-container{
+  margin-top: 20px;
+  display: block;
+  text-align: center;
 }
 </style>
