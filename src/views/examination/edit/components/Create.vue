@@ -12,7 +12,7 @@
         </el-select>
       </el-form-item>
 
-      <el-form-item label="课程">
+      <el-form-item label="开考课程">
         <el-select v-model="value" placeholder="请选择">
           <el-option
             v-for="item in options"
@@ -21,6 +21,18 @@
             :value="item.value"
           />
         </el-select>
+              </el-form-item>
+            <el-form-item label="开考专业">
+        <el-select v-model="value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
+
       </el-form-item>
             <el-form-item label="开考班级">
         <el-select v-model="value" placeholder="请选择">
