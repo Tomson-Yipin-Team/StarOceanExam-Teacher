@@ -2,7 +2,7 @@
   <div>
     <el-card>
       <div slot="header">
-        <span style="text-align: center;display: block">试卷信息</span>
+        <span style="text-align: center;display: block">题目信息</span>
       </div>
       <el-row>
         <el-col :span="6" :offset="1" style="text-align: center;display: block">

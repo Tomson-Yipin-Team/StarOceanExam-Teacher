@@ -66,13 +66,13 @@ export const constantRoutes = [
         path: 'see',
         name: 'See',
         component: () => import('@/views/examination/all/index'),
-        meta: { title: '所有考试', icon: 'list' }
+        meta: { title: '发布考试', icon: 'list' }
       },
       {
         path: 'create',
         name: 'Create',
         component: () => import('@/views/examination/edit/index'),
-        meta: { title: '创建试卷', icon: 'edit' }
+        meta: { title: '卷库', icon: 'edit' }
       },
       {
         path: 'exam-db',
