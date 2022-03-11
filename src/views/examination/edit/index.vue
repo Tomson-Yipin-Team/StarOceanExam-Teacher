@@ -2,7 +2,7 @@
   <div>
     <el-card class="container">
       <el-row type="flex" justify="center">
-        <el-col span="10">
+        <el-col :span="10">
           <el-steps :active="active" finish-status="success">
             <el-step title="步骤 1" />
             <el-step title="步骤 2" />
@@ -11,7 +11,7 @@
         </el-col>
       </el-row>
       <el-row type="flex" justify="center">
-        <el-col span="18">
+        <el-col :span="18">
           <create v-if="active === 0" />
           <question v-if="active === 1" />
         </el-col>
