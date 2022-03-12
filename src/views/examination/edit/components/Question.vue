@@ -15,8 +15,8 @@
               v-for="item in options"
               :key="item.value"
               :label="item.label"
-              :value="item.value">
-            </el-option>
+              :value="item.value"
+            />
           </el-select>
         </el-form-item>
       </el-form>
@@ -35,7 +35,7 @@ export default {
     return {
       form: {
         way: ''
-      },options: [{
+      }, options: [{
         value: '1000075885',
         label: '2021-2022-1普本大学英语三期末考试'
       }, {

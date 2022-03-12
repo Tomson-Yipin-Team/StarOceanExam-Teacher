@@ -12,57 +12,53 @@
             ref="filterTable"
             :data="tableData"
             style="width: 100%"
+            border
           >
             <el-table-column
-              lable="试卷编号"
-              sortable
-              width="50"
+              label="题目编号"
+              width="150px"
             >
               <template #default="scope">
-                {{scope.row.id}}
+                {{ scope.row.id }}
               </template>
             </el-table-column>
             <el-table-column
               label="试题类型"
-              sortable
               width="180"
               column-key="subject"
               :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
               :filter-method="filterHandler"
             >
               <template #default="scope">
-                {{scope.row.subject}}
+                {{ scope.row.subject }}
               </template>
             </el-table-column>
             <el-table-column
               label="试题数量"
+              width="300px"
             >
               <template #default="scope">
-                {{scope.row.totalNumber}}
+                {{ scope.row.totalNumber }}
               </template>
             </el-table-column>
             <el-table-column
               prop="rest"
               label="未使用的试题数量（未被学生做过）"
+              width="300px"
             />
-            <el-table-column
-              prop="origin"
-              label="试卷构成"
-              width="180"
-            />
+
             <el-table-column
               align="center"
               fixed="right"
               label="操作"
-              width="200"
+              width="200px"
             >
               <template>
                 <el-row type="flex" justify="center">
-                  <el-button type="text" size="small">查看该题库</el-button>
-                  <el-button type="text" size="small">删除该题库</el-button>
-                </el-row>
-                <el-row type="flex" justify="center">
-                  <el-button type="text" size="small">分享此题库</el-button>
+                  <el-button-group>
+                    <el-button type="primary" size="small" @click="onLook">查看</el-button>
+                    <el-button type="primary" size="small" @click="onShare">分享</el-button>
+                  </el-button-group>
                 </el-row>
               </template>
             </el-table-column>
@@ -70,11 +66,40 @@
         </el-card>
       </el-col>
     </el-row>
+
+<!--查看弹出框-->
+    <el-dialog
+      title="查看试题"
+      :visible.sync="dialogLook"
+      width="60%"
+      :before-close="handleClose"
+    >
+      <el-form>
+        <el-form-item label="请输入题号">
+          <el-col span="6">
+            <el-input v-model="questionNumber" placeholder="请输入题目号"></el-input>
+          </el-col>
+          <el-col :offset="1" span="3">
+            <el-button type="primary" icon="el-icon-document" @click="toNext">
+              跳转
+            </el-button>
+          </el-col>
+        </el-form-item>
+      </el-form>
+      <div v-html="html" />
+      <markdown-editor v-show="false" ref="markdownEditor" v-model="content" :options="{hideModeSwitch:true,isViewer:true}" height="400px" />
+    </el-dialog>
   </div>
 </template>
 
 <script>
+
+import MarkdownEditor from '@/components/MarkdownEditor'
+
 export default {
+  components: {
+    MarkdownEditor
+  },
   data() {
     return {
       tableData: [{
@@ -136,22 +161,86 @@ export default {
         totalNumber: '68',
         rest: '32',
         origin: '查看'
-      }]
+      }],
+      dialogLook: false,
+      html: '',
+      content: '# 第二章 物理层\n' +
+        '\n' +
+        '## 基本概念\n' +
+        '\n' +
+        '用于物理层的协议常被人称为物理层规程\n' +
+        '\n' +
+        '物理层的主要任务描述为确定与传输媒体的接口有关的一些特性：\n' +
+        '\n' +
+        '* 机械特性\n' +
+        '* 电气特性\n' +
+        '* 功能特性\n' +
+        '* 过程特性\n' +
+        '\n' +
+        '数据在计算机内部多采用并行传输，但数据在通讯线路（传输媒体）上的传输方式一般是串行传输。',
+      questionNumber: ''
     }
   },
   methods: {
+    // 重置学科过滤器
     resetDateFilter() {
       this.$refs.filterTable.clearFilter('subject')
     },
+    // 重置所有过滤器
     clearFilter() {
       this.$refs.filterTable.clearFilter()
     },
+    // 过滤器
     filterHandler(value, row, column) {
       const property = column['property']
       return row[property] === value
     },
+    // 创建试卷
     toCreate() {
       this.$router.push('/question/create-question')
+    },
+    // 分享按钮
+    onShare() {
+      this.$confirm('此操作将会创建一条分享链接，是否继续？', '分享提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$notify({
+          type: 'success',
+          title: '分享成功',
+          message: '分享链接已复制到剪贴板上'
+        })
+      }).catch(() => {
+        this.$notify({
+          type: 'info',
+          title: '信息',
+          message: '已取消分享'
+        })
+      })
+    },
+    // 查看按钮
+    onLook() {
+      this.dialogLook = true
+    },
+    // 确认关闭
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done()
+        })
+        .catch(_ => {})
+    },
+    toNext() {
+      this.html = this.$refs.markdownEditor.getHtml()
+    }
+  },
+  watch: {
+    content: {
+      immediate: true,
+      handler() {
+        this.html = this.$refs.markdownEditor.getHtml()
+      }
     }
   }
 }
