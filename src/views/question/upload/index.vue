@@ -8,10 +8,10 @@
     <el-row class="container">
       <el-col :xs="22" :sm="22" :md="6" :lg="6" :xl="6" :offset="1">
         <QuestionCategory @questionCategory="changeValue" />
+        <Files class="app-container"/>
       </el-col>
       <el-col :xs="22" :sm="22" :md="15" :lg="15" :xl="15" :offset="1">
         <upload />
-        <Files class="app-container"/>
       </el-col>
     </el-row>
   </div>

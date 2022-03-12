@@ -14,24 +14,33 @@
             style="width: 100%"
           >
             <el-table-column
-              prop="id"
               lable="试卷编号"
               sortable
               width="50"
-            />
+            >
+              <template #default="scope">
+                {{scope.row.id}}
+              </template>
+            </el-table-column>
             <el-table-column
-              prop="subject"
               label="试题类型"
               sortable
               width="180"
               column-key="subject"
               :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
               :filter-method="filterHandler"
-            />
+            >
+              <template #default="scope">
+                {{scope.row.subject}}
+              </template>
+            </el-table-column>
             <el-table-column
-              prop="totalNumber"
               label="试题数量"
-            />
+            >
+              <template #default="scope">
+                {{scope.row.totalNumber}}
+              </template>
+            </el-table-column>
             <el-table-column
               prop="rest"
               label="未使用的试题数量（未被学生做过）"

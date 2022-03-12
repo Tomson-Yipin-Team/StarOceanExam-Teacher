@@ -9,6 +9,16 @@
             <el-radio label="3" border>从现有模板导入</el-radio>
           </el-radio-group>
         </el-form-item>
+        <el-form-item label="选择试卷">
+          <el-select v-model="value" filterable placeholder="请选择">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
       </el-form>
     </el-row>
 
@@ -25,7 +35,14 @@ export default {
     return {
       form: {
         way: ''
-      }
+      },options: [{
+        value: '1000075885',
+        label: '2021-2022-1普本大学英语三期末考试'
+      }, {
+        value: '1000075886',
+        label: '2021-2022-2普本大学英语三期末考试'
+      }],
+      value: ''
     }
   }
 }

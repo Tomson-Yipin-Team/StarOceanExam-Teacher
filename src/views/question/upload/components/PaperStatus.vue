@@ -33,9 +33,9 @@
           <el-row class="text-number">{{ question.now }}/{{ question.now }}</el-row>
         </el-col>
         <el-col :offset="1" :span="5" style="text-align: center;display: block">
-          <el-button type="primary">上一题</el-button>
+          <el-button type="primary" plain @click="toPrevious">上一题</el-button>
           <div class="empty" />
-          <el-button type="primary">下一题</el-button>
+          <el-button type="primary" @click="toNext">下一题</el-button>
         </el-col>
       </el-row>
     </el-card>
@@ -53,14 +53,38 @@ export default { // 点击编辑试卷后的传来的试卷id和试卷名称
         name: '这里是试卷名称'
       }],
       question: {
-        total: '0',
-        now: '0'
+        total: 1,
+        now: 1
       }
     }
   },
   watch: {
     question: {
 
+    }
+  },
+  methods: {
+    toPrevious() {
+      if (this.question.now === 1) {
+        this.$notify({
+          title: '警告',
+          message: '已经是第一题了！',
+          type: 'warning',
+          position: 'bottom-right'
+        })
+      } else {
+        this.question.now -= 1
+      }
+    },
+    toNext() {
+      if (this.question.now === this.question.total) {
+        this.$notify({
+          title: '警告',
+          message: '已经是最后一题了',
+          type: 'warning',
+          position: 'bottom-right'
+        })
+      }
     }
   }
 }

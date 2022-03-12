@@ -8,6 +8,11 @@
         border="border"
       >
         <el-table-column label="发布时间" prop="date" align="center" width="100" />
+        <el-table-column label="ID" align="center" width="100">
+          <template #default="scope">
+            {{scope.row.id}}
+          </template>
+        </el-table-column>
         <el-table-column label="名称" prop="name" align="center" />
         <el-table-column label="发布人" prop="origin" align="center" width="100" />
         <el-table-column label="参加人数" prop="join" align="center" width="100" />
@@ -77,11 +82,11 @@ export default {
   methods: {
     // TODO: 补充编辑功能
     handleEdit(index, row) {
-      console.log(index, row)
+      console.log(index, row.id)
     },
     // TODO: 补充删除功能
     handleDelete(index, row) {
-      console.log(index, row)
+      console.log(index, row.id)
     },
     // 状态颜色
     tableRowClassName(index, row) {
