@@ -1,18 +1,20 @@
 <template>
   <div>
     <count />
+    <action />
     <student-table />
   </div>
 </template>
 
 <script>
 
-import StudentTable from '@/views/classroom/joined/components/StudentTable'
-import Count from '@/views/classroom/joined/components/Count'
+import StudentTable from './components/StudentTable'
+import Count from './components/Count'
+import Action from './components/Action'
 
 export default {
   name: 'Index',
-  components: { StudentTable, Count }
+  components: { StudentTable, Count, Action }
 
 }
 </script>

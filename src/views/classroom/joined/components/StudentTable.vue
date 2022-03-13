@@ -3,9 +3,11 @@
     <el-row type="flex" justify="center" class="table">
       <el-col :span="23">
         <el-card>
-          <el-row>
-            <el-button type="primary">创建新的班级</el-button>
-          </el-row>
+          <div slot="header">
+            <el-row type="flex" justify="center">
+              已创建班级
+            </el-row>
+          </div>
           <el-table
             :data="tableData"
             style="width: 100%"
