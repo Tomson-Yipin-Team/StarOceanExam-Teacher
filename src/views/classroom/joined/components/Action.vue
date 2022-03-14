@@ -8,9 +8,15 @@
               操作
             </el-row>
           </div>
-          <el-button class="button">创建新的班级</el-button>
-          <el-button class="button">批准所有</el-button>
-          <el-button class="button">拒绝所有</el-button>
+          <el-row type="flex" justify="center">
+            <el-button class="button">创建新的班级</el-button>
+          </el-row>
+          <el-row type="flex" justify="center">
+            <el-button class="button">批准所有</el-button>
+          </el-row>
+          <el-row type="flex" justify="center">
+            <el-button class="button">拒绝所有</el-button>
+          </el-row>
         </el-card>
       </el-col>
       <el-col :xs="20" :sm="15" :md="15" :lg="15" :xl="15" :offset="1">
