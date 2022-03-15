@@ -37,6 +37,12 @@ export const constantRoutes = [
     hidden: true
   },
 
+  // {
+  //   path: '/register',
+  //   component: () => import('@/views/register/index'),
+  //   hidden: true
+  // },
+
   {
     path: '/404',
     component: () => import('@/views/404'),
@@ -69,10 +75,16 @@ export const constantRoutes = [
         meta: { title: '卷库', icon: 'list' }
       },
       {
-        path: 'create',
-        name: 'Create',
+        path: 'release',
+        name: 'Release',
         component: () => import('@/views/examination/edit/index'),
         meta: { title: '发布考试', icon: 'edit' }
+      },
+      {
+        path: 'create',
+        name: 'Create',
+        component: () => import('@/views/examination/create/index'),
+        meta: { title: '创建试卷', icon: 'edit' }
       }
     ]
   },

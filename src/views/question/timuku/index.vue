@@ -67,7 +67,7 @@
       </el-col>
     </el-row>
 
-<!--查看弹出框-->
+    <!--查看弹出框-->
     <el-dialog
       title="查看试题"
       :visible.sync="dialogLook"
@@ -76,10 +76,10 @@
     >
       <el-form>
         <el-form-item label="请输入题号">
-          <el-col span="6">
-            <el-input v-model="questionNumber" placeholder="请输入题目号"></el-input>
+          <el-col :span="6">
+            <el-input v-model="questionNumber" placeholder="请输入题目号" />
           </el-col>
-          <el-col :offset="1" span="3">
+          <el-col :offset="1" :span="3">
             <el-button type="primary" icon="el-icon-document" @click="toNext">
               跳转
             </el-button>
@@ -177,13 +177,13 @@ export default {
         '\n' +
         '小程的宿舍在六楼，小程每次上楼都可以选择向上跨一级台阶或者跨两级台阶，小程想知道\n' +
         '为了到达第n级台阶，他一共有多少种方案可取\n' +
-        '## 输入格式\n'+
+        '## 输入格式\n' +
         '输入一行，包含一个整数n(1<n<100000)\n' +
-        '## 输出格式\n'+
-        '输出一个整数，表示小程可以采取的方案数\n'+
-        '## 输入样例\n'+
-        '10\n'+
-        '## 输出样例\n'+
+        '## 输出格式\n' +
+        '输出一个整数，表示小程可以采取的方案数\n' +
+        '## 输入样例\n' +
+        '10\n' +
+        '## 输出样例\n' +
         '89\n',
       questionNumber: ''
     }
@@ -241,15 +241,16 @@ export default {
     toNext() {
       this.html = this.$refs.markdownEditor.getHtml()
     }
-  },
-  watch: {
-    content: {
-      immediate: true,
-      handler() {
-        this.html = this.$refs.markdownEditor.getHtml()
-      }
-    }
   }
+  // ,
+  // watch: {
+  //   content: {
+  //     immediate: true,
+  //     handler() {
+  //       this.html = this.$refs.markdownEditor.getHtml()
+  //     }
+  //   }
+  // }
 }
 </script>
 

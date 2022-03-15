@@ -2,13 +2,16 @@
   <div>
     <el-row class="container">
       <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22" :offset="1">
+        <!--试卷状态-->
         <PaperStatus :sub-id="id" :sub-name="name" />
       </el-col>
     </el-row>
     <el-row class="container">
       <el-col :xs="22" :sm="22" :md="6" :lg="6" :xl="6" :offset="1">
+        <!--题目控件-->
         <QuestionCategory @questionCategory="changeValue" />
-        <Files class="app-container"/>
+        <!--上传控件-->
+        <Files class="app-container" />
       </el-col>
       <el-col :xs="22" :sm="22" :md="15" :lg="15" :xl="15" :offset="1">
         <upload />

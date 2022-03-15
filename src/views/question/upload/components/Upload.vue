@@ -6,7 +6,7 @@
       </div>
       <el-row>
         <div class="editor-container">
-          <markdown-editor ref="markdownEditor" :language="zh" v-model="content" :options="{hideModeSwitch:true,previewStyle:'vertical'}" height="400px" />
+          <markdown-editor ref="markdownEditor" language="zh" v-model="content" :options="{hideModeSwitch:true,previewStyle:'vertical'}" height="400px" />
         </div>
       </el-row>
       <el-row class="button" type="flex" justify="end">

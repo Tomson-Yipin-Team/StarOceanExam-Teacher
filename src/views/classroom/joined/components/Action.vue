@@ -9,7 +9,7 @@
             </el-row>
           </div>
           <el-row type="flex" justify="center">
-            <el-button class="button">创建新的班级</el-button>
+            <el-button class="button" @click="createClass">创建新的班级</el-button>
           </el-row>
           <el-row type="flex" justify="center">
             <el-button class="button">批准所有</el-button>
@@ -74,6 +74,11 @@ export default {
         name: '程小伟',
         tip: '再不放我进去，我可要'
       }]
+    }
+  },
+  methods: {
+    createClass() {
+      this.$router.push({ path: '/classroom/join' })
     }
   }
 }
