@@ -13,9 +13,11 @@
 
       <el-row class="button" type="flex" justify="end" />
       <el-row>
-        <el-button type="primary" icon="el-icon-document" @click="getNextPage">
-          Get HTML
-        </el-button>
+        <el-button>下一题</el-button>
+        <el-button>上一题</el-button>
+      </el-row>
+      <el-row>
+
         <div v-html="html" />
       </el-row>
     </el-card>
@@ -27,6 +29,10 @@
 import content from '@/api/question-content'
 import MarkdownEditor from '@/components/MarkdownEditor'
 
+import '@toast-ui/editor/dist/toastui-editor-viewer.css';
+
+import { Viewer } from '@toast-ui/vue-editor';
+
 export default {
   name: 'Upload',
   components: { MarkdownEditor },
@@ -34,7 +40,8 @@ export default {
     return {
       questionNumber: 0,
       content: '',
-      html: ''
+      html: '',
+      editorOptions: ''
     }
   },
   watch: {
