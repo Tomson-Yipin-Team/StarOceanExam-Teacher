@@ -2,7 +2,13 @@
   <div>
     <el-row>
       <!--题目列表-->
-      <el-col :xs="8" :sm="8" :md="6" :lg="6" :xl="6" :offset="1">
+      <el-col :xs="8" :sm="8" :md="6" :lg="6" :xl="6">
+        <el-card v-if="showInfo">
+          <div slot="header" style="float: bottom;text-align: center">
+            试卷信息
+          </div>
+          <PaperInfo />
+        </el-card>
         <el-card>
           <div slot="header" style="float: bottom;text-align: center">
             题目列表
@@ -10,9 +16,9 @@
           <Tree />
         </el-card>
       </el-col>
-    <!--题目预览-->
-      <el-col :xs="10" :sm="10" :md="14" :lg="14" :xl="14" :offset="1">
-        <paper></paper>
+      <!--题目预览-->
+      <el-col :xs="10" :sm="10" :md="16" :lg="16" :xl="16" :offset="1">
+        <paper />
       </el-col>
     </el-row>
 
@@ -22,11 +28,28 @@
 <script>
 
 import Tree from './components/Tree'
-import Paper from '@/views/examination/create/components/paper';
+import Paper from './components/paper'
+import PaperInfo from './components/PaperInfo'
 
 export default {
   name: 'Index',
-  components: { Tree, Paper }
+  components: { Tree, Paper, PaperInfo },
+  data() {
+    return {
+      name: this.$route.query.name,
+      showInfo: true
+    }
+  },
+  watch: {
+    name: {
+      immediate: true,
+      handler() {
+        if (this.name === undefined) {
+          this.showInfo = false
+        }
+      }
+    }
+  }
 }
 </script>
 

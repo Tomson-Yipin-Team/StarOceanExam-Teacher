@@ -69,16 +69,22 @@ export const constantRoutes = [
     meta: { title: '管理考试', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'see',
-        name: 'See',
+        path: 'all',
+        name: 'All',
         component: () => import('@/views/examination/all/index'),
-        meta: { title: '卷库', icon: 'list' }
+        meta: { title: '考试', icon: 'list' }
       },
       {
         path: 'release',
         name: 'Release',
         component: () => import('@/views/examination/edit/index'),
         meta: { title: '发布考试', icon: 'edit' }
+      },
+      {
+        path: 'paper',
+        name: 'Paper',
+        component: () => import('@/views/examination/paper/index'),
+        meta: { title: '卷库', icon: 'edit' }
       },
       {
         path: 'create',
