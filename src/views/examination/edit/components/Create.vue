@@ -32,8 +32,6 @@
           />
         </el-select>
       </el-form-item>
-
-      </el-form-item>
             <el-form-item label="开考班级">
         <el-select v-model="value" placeholder="请选择">
           <el-option
