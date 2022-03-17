@@ -5,14 +5,16 @@
         <el-card>
           <el-row>
             <el-button type="danger" plain @click="clearFilter">清除所有过滤器</el-button>
-            <el-button type="primary" @click="toCreate">添加题目 <i class="el-icon-upload" /></el-button>
-            <el-button icon="el-icon-circle-plus" type="primary">添加题型</el-button>
+            <el-button type="primary" @click="toCreate">添加题目<i class="el-icon-upload" /></el-button>
+            <!--取消添加题型-->
+            <!--<el-button icon="el-icon-circle-plus" type="primary">添加题型</el-button>-->
           </el-row>
           <el-table
             ref="filterTable"
             :data="tableData"
             style="width: 100%"
             border
+            height="900px"
           >
             <el-table-column
               label="题目编号"
@@ -35,7 +37,7 @@
             </el-table-column>
             <el-table-column
               label="试题数量"
-              width="300px"
+              width="150px"
             >
               <template #default="scope">
                 {{ scope.row.totalNumber }}
@@ -44,8 +46,16 @@
             <el-table-column
               prop="rest"
               label="未使用的试题数量（未被学生做过）"
-              width="300px"
+              width="150px"
             />
+            <el-table-column
+              label="标签"
+              width="150px"
+            >
+              <template #default="scope">
+                <el-tag>{{ scope.row.tag }}</el-tag>
+              </template>
+            </el-table-column>
 
             <el-table-column
               align="center"
@@ -73,32 +83,17 @@
       :visible.sync="dialogLook"
       width="60%"
       :before-close="handleClose"
-    >
-      <el-form>
-        <el-form-item label="请输入题号">
-          <el-col :span="6">
-            <el-input v-model="questionNumber" placeholder="请输入题目号" />
-          </el-col>
-          <el-col :offset="1" :span="3">
-            <el-button type="primary" icon="el-icon-document" @click="toNext">
-              跳转
-            </el-button>
-          </el-col>
-        </el-form-item>
-      </el-form>
-      <div v-html="html" />
-      <markdown-editor v-show="false" ref="markdownEditor" v-model="content" :options="{hideModeSwitch:true,isViewer:true}" height="400px" />
-    </el-dialog>
+    />
   </div>
 </template>
 
 <script>
 
-import MarkdownEditor from '@/components/MarkdownEditor'
+// import MarkdownEditor from '@/components/MarkdownEditor'
 
 export default {
   components: {
-    MarkdownEditor
+    // MarkdownEditor
   },
   data() {
     return {
@@ -107,13 +102,15 @@ export default {
         subject: '听力',
         totalNumber: '105',
         rest: '42',
-        origin: '查看'
+        origin: '查看',
+        tag: '选择'
       }, {
         id: '2',
         subject: '单项选择',
         totalNumber: '807',
         rest: '301',
-        origin: '查看'
+        origin: '查看',
+        tag: '选择'
       }, {
         id: '3',
         subject: '完型填空',

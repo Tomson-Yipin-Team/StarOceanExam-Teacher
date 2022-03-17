@@ -1,10 +1,11 @@
 <template>
   <div>
     <el-card>
-      <div slot="header"><span style="text-align: center;display: block">请选择题型</span></div>
+      <div slot="header"><span style="text-align: center;display: block">题目信息</span></div>
       <el-row type="flex" justify="center">
         <el-form>
-          <el-form-item label="题型" label-width="50px">
+          <!--题目类型-->
+          <el-form-item label="题型" label-width="150px">
             <el-select v-model="value" placeholder="请选择">
               <el-option-group
                 v-for="group in options"
@@ -20,8 +21,15 @@
               </el-option-group>
             </el-select>
           </el-form-item>
-          <!--题目数量-->
-          <el-form-item />
+
+          <!--题目难易度-->
+          <el-form-item label="题目难易度">
+            <el-select v-model="form.difficulty" placeholder="请选择题目难易度">
+              <el-option label="简单" value="0" />
+              <el-option label="中等" value="1" />
+              <el-option label="难" value="2" />
+            </el-select>
+          </el-form-item>
         </el-form>
       </el-row>
     </el-card>
@@ -58,7 +66,10 @@ export default {
           label: '代码'
         }]
       }],
-      value: ''
+      value: '',
+      form: {
+        difficulty: ''
+      }
     }
   },
   watch: {
