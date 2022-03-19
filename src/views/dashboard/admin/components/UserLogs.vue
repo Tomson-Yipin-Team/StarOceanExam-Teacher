@@ -1,6 +1,6 @@
 <template>
   <div id="contain">
-    <el-card header="公告">
+    <el-card header="用户日志">
       <el-table
         :data="announcement"
         style="width: 100%"
@@ -11,8 +11,14 @@
       >
         <el-table-column
           #default="scope"
+          width="250px"
         >
-          [{{ scope.row.time }}] {{ scope.row.content }}
+          [{{ scope.row.time }}] {{ scope.row.name }}
+        </el-table-column>
+        <el-table-column
+          #default="scope"
+        >
+          <el-tag size="mini">{{ scope.row.status }}</el-tag>
         </el-table-column>
         <el-table-column fixed="right" width="50px">
           <el-button type="text" size="mini">
@@ -26,17 +32,19 @@
 
 <script>
 export default {
-  name: 'Announcement',
+  name: 'UserLogs',
   data() {
     return {
       announcement: [
         {
-          content: '初始化完成',
-          status: '完成',
+          content: '考试完成',
+          name: '春学期期末考试2-1',
+          status: '考试进行中',
           time: '2022-3-12'
         },
         {
-          content: '部署完成，欢迎使用考试管理系统',
+          content: '考试完成',
+          name: '春学期期末考试1-1',
           status: '完成',
           time: '2022-3-09'
         }

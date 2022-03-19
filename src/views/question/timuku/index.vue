@@ -83,13 +83,33 @@
       :visible.sync="dialogLook"
       width="60%"
       :before-close="handleClose"
-    />
+    >
+      <el-table
+        :data="subQuestion"
+        style="width: 100%"
+      >
+        <el-table-column #default="scope" label="名称">
+          {{ scope.row.name }}
+        </el-table-column>
+        <el-table-column #default="scope" label="难易度" fixed="right" width="100px">
+          <el-tag :type="difficultyType(scope.row)">{{ scope.row.difficulty }}</el-tag>
+        </el-table-column>
+        <el-table-column #default="scope" label="操作" fixed="right" width="200px">
+          <el-button-group>
+            <el-button type="primary" plain @click="seeSubQuestion(scope.$index,scope.row)">查看</el-button>
+            <el-button type="danger">删除</el-button>
+          </el-button-group>
+        </el-table-column>
+      </el-table>
+    </el-dialog>
+
   </div>
 </template>
 
 <script>
 
 // import MarkdownEditor from '@/components/MarkdownEditor'
+import questionContent from '@/api/question-content'
 
 export default {
   components: {
@@ -97,91 +117,11 @@ export default {
   },
   data() {
     return {
-      tableData: [{
-        id: '1',
-        subject: '听力',
-        totalNumber: '105',
-        rest: '42',
-        origin: '查看',
-        tag: '选择'
-      }, {
-        id: '2',
-        subject: '单项选择',
-        totalNumber: '807',
-        rest: '301',
-        origin: '查看',
-        tag: '选择'
-      }, {
-        id: '3',
-        subject: '完型填空',
-        totalNumber: '104',
-        rest: '9',
-        origin: '查看'
-      }, {
-        id: '4',
-        subject: '十五选十',
-        totalNumber: '88',
-        rest: '44',
-        origin: '查看'
-      },
-      {
-        id: '5',
-        subject: '段落信息匹配',
-        totalNumber: '62',
-        rest: '21',
-        origin: '查看'
-      },
-      {
-        id: '6',
-        subject: '阅读理解',
-        totalNumber: '533',
-        rest: '115',
-        origin: '查看'
-      },
-      {
-        id: '7',
-        subject: '句子翻译',
-        totalNumber: '78',
-        rest: '45',
-        origin: '查看'
-      },
-      {
-        id: '8',
-        subject: '任务型阅读',
-        totalNumber: '67',
-        rest: '44',
-        origin: '查看'
-      },
-      {
-        id: '9',
-        subject: '书面表达',
-        totalNumber: '68',
-        rest: '32',
-        origin: '查看'
-      },
-      {
-        id: '10',
-        subject: '算法设计',
-        totalNumber: '21',
-        rest: '10',
-        origin: '查看'
-      }],
+      tableData: questionContent.timuku,
       dialogLook: false,
       html: '',
-      content: '# 问题A：小程上楼\n' +
-        '\n' +
-        '## 问题描述\n' +
-        '\n' +
-        '小程的宿舍在六楼，小程每次上楼都可以选择向上跨一级台阶或者跨两级台阶，小程想知道\n' +
-        '为了到达第n级台阶，他一共有多少种方案可取\n' +
-        '## 输入格式\n' +
-        '输入一行，包含一个整数n(1<n<100000)\n' +
-        '## 输出格式\n' +
-        '输出一个整数，表示小程可以采取的方案数\n' +
-        '## 输入样例\n' +
-        '10\n' +
-        '## 输出样例\n' +
-        '89\n',
+      subQuestion: questionContent.timuku[0].questions,
+      content: '',
       questionNumber: ''
     }
   },
@@ -235,19 +175,26 @@ export default {
         })
         .catch(_ => {})
     },
-    toNext() {
-      this.html = this.$refs.markdownEditor.getHtml()
+    // toNext() {
+    //   this.html = this.$refs.markdownEditor.getHtml()
+    // },
+    // 查看子题目
+    seeSubQuestion(index, row) {
+      this.$router.push({ path: '/question/create-question', query: { name: row.name }})
+    },
+    // tag 颜色选择
+    difficultyType(row) {
+      if (row.difficulty === '简单') {
+        return 'success'
+      } else if (row.difficulty === '中等') {
+        return 'warning'
+      } else if (row.difficulty === '困难') {
+        return 'danger'
+      } else {
+        return ''
+      }
     }
   }
-  // ,
-  // watch: {
-  //   content: {
-  //     immediate: true,
-  //     handler() {
-  //       this.html = this.$refs.markdownEditor.getHtml()
-  //     }
-  //   }
-  // }
 }
 </script>
 

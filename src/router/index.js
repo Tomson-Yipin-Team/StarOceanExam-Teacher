@@ -109,7 +109,7 @@ export const constantRoutes = [
       path: 'create-question',
       name: 'CreateQuestion',
       component: () => import('@/views/question/upload/index.vue'),
-      meta: { title: '上传题目', icon: 'edit' }
+      meta: { title: '编辑题目', icon: 'edit' }
     }]
   },
 

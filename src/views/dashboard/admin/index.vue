@@ -4,9 +4,14 @@
     <!--TODO: 更换图标-->
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
 
-    <el-card>
-      <announcement />
-    </el-card>
+    <el-row gutter="20">
+      <el-col :xs="22" :sm="22" :md="12" :lg="12" :xl="12">
+        <announcement />
+      </el-col>
+      <el-col :xs="22" :sm="22" :md="12" :lg="12" :xl="12">
+        <user-logs />
+      </el-col>
+    </el-row>
 
   </div>
 </template>
@@ -15,6 +20,7 @@
 
 import PanelGroup from './components/PanelGroup'
 import Announcement from '@/views/dashboard/admin/components/Announcement'
+import UserLogs from '@/views/dashboard/admin/components/UserLogs'
 
 const lineChartData = {
   newVisitis: {
@@ -39,7 +45,8 @@ export default {
   name: 'DashboardAdmin',
   components: {
     PanelGroup,
-    Announcement
+    Announcement,
+    UserLogs
   },
   data() {
     return {
@@ -57,7 +64,7 @@ export default {
 <style lang="scss" scoped>
 .dashboard-editor-container {
   padding: 32px;
-  background-color: rgb(240, 242, 245);
+  //background-color: rgb(240, 242, 245);
   position: relative;
 
   .github-corner {
