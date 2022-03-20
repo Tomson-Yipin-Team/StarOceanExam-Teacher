@@ -34,15 +34,53 @@ export default {
     questions: [
       {
         name: '123',
-        difficulty: '简单'
+        difficulty: '简单',
+        category: 'choice',
+        content: '这是一道选择题',
+        answers: {
+          A: '123',
+          B: '2',
+          C: '3',
+          D: '4'
+        }
+        // correct: this.answers.a3
       },
       {
         name: '234',
-        difficulty: '中等'
+        difficulty: '中等',
+        category: 'judge',
+        content: '这是一道判断题',
+        answers: {
+          A: '12',
+          B: '2'
+        }
+        // correct: this.answers.a1
       },
       {
         name: '123123',
-        difficulty: '困难'
+        difficulty: '困难',
+        category: 'blank',
+        content: ' 这是一道填空题',
+        correct: ''
+      },
+      {
+        name: '听力',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6'
+          }
+        ]
       }
     ]
   }, {

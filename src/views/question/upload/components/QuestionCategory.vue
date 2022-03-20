@@ -47,8 +47,11 @@ export default {
           value: 'choice',
           label: '选择题'
         }, {
-          value: 'fill',
+          value: 'blank',
           label: '填空题'
+        }, {
+          value: 'judge',
+          label: '判断题'
         }]
       }, {
         label: '英语',

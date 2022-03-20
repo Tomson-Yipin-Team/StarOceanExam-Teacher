@@ -180,7 +180,7 @@ export default {
     // },
     // 查看子题目
     seeSubQuestion(index, row) {
-      this.$router.push({ path: '/question/create-question', query: { name: row.name }})
+      this.$router.push({ path: '/question/create-question', query: { name: row.name, categroy: row.category }})
     },
     // tag 颜色选择
     difficultyType(row) {

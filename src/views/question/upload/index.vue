@@ -11,10 +11,17 @@
         <!--题目控件-->
         <QuestionCategory @questionCategory="changeValue" />
         <!--上传控件-->
-        <!--<Files class="app-container" />-->
+        <transition name="el-fade-in-linear">
+          <Files v-if="questionCategory === 'listen'" class="app-container" />
+        </transition>
       </el-col>
       <el-col :xs="22" :sm="22" :md="15" :lg="15" :xl="15" :offset="0">
-        <upload />
+        <transition-group name="el-fade-in-linear">
+          <Choice v-show="questionCategory === 'choice'" :key="comId[0]" />
+          <Judge v-show="questionCategory === 'judge'" :key="comId[1]" />
+          <Blank v-show="questionCategory === 'blank'" :key="comId[2]" />
+          <EnglishListen v-show="questionCategory === 'listen'" :key="comId[3]" />
+        </transition-group>
       </el-col>
     </el-row>
   </div>
@@ -23,23 +30,30 @@
 <script>
 
 import QuestionCategory from './components/QuestionCategory'
-import Upload from './components/Upload'
+import Choice from './components/Choice'
+import Judge from './components/Judge'
+import Blank from './components/Blank'
+import EnglishListen from '@/views/question/upload/components/EnglishListen'
 // import PaperStatus from './components/PaperStatus'
-// import Files from './components/Files'
+import Files from './components/Files'
 
 export default {
   name: 'Index',
   components: {
     QuestionCategory,
-    Upload
+    Choice,
+    Judge,
+    Blank,
+    EnglishListen,
     // PaperStatus,
-    // Files
+    Files
   },
   data() {
     return {
       questionCategory: '',
       id: '',
-      name: ''
+      name: '',
+      comId: [0, 1, 2, 3, 4]
     }
   },
   methods: {

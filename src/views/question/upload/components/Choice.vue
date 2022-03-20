@@ -15,32 +15,29 @@
             :options="{hideModeSwitch:true,previewStyle: 'tab'}"
             height="400px"
           />
-          <!--答案-->
+          <!--编辑答案-->
           <el-row v-for="(item, index) in answers" :key="index">
             <el-col :span="2">
               <el-button>{{ index }}</el-button>
             </el-col>
             <el-col :span="16">
-              <markdown-editor
-                ref="markdownEditor"
-                v-model="content"
-                language="zh"
-                :options="{hideModeSwitch:true,previewStyle: 'tab'}"
-                height="100px"
-              />
+              <div class="editor-container">
+                <markdown-editor
+                  ref="markdownEditor"
+                  v-model="answers[index]"
+                  language="zh"
+                  :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+                  height="100px"
+                />
+              </div>
             </el-col>
           </el-row>
         </el-tab-pane>
+
         <!--预览题目-->
         <el-tab-pane label="预览" name="preview">
           <div class="editor-container">
-            <editor
-              :initial-value="content"
-              :options="editorOptions"
-              height="500px"
-              initial-edit-type="wysiwyg"
-              preview-style="vertical"
-            />
+            <Viewer :initial-value="previewContent" height="500px" />
           </div>
         </el-tab-pane>
       </el-tabs>
@@ -56,13 +53,13 @@
 import 'codemirror/lib/codemirror.css'
 import MarkdownEditor from '@/components/MarkdownEditor'
 import '@toast-ui/editor/dist/toastui-editor.css'
-import { Editor } from '@toast-ui/vue-editor'
+import { Viewer } from '@toast-ui/vue-editor'
 import '@toast-ui/editor/dist/i18n/zh-cn.js'
 import questionContent from '@/api/question-content'
 
 export default {
-  name: 'Upload',
-  components: { Editor, MarkdownEditor },
+  name: 'Choice',
+  components: { Viewer, MarkdownEditor },
   data() {
     return {
       content: '',
@@ -75,14 +72,21 @@ export default {
   },
   computed: {
     answers() {
-      return questionContent.question[2].answers
+      return questionContent.timuku[0].questions[0].answers
+    },
+    previewContent() {
+      let answerContent = '## 选项：\n'
+      for (const key in this.answers) {
+        answerContent += key + ':' + this.answers[key] + '\n'
+      }
+      return '## 题目\n' + this.content + '\n' + answerContent
     }
   },
   watch: {
     content: {
       immediate: true,
       handler(newValue) {
-        this.content = questionContent.question[0].question
+        this.content = questionContent.timuku[0].questions[0].content
         console.log(newValue)
       }
     }

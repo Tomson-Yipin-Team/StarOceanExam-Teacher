@@ -4,7 +4,7 @@
     <!--TODO: 更换图标-->
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
 
-    <el-row gutter="20">
+    <el-row :gutter="20">
       <el-col :xs="22" :sm="22" :md="12" :lg="12" :xl="12">
         <announcement />
       </el-col>
