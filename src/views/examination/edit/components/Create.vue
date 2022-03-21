@@ -21,8 +21,8 @@
             :value="item.value"
           />
         </el-select>
-              </el-form-item>
-            <el-form-item label="开考专业">
+      </el-form-item>
+      <el-form-item label="开考专业">
         <el-select v-model="value" placeholder="请选择">
           <el-option
             v-for="item in options"
@@ -32,7 +32,7 @@
           />
         </el-select>
       </el-form-item>
-            <el-form-item label="开考班级">
+      <el-form-item label="开考班级">
         <el-select v-model="value" placeholder="请选择">
           <el-option
             v-for="item in options"

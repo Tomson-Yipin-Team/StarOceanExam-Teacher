@@ -146,6 +146,18 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/group',
+    component: Layout,
+    children: [
+      {
+        path: 'teacher-group',
+        name: 'TeacherGroup',
+        component: () => import('@/views/group/index'),
+        meta: { title: '教师组', icon: 'peoples' }
+      }
+    ]
+  },
 
   {
     path: '/personal',

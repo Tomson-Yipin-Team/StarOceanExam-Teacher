@@ -1,10 +1,9 @@
-<template>
-
+<template >
 </template>
 
 <script>
 export default {
-  name: "Release"
+  name: 'Release'
 }
 </script>
 
