@@ -28,7 +28,7 @@
 <script>
 
 import Tree from './components/Tree'
-import Paper from './components/paper'
+import Paper from './components/Paper'
 import PaperInfo from './components/PaperInfo'
 
 export default {
