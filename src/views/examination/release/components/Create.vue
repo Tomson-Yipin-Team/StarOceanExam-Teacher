@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-form ref="form" :model="form" label-width="120px">
+    <el-form ref="basicForm" :model="form" label-width="120px">
       <el-form-item label="考试名称">
         <el-input v-model="form.name" />
       </el-form-item>

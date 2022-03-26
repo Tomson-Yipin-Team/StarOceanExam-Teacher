@@ -3,17 +3,17 @@
     <el-row>
       <!--题目列表-->
       <el-col :xs="8" :sm="8" :md="6" :lg="6" :xl="6">
-        <el-card v-if="showInfo">
+        <el-card v-if="showInfo" class="card">
           <div slot="header" style="float: bottom;text-align: center">
             试卷信息
           </div>
           <PaperInfo />
         </el-card>
-        <el-card>
+        <el-card class="card">
           <div slot="header" style="float: bottom;text-align: center">
             题目列表
           </div>
-          <Tree />
+          <Tree style="text-align: center"/>
         </el-card>
       </el-col>
       <!--题目预览-->
@@ -54,5 +54,9 @@ export default {
 </script>
 
 <style scoped>
-
+.card{
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+}
 </style>

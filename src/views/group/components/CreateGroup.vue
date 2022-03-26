@@ -5,7 +5,7 @@
     </el-row>
 
     <el-dialog title="创建群组" width="30%" :visible.sync="dialogTableVisible">
-      <el-form ref="form" label-position="left" label-width="100px" :model="form" :rules="rules">
+      <el-form ref="basicForm" label-position="left" label-width="100px" :model="form" :rules="rules">
         <el-form-item label="名称" prop="name">
           <el-input v-model="form.name" />
         </el-form-item>

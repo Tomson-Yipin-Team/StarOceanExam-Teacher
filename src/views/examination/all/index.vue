@@ -7,13 +7,13 @@
         style="width: 100%"
         border="border"
       >
-        <el-table-column label="发布时间" prop="date" align="center" width="100" />
+        <el-table-column label="发布时间" prop="date" align="center" width="100" fixed />
         <el-table-column label="ID" align="center" width="100">
           <template #default="scope">
             {{ scope.row.id }}
           </template>
         </el-table-column>
-        <el-table-column label="名称" prop="name" align="center" />
+        <el-table-column label="名称" prop="name" align="center" width="500" />
         <el-table-column label="发布人" prop="origin" align="center" width="100" />
         <el-table-column label="参加人数" prop="join" align="center" width="100" />
         <el-table-column label="状态" width="100" align="center">
@@ -31,7 +31,7 @@
             </el-popover>
           </template>
         </el-table-column>
-        <el-table-column label="操作" align="center" width="400">
+        <el-table-column label="操作" align="center" width="250" fixed="right">
           <template #default="scope">
             <el-button
               size="mini"

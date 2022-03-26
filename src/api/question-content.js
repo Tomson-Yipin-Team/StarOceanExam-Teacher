@@ -25,8 +25,8 @@ export default {
     }
   ],
   timuku: [{
-    id: '1',
-    subject: '听力',
+    id: 1,
+    name: '听力',
     totalNumber: '105',
     rest: '42',
     origin: '查看',
@@ -84,65 +84,82 @@ export default {
       }
     ]
   }, {
-    id: '2',
-    subject: '单项选择',
+    id: 2,
+    name: '单项选择',
     totalNumber: '807',
     rest: '301',
     origin: '查看',
     tag: '选择'
   }, {
-    id: '3',
-    subject: '完型填空',
+    id: 3,
+    name: '完型填空',
     totalNumber: '104',
     rest: '9',
     origin: '查看'
   }, {
-    id: '4',
-    subject: '十五选十',
+    id: 4,
+    name: '十五选十',
     totalNumber: '88',
     rest: '44',
     origin: '查看'
   },
   {
-    id: '5',
-    subject: '段落信息匹配',
+    id: 5,
+    name: '段落信息匹配',
     totalNumber: '62',
     rest: '21',
     origin: '查看'
   },
   {
-    id: '6',
-    subject: '阅读理解',
+    id: 6,
+    name: '阅读理解',
     totalNumber: '533',
     rest: '115',
     origin: '查看'
   },
   {
-    id: '7',
-    subject: '句子翻译',
+    id: 7,
+    name: '句子翻译',
     totalNumber: '78',
     rest: '45',
     origin: '查看'
   },
   {
-    id: '8',
-    subject: '任务型阅读',
+    id: 8,
+    name: '任务型阅读',
     totalNumber: '67',
     rest: '44',
     origin: '查看'
   },
   {
-    id: '9',
-    subject: '书面表达',
+    id: 9,
+    name: '书面表达',
     totalNumber: '68',
     rest: '32',
     origin: '查看'
   },
   {
-    id: '10',
-    subject: '算法设计',
+    id: 10,
+    name: '算法设计',
     totalNumber: '21',
     rest: '10',
     origin: '查看'
-  }]
+  }],
+  category: [
+    {
+      id: 1,
+      name: '英语四六级',
+      value: 'English'
+    },
+    {
+      id: 2,
+      name: '高考数学',
+      value: 'Math'
+    },
+    {
+      id: 999,
+      name: '自定义',
+      value: 'customize'
+    }
+  ]
 }

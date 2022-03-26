@@ -2,78 +2,75 @@
   <div class="container">
     <el-row type="flex" justify="center" class="table">
       <el-col :span="23">
-        <el-card>
-          <el-row>
-            <el-button type="danger" plain @click="clearFilter">清除所有过滤器</el-button>
-            <el-button type="primary" @click="toCreate">添加题目<i class="el-icon-upload" /></el-button>
-            <!--取消添加题型-->
-            <!--<el-button icon="el-icon-circle-plus" type="primary">添加题型</el-button>-->
-          </el-row>
-          <el-table
-            ref="filterTable"
-            :data="tableData"
-            style="width: 100%"
-            border
-            height="900px"
+        <el-row>
+          <el-button type="danger" plain @click="clearFilter">清除所有过滤器</el-button>
+          <el-button type="primary" @click="toCreate">添加题目<i class="el-icon-upload" /></el-button>
+          <!--取消添加题型-->
+          <!--<el-button icon="el-icon-circle-plus" type="primary">添加题型</el-button>-->
+        </el-row>
+        <el-table
+          ref="filterTable"
+          :data="tableData"
+          style="width: 100%"
+          border
+          height="900px"
+        >
+          <el-table-column
+            label="题目编号"
+            width="150px"
           >
-            <el-table-column
-              label="题目编号"
-              width="150px"
-            >
-              <template #default="scope">
-                {{ scope.row.id }}
-              </template>
-            </el-table-column>
-            <el-table-column
-              label="试题类型"
-              width="180"
-              column-key="name"
-              :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
-              :filter-method="filterHandler"
-            >
-              <template #default="scope">
-                {{ scope.row.name }}
-              </template>
-            </el-table-column>
-            <el-table-column
-              label="试题数量"
-              width="150px"
-            >
-              <template #default="scope">
-                {{ scope.row.totalNumber }}
-              </template>
-            </el-table-column>
-            <el-table-column
-              prop="rest"
-              label="未使用的试题数量（未被学生做过）"
-              width="150px"
-            />
-            <el-table-column
-              label="标签"
-              width="150px"
-            >
-              <template #default="scope">
-                <el-tag>{{ scope.row.tag }}</el-tag>
-              </template>
-            </el-table-column>
+            <template #default="scope">
+              {{ scope.row.id }}
+            </template>
+          </el-table-column>
+          <el-table-column
+            label="试题类型"
+            width="180"
+            column-key="name"
+            :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
+            :filter-method="filterHandler"
+          >
+            <template #default="scope">
+              {{ scope.row.name }}
+            </template>
+          </el-table-column>
+          <el-table-column
+            label="试题数量"
+            width="150px"
+          >
+            <template #default="scope">
+              {{ scope.row.totalNumber }}
+            </template>
+          </el-table-column>
+          <el-table-column
+            prop="rest"
+            label="未使用的试题数量（未被学生做过）"
+            width="150px"
+          />
+          <el-table-column
+            label="标签"
+            width="150px"
+          >
+            <template #default="scope">
+              <el-tag>{{ scope.row.tag }}</el-tag>
+            </template>
+          </el-table-column>
 
-            <el-table-column
-              align="center"
-              fixed="right"
-              label="操作"
-              width="200px"
-            >
-              <template>
-                <el-row type="flex" justify="center">
-                  <el-button-group>
-                    <el-button type="primary" size="small" @click="onLook">查看</el-button>
-                    <el-button type="primary" size="small" @click="onShare">分享</el-button>
-                  </el-button-group>
-                </el-row>
-              </template>
-            </el-table-column>
-          </el-table>
-        </el-card>
+          <el-table-column
+            align="center"
+            fixed="right"
+            label="操作"
+            width="200px"
+          >
+            <template>
+              <el-row type="flex" justify="center">
+                <el-button-group>
+                  <el-button type="primary" size="small" @click="onLook">查看</el-button>
+                </el-button-group>
+              </el-row>
+            </template>
+          </el-table-column>
+        </el-table>
       </el-col>
     </el-row>
 
@@ -82,7 +79,6 @@
       title="查看试题"
       :visible.sync="dialogLook"
       width="60%"
-      :before-close="handleClose"
     >
       <el-table
         :data="subQuestion"
@@ -95,10 +91,7 @@
           <el-tag :type="difficultyType(scope.row)">{{ scope.row.difficulty }}</el-tag>
         </el-table-column>
         <el-table-column #default="scope" label="操作" fixed="right" width="200px">
-          <el-button-group>
             <el-button type="primary" plain @click="seeSubQuestion(scope.$index,scope.row)">查看</el-button>
-            <el-button type="danger">删除</el-button>
-          </el-button-group>
         </el-table-column>
       </el-table>
     </el-dialog>
@@ -200,9 +193,9 @@ export default {
 
 <style scoped>
 .container{
-  background-color: rgb(240, 242, 245);
-  margin:0;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  /*background-color: rgb(240, 242, 245);*/
+  /*margin:0;*/
+  /*padding-top: 10px;*/
+  /*padding-bottom: 20px;*/
 }
 </style>

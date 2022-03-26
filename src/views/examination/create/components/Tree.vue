@@ -8,7 +8,7 @@
       type="primary"
       size="small"
       @click="handleAddTop"
-    >添加顶级节点</el-button>
+    >添加新的题目</el-button>
     <!-- tree -->
     <el-tree
       ref="SlotTree"
@@ -201,9 +201,10 @@ export default {
 
 	.comp-tree{
 		width: 100%;
-		max-width: 300px;
-		max-height: 80vh;
-		padding: 2em;
+		//max-width: 300px;
+		//max-height: 500px;
+    height: 500px;
+		//padding: 2em;
 		overflow: auto;
 		// 顶部按钮
 		.comp-tr-top{

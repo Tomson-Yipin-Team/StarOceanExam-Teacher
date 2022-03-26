@@ -4,7 +4,7 @@
       <div slot="header" class="clearfix">
         <span>个人信息</span>
       </div>
-      <el-form ref="form" :model="form" label-width="80px">
+      <el-form ref="basicForm" :model="form" label-width="80px">
         <el-form-item label="姓名">
           <el-input v-model="form.name" :disabled="edit" style="width:200px" />
         </el-form-item>

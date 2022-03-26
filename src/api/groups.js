@@ -37,6 +37,7 @@ export default {
   manager: [{
     id: '1',
     name: '高三英语年级组',
+    value: '高三英语年级组',
     users: [{
       name: 'cdw(自己)',
       userId: '1'

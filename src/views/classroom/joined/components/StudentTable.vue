@@ -21,7 +21,7 @@
             />
             <el-table-column
               prop="subject"
-              label="专业"
+              label="课程"
               sortable
               width="180"
               column-key="subject"
@@ -67,41 +67,13 @@
 </template>
 
 <script>
+import classrooms from '@/api/classrooms'
+
 export default {
   name: 'StudentTable',
   data() {
     return {
-      tableData: [{
-        id: '1',
-        subject: '软件工程',
-        date: '2020-03-02',
-        end: '2024-03-02',
-        name: '软工202'
-      }, {
-        id: '7',
-        subject: '软件工程',
-        date: '2021-03-02',
-        end: '2025-03-02',
-        name: '软工211'
-      }, {
-        id: '3',
-        subject: '经管',
-        date: '2022-03-02',
-        end: '2024-03-02',
-        name: '经管222'
-      }, {
-        id: '2',
-        subject: '大数据',
-        date: '2019-03-02',
-        end: '2023-03-02',
-        name: '大数据202'
-      }, {
-        id: '6',
-        subject: '专业英语',
-        date: '2020-03-02',
-        end: '2024-03-02',
-        name: '英语202'
-      }]
+      tableData: classrooms.ownClassroom
     }
   },
   methods: {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row type="flex" justify="center">
-      <el-form ref="form" :model="form" label-width="120px">
+      <el-form ref="basicForm" :model="form" label-width="120px">
         <!--组件方式-->
         <el-form-item label="组卷方式">
           <el-radio-group v-model="form.way">

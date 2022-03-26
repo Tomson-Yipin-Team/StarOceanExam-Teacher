@@ -77,7 +77,7 @@ export const constantRoutes = [
       {
         path: 'release',
         name: 'Release',
-        component: () => import('@/views/examination/edit/index'),
+        component: () => import('@/views/examination/release/index'),
         meta: { title: '发布考试', icon: 'edit' }
       },
       {
@@ -91,6 +91,12 @@ export const constantRoutes = [
         name: 'Create',
         component: () => import('@/views/examination/create/index'),
         meta: { title: '创建试卷', icon: 'edit' }
+      },
+      {
+        path: 'composition',
+        name: 'Composition',
+        component: () => import('@/views/examination/composition/index.vue'),
+        meta: { title: '组卷', icon: 'edit' }
       }
     ]
   },

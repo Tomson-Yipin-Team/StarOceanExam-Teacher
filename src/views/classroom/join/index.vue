@@ -16,7 +16,7 @@
 
           <el-row v-show="active===0" type="flex" justify="center">
             <el-col :span="12">
-              <el-form ref="form" :model="form" label-width="80px">
+              <el-form ref="basicForm" :model="form" label-width="80px">
                 <el-form-item label="班级名称" prop="name">
                   <el-input v-model="form.name" placeholder="请输入班级名称" />
                 </el-form-item>
