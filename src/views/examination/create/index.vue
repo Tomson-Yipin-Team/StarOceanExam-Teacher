@@ -13,7 +13,7 @@
           <div slot="header" style="float: bottom;text-align: center">
             题目列表
           </div>
-          <Tree style="text-align: center"/>
+          <Tree style="text-align: center" />
         </el-card>
       </el-col>
       <!--题目预览-->

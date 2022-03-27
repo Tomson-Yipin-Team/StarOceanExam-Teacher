@@ -5,7 +5,9 @@ export default {
       date: '2022-03-01',
       name: '2021-2022-1普本大学英语三期末考试',
       origin: '张三',
-      join: '26',
+      join: 26,
+      waitCorrect: 0,
+      finishCorrect: 26,
       status: '正在进行',
       beginTime: '2021-12-27 13:28:40',
       endTime: '2021-12-27 15:09:42'
@@ -15,18 +17,34 @@ export default {
       date: '2022-03-01',
       name: '2021-2022-2普本大学英语三期末考试',
       origin: '张三',
-      join: '36',
+      join: 36,
+      waitCorrect: 0,
+      finishCorrect: 36,
       status: '已结束',
       beginTime: '2021-12-27 13:28:40',
       endTime: '2021-12-27 15:09:42'
     },
     {
-      id: '1000075886',
+      id: '1000075888',
       date: '2022-03-01',
       name: '2021-2022-2普本大学语文三期末考试',
       origin: '张三',
-      join: '36',
+      join: 36,
+      waitCorrect: 0,
+      finishCorrect: 36,
       status: '即将开始',
+      beginTime: '2021-12-27 13:28:40',
+      endTime: '2021-12-27 15:09:42'
+    },
+    {
+      id: '1000074886',
+      date: '2022-03-01',
+      name: '2021-2022-2普本C++程序设计基础期末考试',
+      origin: '张三',
+      join: '36',
+      status: '等待批阅',
+      waitCorrect: 12,
+      finishCorrect: 24,
       beginTime: '2021-12-27 13:28:40',
       endTime: '2021-12-27 15:09:42'
     }
@@ -136,7 +154,7 @@ export default {
       origin: '张三'
     },
     {
-      id: '1000075886',
+      id: '1000075888',
       date: '2022-03-01',
       name: '2019-2020-2普本大学英语三期末考试',
       origin: '张三'

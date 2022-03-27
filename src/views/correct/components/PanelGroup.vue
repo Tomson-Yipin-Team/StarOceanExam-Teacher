@@ -1,32 +1,34 @@
 <template>
-  <el-row :gutter="40" class="panel-group">
-    <el-col :xs="24" :sm="24" :lg="8" class="card-panel-col">
-      <div class="card-panel" @click="handleSetLineChartData('newVisitis')">
-        <div class="card-panel-icon-wrapper icon-people">
-          <svg-icon icon-class="peoples" class-name="card-panel-icon" />
-        </div>
-        <div class="card-panel-description">
-          <div class="card-panel-text">
-            等待批阅
+  <el-card>
+    <el-row :gutter="40" class="panel-group">
+      <el-col :xs="24" :sm="24" :lg="8" class="card-panel-col">
+        <div class="card-panel" @click="handleSetLineChartData('newVisitis')">
+          <div class="card-panel-icon-wrapper icon-people">
+            <svg-icon icon-class="peoples" class-name="card-panel-icon" />
           </div>
-          <count-to :start-val="0" :end-val="24" :duration="2600" class="card-panel-num" />
-        </div>
-      </div>
-    </el-col>
-    <el-col :xs="24" :sm="24" :lg="8" class="card-panel-col">
-      <div class="card-panel" @click="handleSetLineChartData('messages')">
-        <div class="card-panel-icon-wrapper icon-message">
-          <svg-icon icon-class="message" class-name="card-panel-icon" />
-        </div>
-        <div class="card-panel-description">
-          <div class="card-panel-text">
-            已完成
+          <div class="card-panel-description">
+            <div class="card-panel-text">
+              等待批阅
+            </div>
+            <count-to :start-val="0" :end-val="24" :duration="2600" class="card-panel-num" />
           </div>
-          <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" />
         </div>
-      </div>
-    </el-col>
-  </el-row>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="8" class="card-panel-col">
+        <div class="card-panel" @click="handleSetLineChartData('messages')">
+          <div class="card-panel-icon-wrapper icon-message">
+            <svg-icon icon-class="message" class-name="card-panel-icon" />
+          </div>
+          <div class="card-panel-description">
+            <div class="card-panel-text">
+              已完成
+            </div>
+            <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" />
+          </div>
+        </div>
+      </el-col>
+    </el-row>
+  </el-card>
 </template>
 
 <script>
@@ -46,10 +48,10 @@ export default {
 
 <style lang="scss" scoped>
 .panel-group {
-  margin-top: 18px;
+  //margin-top: 18px;
 
   .card-panel-col {
-    margin-bottom: 32px;
+    //margin-bottom: 32px;
   }
 
   .card-panel {

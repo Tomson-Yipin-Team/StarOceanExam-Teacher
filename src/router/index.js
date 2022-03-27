@@ -149,6 +149,12 @@ export const constantRoutes = [
         name: 'Correct',
         component: () => import('@/views/correct/index'),
         meta: { title: '批改试卷', icon: 'el-icon-finished' }
+      },
+      {
+        path: 'work',
+        name: 'Work',
+        component: () => import('@/views/correct/work/index'),
+        hidden: true
       }
     ]
   },
@@ -178,6 +184,18 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/test',
+    component: Layout,
+    children: [
+      {
+        path: 'test',
+        name: 'Test',
+        component: () => import('@/components/Chat/index'),
+        meta: { title: '测试', icon: 'peoples' }
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

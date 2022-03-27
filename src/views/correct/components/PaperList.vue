@@ -6,6 +6,7 @@
         :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         style="width: 100%"
         border="border"
+        :default-sort="{prop: 'status', order: 'descending'}"
       >
         <el-table-column label="发布时间" prop="date" align="center" width="100" fixed />
         <el-table-column label="ID" align="center" width="100">
@@ -16,7 +17,9 @@
         <el-table-column label="名称" prop="name" align="center" width="500" />
         <el-table-column label="发布人" prop="origin" align="center" width="100" />
         <el-table-column label="参加人数" prop="join" align="center" width="100" />
-        <el-table-column label="状态" width="100" align="center">
+        <el-table-column label="已批阅人数" prop="finishCorrect" align="center" width="100" />
+        <el-table-column label="未批阅数" prop="waitCorrect" align="center" width="100" />
+        <el-table-column label="状态" prop="status" width="100" align="center" sortable>
           <template #default="scope">
             <el-popover effect="light" trigger="hover" placement="top">
               <template #default>
@@ -31,22 +34,20 @@
             </el-popover>
           </template>
         </el-table-column>
-        <el-table-column label="操作" align="center" width="250" fixed="right">
+        <el-table-column label="操作" align="center" width="150" fixed="right">
           <template #default="scope">
             <el-button
               size="mini"
-              @click="handleEdit(scope.$index, scope.row)"
-            >编辑</el-button>
-            <el-button
-              size="mini"
-              type="danger"
-              @click="handleDelete(scope.$index, scope.row)"
-            >删除</el-button>
-            <el-button
-              size="mini"
               type="primary"
+              plain
               @click="handlePreview(scope.$index, scope.row)"
             >查看</el-button>
+            <el-button
+              v-if="scope.row.status==='等待批阅'?true:false"
+              size="mini"
+              type="warning"
+              @click="handleWork(scope.$index, scope.row)"
+            >批阅</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -121,6 +122,11 @@ export default {
       } else {
         return ''
       }
+    },
+    handleWork() {
+      this.$router.push({
+        path: '/correct/work'
+      })
     }
   }
 }

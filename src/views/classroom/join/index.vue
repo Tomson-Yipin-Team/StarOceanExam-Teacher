@@ -55,10 +55,12 @@
           </el-row>
 
           <el-row v-show="active===2" type="flex" justify="center">
-            <el-col :span="4">
-              <el-result icon="success" title="创建成功" sub-title="班级二维码及连接已生成" />
+            <el-col :span="8">
+              <el-card>
+                <el-result icon="success" title="创建成功" sub-title="班级二维码及连接已生成" />
+              </el-card>
             </el-col>
-            <el-col :span="6" :offset="1">
+            <el-col :span="8" :offset="1">
               <el-card header="班级链接">
                 <el-row>
                   <el-input v-model="form.linkContent" placeholder="请输入内容" :disabled="true">
@@ -71,7 +73,7 @@
               </el-card>
 
             </el-col>
-            <el-col :span="4" :offset="1">
+            <el-col :span="6" :offset="1">
               <el-card header="班级二维码">
                 <img src="https://cloud.jujuh.top/api/v3/file/source/24/30_1d4ab55bc585cec519791a842fe4f94e.png?sign=JQY95E6BBnJLpTYUP9GBsxRGW3jFtUwNLh3r4czdG-w%3D%3A0" width="100%">
               </el-card>

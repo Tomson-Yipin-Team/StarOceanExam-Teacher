@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-editor-container">
-
+    <Chat class="chat" />
     <!--TODO: 更换图标-->
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
 
@@ -12,7 +12,6 @@
         <user-logs />
       </el-col>
     </el-row>
-
   </div>
 </template>
 
@@ -21,6 +20,7 @@
 import PanelGroup from './components/PanelGroup'
 import Announcement from '@/views/dashboard/admin/components/Announcement'
 import UserLogs from '@/views/dashboard/admin/components/UserLogs'
+import Chat from '@/components/Chat/index.vue'
 
 const lineChartData = {
   newVisitis: {
@@ -46,7 +46,8 @@ export default {
   components: {
     PanelGroup,
     Announcement,
-    UserLogs
+    UserLogs,
+    Chat
   },
   data() {
     return {
@@ -86,4 +87,8 @@ export default {
 //    padding: 8px;
 //  }
 //}
+.chat{
+  position: fixed;  // 浮动
+  z-index: 999999;
+}
 </style>
