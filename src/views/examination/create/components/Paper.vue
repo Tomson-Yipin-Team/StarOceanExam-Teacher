@@ -7,21 +7,38 @@
       <el-row class="button" type="flex" justify="end" />
       <el-row>
         <el-col :span="6">
+          您当前正在浏览<br>
+          <span class="question-number">{{ questionNumber+1 }}/{{ totalNumber }}题</span>
+        </el-col>
+        <el-col :span="14" :offset="4">
           <el-button-group>
             <el-button @click="getNextPage">下一题</el-button>
             <el-button @click="getPreviousPage">上一题</el-button>
+            <el-button type="primary" plain @click="changeMode">{{ seeMode=== true?'显示完整试卷':'显示小题' }}</el-button>
           </el-button-group>
         </el-col>
-        <el-col :span="10" :offset="8">
-          <el-button type="primary" @click="changeMode">切换显示</el-button>
-          <el-button type="primary" plain @click="editQuestion">编辑题目</el-button>
-        </el-col>
       </el-row>
+      <el-divider />
       <!--内容显示-->
-      <el-row>
-        <viewer v-if="seeMode" :key="questionNumber" :initial-value="content" height="500px" />
-        <viewer v-if="!seeMode" :initial-value="allContent" height="500px" />
-      </el-row>
+      <!--<el-row>-->
+      <!--  <viewer v-if="seeMode" :key="questionNumber" :initial-value="content" height="500px" />-->
+      <!--  <viewer v-if="!seeMode" :initial-value="allContent" height="500px" />-->
+      <!--</el-row>-->
+      <el-tabs v-model="activeName" type="card">
+        <el-tab-pane label="预览" name="preview">
+          <viewer v-if="seeMode" :key="questionNumber" :initial-value="content" height="500px" />
+          <viewer v-if="!seeMode" :initial-value="allContent" height="500px" />
+        </el-tab-pane>
+        <el-tab-pane label="编辑" name="edit">
+          <markdown-editor
+            ref="markdownEditor"
+            v-model="content"
+            language="zh"
+            :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+            height="700px"
+          />
+        </el-tab-pane>
+      </el-tabs>
     </el-card>
   </div>
 </template>
@@ -32,10 +49,11 @@ import questionContent from '@/api/question-content'
 
 import '@toast-ui/editor/dist/toastui-editor-viewer.css'
 import { Viewer } from '@toast-ui/vue-editor'
+import markdownEditor from '@/components/MarkdownEditor'
 
 export default {
   name: 'Upload',
-  components: { Viewer },
+  components: { Viewer, markdownEditor },
   data() {
     return {
       questionNumber: 0,
@@ -43,7 +61,9 @@ export default {
       editorOptions: '',
       category: '',
       selectContent: '',
-      seeMode: true
+      seeMode: true,
+      totalNumber: this.$route.query.number,
+      activeName: 'preview'
     }
   },
   // TODO：更改生成完整试卷的逻辑(生成标题和题目)
@@ -76,7 +96,7 @@ export default {
     },
     // 上一题
     getPreviousPage() {
-      if (this.questionNumber > 1) { this.questionNumber -= 1 }
+      if (this.questionNumber > 0) { this.questionNumber -= 1 }
     },
     // 切换显示模式
     changeMode() {
@@ -92,5 +112,8 @@ export default {
 <style scoped>
 .button{
   margin-top: 20px;
+}
+.question-number{
+  font-size: 2em;
 }
 </style>

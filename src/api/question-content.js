@@ -33,6 +33,7 @@ export default {
     tag: '选择',
     questions: [
       {
+        id: 101,
         name: '123',
         difficulty: '简单',
         category: 'choice',
@@ -46,6 +47,7 @@ export default {
         // correct: this.answers.a3
       },
       {
+        id: 102,
         name: '234',
         difficulty: '中等',
         category: 'judge',
@@ -57,6 +59,7 @@ export default {
         // correct: this.answers.a1
       },
       {
+        id: 103,
         name: '123123',
         difficulty: '困难',
         category: 'blank',
@@ -64,6 +67,7 @@ export default {
         correct: ''
       },
       {
+        id: 104,
         name: '听力',
         difficulty: '简单',
         category: 'listen',

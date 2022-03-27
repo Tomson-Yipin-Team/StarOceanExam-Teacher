@@ -71,11 +71,27 @@
         </template>
       </div>
     </el-tree>
+    <el-dialog :visible.sync="showDialog" width="30%" title="导入题目">
+      <el-form label-width="100px">
+        <el-form-item label="选择题目">
+          <el-cascader
+            v-model="newParam.name"
+            :options="questions"
+            :props="cascaderProps"
+            style="width: 200px"
+          />
+        </el-form-item>
+        <el-form-item>
+          <el-button>确认</el-button>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import api from '@/api/tree'
+import questionContent from '@/api/question-content'
 
 export default {
   name: 'ComponentTree',
@@ -95,6 +111,18 @@ export default {
         name: '新增节点',
         pid: 0,
         children: []
+      },
+      questions: questionContent.timuku,
+      value: '',
+      cascaderProps: {
+        expandTrigger: 'hover',
+        label: 'name',
+        value: 'name',
+        children: 'questions'
+      },
+      showDialog: false,
+      newParam: {
+        name: ''
       }
     }
   },
@@ -157,6 +185,7 @@ export default {
       })
     },
     handleAdd(_node, _data) { // 新增节点
+      this.showDialog = true,
       console.log(_node, _data)
       // 判断层级
       if (_node.level >= this.MAX_LEVEL) {

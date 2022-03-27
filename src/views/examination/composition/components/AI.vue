@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <el-card>
+  <div class="container">
+    <el-card style="width: 70%" header="请填写试卷信息">
       <el-form ref="aiForm" :rules="rules" label-width="120px">
         <!--试卷名称-->
         <el-form-item label="试卷名称" prop="name">
-          <el-col :span="12">
+          <el-col :span="20">
             <el-input v-model="formData.name" />
           </el-col>
         </el-form-item>
@@ -21,7 +21,7 @@
               v-for="item in timuku"
               :key="item.id"
               :label="item.name"
-              :value="item.subject"
+              :value="item.name"
             />
           </el-select>
         </el-form-item>
@@ -50,10 +50,13 @@
             <el-input v-model="formData.questionNumber" />
           </el-col>
         </el-form-item>
+        <el-form-item>
+          <el-row type="flex" justify="end">
+            <el-button type="primary" plain @click="handleSubmit">下一步</el-button>
+          </el-row>
+        </el-form-item>
       </el-form>
-      <el-row>
-        <el-button type="primary" plain @click="handleSubmit">提交</el-button>
-      </el-row>
+
     </el-card>
   </div>
 </template>
@@ -97,7 +100,8 @@ export default {
       this.$router.push({
         path: '/examination/create',
         query: {
-          name: 'ai'
+          name: this.formData.name,
+          number: 12
         }
       })
     },
@@ -113,5 +117,10 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 </style>

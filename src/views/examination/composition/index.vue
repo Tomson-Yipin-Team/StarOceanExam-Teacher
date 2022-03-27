@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <AI v-if="way==='ai'" />
-    <Manual v-if="way==='normal'" />
+    <Manual v-if="way==='manual'" />
   </div>
 </template>
 
@@ -23,12 +23,5 @@ export default {
 </script>
 
 <style scoped>
-/*.container{*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*}*/
-/*.card-container{*/
-/*  width: 70%;*/
-/*}*/
+
 </style>
