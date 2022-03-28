@@ -45,5 +45,24 @@ export default {
       { value: 6, label: '软工202' },
       { value: 7, label: '大数据202' }
     ]
+  }],
+  students: [{
+    id: '2030110123',
+    name: 'qwe'
+  }, {
+    id: '2030110124',
+    name: 'sdf'
+  }, {
+    id: '2030110125',
+    name: 'qqwe'
+  }, {
+    id: '2030110126',
+    name: 'qaas'
+  }, {
+    id: '2030110127',
+    name: 'qgf'
+  }, {
+    id: '2030110128',
+    name: 'qwe'
   }]
 }

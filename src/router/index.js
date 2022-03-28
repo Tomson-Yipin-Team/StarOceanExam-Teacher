@@ -90,13 +90,15 @@ export const constantRoutes = [
         path: 'create',
         name: 'Create',
         component: () => import('@/views/examination/create/index'),
-        meta: { title: '创建试卷', icon: 'edit' }
+        meta: { title: '创建试卷', icon: 'edit' },
+        hidden: true
       },
       {
         path: 'composition',
         name: 'Composition',
         component: () => import('@/views/examination/composition/index.vue'),
-        meta: { title: '组卷', icon: 'edit' }
+        meta: { title: '组卷', icon: 'edit' },
+        hidden: true
       }
     ]
   },

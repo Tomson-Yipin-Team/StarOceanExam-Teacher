@@ -14,7 +14,7 @@
             {{ scope.row.id }}
           </template>
         </el-table-column>
-        <el-table-column label="名称" prop="name" align="center" width="500" />
+        <el-table-column label="名称" prop="name" align="center" />
         <el-table-column label="发布人" prop="origin" align="center" width="100" />
         <el-table-column label="参加人数" prop="join" align="center" width="100" />
         <el-table-column label="已批阅人数" prop="finishCorrect" align="center" width="100" />
@@ -123,9 +123,13 @@ export default {
         return ''
       }
     },
-    handleWork() {
+    handleWork(index, row) {
       this.$router.push({
-        path: '/correct/work'
+        path: '/correct/work',
+        query: {
+          name: row.name,
+          id: row.id
+        }
       })
     }
   }

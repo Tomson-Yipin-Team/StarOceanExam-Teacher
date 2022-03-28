@@ -7,6 +7,7 @@
         <navbar />
       </div>
       <app-main />
+      <Chat class="chat" />
     </div>
   </div>
 </template>
@@ -14,13 +15,15 @@
 <script>
 import { Navbar, Sidebar, AppMain } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
+import Chat from './components/Chat/index'
 
 export default {
   name: 'Layout',
   components: {
     Navbar,
     Sidebar,
-    AppMain
+    AppMain,
+    Chat
   },
   mixins: [ResizeMixin],
   computed: {
@@ -89,5 +92,9 @@ export default {
 
   .mobile .fixed-header {
     width: 100%;
+  }
+  .chat{
+    position: fixed;  // 浮动
+    z-index: 999999;
   }
 </style>
