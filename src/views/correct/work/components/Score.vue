@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--学生信息-->
-    <el-descriptions label-class-name="item" border :column="1" :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS ">
+    <el-descriptions label-class-name="item" border :column="1" :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS">
       <el-descriptions-item label="学生姓名">{{ students[form.correctNumber].name }}</el-descriptions-item>
       <el-descriptions-item label="当前学生">{{ form.correctNumber+1 }} / {{ students.length }}</el-descriptions-item>
     </el-descriptions>

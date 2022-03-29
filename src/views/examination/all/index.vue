@@ -13,7 +13,7 @@
             {{ scope.row.id }}
           </template>
         </el-table-column>
-        <el-table-column label="名称" prop="name" align="center" width="500" />
+        <el-table-column label="名称" prop="name" align="center" />
         <el-table-column label="发布人" prop="origin" align="center" width="100" />
         <el-table-column label="参加人数" prop="join" align="center" width="100" />
         <el-table-column label="状态" width="100" align="center">
@@ -46,7 +46,19 @@
               size="mini"
               type="primary"
               @click="handlePreview(scope.$index, scope.row)"
-            >查看</el-button>
+            >考试状态</el-button>
+
+          </template>
+        </el-table-column>
+        <el-table-column label="成绩" align="center" width="120" fixed="right">
+          <template #default="scope">
+            <el-button
+              size="mini"
+              type="primary"
+              plain
+              :disabled="scope.row.status !=='已结束'"
+              @click="handleAnalyse(scope.$index, scope.row)"
+            >{{ scope.row.status === '已结束' ? '查看':'成绩未出' }}</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -121,6 +133,16 @@ export default {
       } else {
         return ''
       }
+    },
+    handleAnalyse(index, row) {
+      this.$router.push({
+        path: '/examination/analyse',
+        query: {
+          name: row.name,
+          id: row.id,
+          joinNumber: row.join
+        }
+      })
     }
   }
 }

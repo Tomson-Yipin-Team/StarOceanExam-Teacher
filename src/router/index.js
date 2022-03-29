@@ -99,6 +99,13 @@ export const constantRoutes = [
         component: () => import('@/views/examination/composition/index.vue'),
         meta: { title: '组卷', icon: 'edit' },
         hidden: true
+      },
+      {
+        path: 'analyse',
+        name: 'Analyse',
+        component: () => import('@/views/examination/analyse/index.vue'),
+        meta: { title: '成绩分析' },
+        hidden: true
       }
     ]
   },
@@ -194,7 +201,8 @@ export const constantRoutes = [
         path: 'test',
         name: 'Test',
         component: () => import('@/components/Chat/index'),
-        meta: { title: '测试', icon: 'peoples' }
+        meta: { title: '测试', icon: 'peoples' },
+        hidden: true
       }
     ]
   },
