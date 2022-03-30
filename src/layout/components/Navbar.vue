@@ -4,29 +4,36 @@
 
     <breadcrumb class="breadcrumb-container" />
 
-    <div class="right-menu">
-      <el-dropdown class="avatar-container" trigger="click">
-        <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/100/h/100'" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
-        </div>
-        <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
-            <el-dropdown-item>
-              主页
+    <div style="float: right">
+      <span class="message">
+        <el-badge :value="12" class="item">
+          <svg-icon class="message-button" icon-class="message" />
+        </el-badge>
+      </span>
+      <span class="right-menu">
+        <el-dropdown class="avatar-container" trigger="click">
+          <div class="avatar-wrapper">
+            <img :src="avatar+'?imageView2/1/w/100/h/100'" class="user-avatar">
+            <i class="el-icon-caret-bottom" />
+          </div>
+          <el-dropdown-menu slot="dropdown" class="user-dropdown">
+            <router-link to="/">
+              <el-dropdown-item>
+                主页
+              </el-dropdown-item>
+            </router-link>
+            <router-link to="/personal/personal">
+              <el-dropdown-item>个人中心</el-dropdown-item>
+            </router-link>
+            <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
+              <el-dropdown-item>消息</el-dropdown-item>
+            </a>
+            <el-dropdown-item divided @click.native="logout">
+              <span style="display:block;">登出</span>
             </el-dropdown-item>
-          </router-link>
-          <router-link to="/personal/personal">
-            <el-dropdown-item>个人中心</el-dropdown-item>
-          </router-link>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>消息</el-dropdown-item>
-          </a>
-          <el-dropdown-item divided @click.native="logout">
-            <span style="display:block;">登出</span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </span>
     </div>
   </div>
 </template>
@@ -64,7 +71,7 @@ export default {
   height: 50px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
   .hamburger-container {
@@ -85,7 +92,7 @@ export default {
   }
 
   .right-menu {
-    float: right;
+    //float: right;
     height: 100%;
     line-height: 50px;
 
@@ -135,5 +142,15 @@ export default {
       }
     }
   }
+  .message{
+    position: relative;
+    left: -30px;
+    top:-15px
+  }
+  .message-button{
+    font-size: 25px;
+    color: #1f434f;
+  }
 }
+
 </style>

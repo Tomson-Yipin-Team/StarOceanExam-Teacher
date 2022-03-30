@@ -6,7 +6,7 @@
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
       </div>
-      <app-main />
+      <app-main id="all-app-container" />
       <Chat class="chat" />
     </div>
   </div>
@@ -97,4 +97,11 @@ export default {
     position: fixed;  // 浮动
     z-index: 999999;
   }
+</style>
+
+<style>
+/*app-main的样式*/
+#all-app-container{
+  background-color: #e9eaf4;
+}
 </style>

@@ -1,14 +1,19 @@
 <template>
   <div class="dashboard-editor-container">
-    <!--<Chat class="chat" />-->
-    <!--TODO: 更换图标-->
-    <panel-group @handleSetLineChartData="handleSetLineChartData" />
-
+    <!--<panel-group @handleSetLineChartData="handleSetLineChartData" />-->
     <el-row :gutter="20">
-      <el-col :xs="22" :sm="22" :md="12" :lg="12" :xl="12">
-        <announcement />
+      <el-col :xs="24" :sm="24" :md="6" :lg="8" :xl="8">
+        <Welcome />
       </el-col>
-      <el-col :xs="22" :sm="22" :md="12" :lg="12" :xl="12">
+      <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
+        <panel-group panel-name="班级数量" :panel-number="12" svg-name="peoples" color-style="#40c9c6" />
+        <panel-group panel-name="学生数量" :panel-number="230" svg-name="peoples" color-style="#40c9c6" />
+        <panel-group panel-name="等待批阅" :panel-number="2" svg-name="message" color-style="#518ff9" />
+        <panel-group panel-name="即将进行" :panel-number="1" svg-name="message" color-style="#518ff9" />
+        <Tips />
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+        <announcement />
         <user-logs />
       </el-col>
     </el-row>
@@ -20,41 +25,23 @@
 import PanelGroup from './components/PanelGroup'
 import Announcement from '@/views/dashboard/admin/components/Announcement'
 import UserLogs from '@/views/dashboard/admin/components/UserLogs'
-
-const lineChartData = {
-  newVisitis: {
-    expectedData: [100, 120, 161, 134, 105, 160, 165],
-    actualData: [120, 82, 91, 154, 162, 140, 145]
-  },
-  messages: {
-    expectedData: [200, 192, 120, 144, 160, 130, 140],
-    actualData: [180, 160, 151, 106, 145, 150, 130]
-  },
-  purchases: {
-    expectedData: [80, 100, 121, 104, 105, 90, 100],
-    actualData: [120, 90, 100, 138, 142, 130, 130]
-  },
-  shoppings: {
-    expectedData: [130, 140, 141, 142, 145, 150, 160],
-    actualData: [120, 82, 91, 154, 162, 140, 130]
-  }
-}
-
+import Welcome from '@/views/dashboard/admin/components/Welcome'
+import Tips from '@/views/dashboard/admin/components/Tips'
 export default {
   name: 'DashboardAdmin',
   components: {
     PanelGroup,
     Announcement,
-    UserLogs
+    UserLogs,
+    Welcome,
+    Tips
   },
   data() {
     return {
-      lineChartData: lineChartData.newVisitis
     }
   },
   methods: {
     handleSetLineChartData(type) {
-      this.lineChartData = lineChartData[type]
     }
   }
 }
@@ -63,6 +50,7 @@ export default {
 <style lang="scss" scoped>
 .dashboard-editor-container {
   padding: 32px;
+  padding-top: 10px;
   //background-color: rgb(240, 242, 245);
   position: relative;
 
@@ -75,7 +63,7 @@ export default {
 
   .announcement {
     background: #ffffff;
-    padding: 16px 16px 0;
+    //padding: 16px 16px 0;
     font-family: 微软雅黑;
   }
 }

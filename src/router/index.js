@@ -192,20 +192,12 @@ export const constantRoutes = [
       }
     ]
   },
-
-  {
-    path: '/test',
-    component: Layout,
-    children: [
-      {
-        path: 'test',
-        name: 'Test',
-        component: () => import('@/components/Chat/index'),
-        meta: { title: '测试', icon: 'peoples' },
-        hidden: true
-      }
-    ]
-  },
+  //
+  // {
+  //   path: '/test',
+  //   component: () => import('@/views/test'),
+  //   meta: { title: '测试', icon: 'peoples' }
+  // },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
