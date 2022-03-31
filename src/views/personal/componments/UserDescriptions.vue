@@ -1,21 +1,20 @@
 <template>
-  <div>
-    <el-descriptions border :column="1" :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS">
-      <el-descriptions-item label="试卷名称">{{ name }}</el-descriptions-item>>
-      <el-descriptions-item label="试卷ID">{{ id }}</el-descriptions-item>>
-      <el-descriptions-item label="阅卷方式">流水卷(已关闭学生匿名)</el-descriptions-item>
-      <el-descriptions-item label="平均分">8.12</el-descriptions-item>
+  <div class="container">
+    <el-descriptions class="description" :column="1" border :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS">
+      <el-descriptions-item label="用户名" />
+      <el-descriptions-item label="姓名" />
+      <el-descriptions-item label="昵称" />
+      <el-descriptions-item label="学校" />
+      <el-descriptions-item label="学院" />
     </el-descriptions>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'WorkInfo',
+  name: 'UserDescriptions',
   data() {
     return {
-      name: this.$route.query.name,
-      id: this.$route.query.id,
       descriptionsPram: {
         CS: {
           'text-align': 'center', // 文本居中
@@ -38,5 +37,11 @@ export default {
 </script>
 
 <style scoped>
-
+.description{
+  width: 80%;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
 </style>
