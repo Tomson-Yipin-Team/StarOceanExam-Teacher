@@ -37,6 +37,12 @@ export const constantRoutes = [
     hidden: true
   },
 
+  // {
+  //   path: '/register',
+  //   component: () => import('@/views/register/index'),
+  //   hidden: true
+  // },
+
   {
     path: '/404',
     component: () => import('@/views/404'),
@@ -50,116 +56,148 @@ export const constantRoutes = [
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      component: () => import('@/views/dashboard/admin/index'),
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/examination',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/examination/see',
+    name: 'Exam',
+    meta: { title: '管理考试', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'all',
+        name: 'All',
+        component: () => import('@/views/examination/all/index'),
+        meta: { title: '考试', icon: 'list' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: 'release',
+        name: 'Release',
+        component: () => import('@/views/examination/release/index'),
+        meta: { title: '发布考试', icon: 'edit' }
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
+        path: 'paper',
+        name: 'Paper',
+        component: () => import('@/views/examination/paper/index'),
+        meta: { title: '卷库', icon: 'edit' }
+      },
+      {
+        path: 'create',
+        name: 'Create',
+        component: () => import('@/views/examination/create/index'),
+        meta: { title: '创建试卷', icon: 'edit' },
+        hidden: true
+      },
+      {
+        path: 'composition',
+        name: 'Composition',
+        component: () => import('@/views/examination/composition/index.vue'),
+        meta: { title: '组卷', icon: 'edit' },
+        hidden: true
+      },
+      {
+        path: 'analyse',
+        name: 'Analyse',
+        component: () => import('@/views/examination/analyse/index.vue'),
+        meta: { title: '成绩分析' },
+        hidden: true
       }
     ]
   },
 
   {
-    path: 'external-link',
+    path: '/question',
     component: Layout,
+    redirect: '/question/question-database',
+    meta: { title: '管理题目', icon: 'list' },
+    children: [{
+      path: 'question-database',
+      name: 'QuestionDB',
+      component: () => import('@/views/question/timuku/index.vue'),
+      meta: { title: '题库', icon: 'edit' }
+    }, {
+      path: 'create-question',
+      name: 'CreateQuestion',
+      component: () => import('@/views/question/upload/index.vue'),
+      meta: { title: '编辑题目', icon: 'edit' }
+    }]
+  },
+
+  {
+    path: '/classroom',
+    component: Layout,
+    redirect: '/classroom/joined',
+    meta: { title: '管理班级', icon: 'list' },
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'joined',
+        name: 'Joined',
+        component: () => import('@/views/classroom/joined/index'),
+        meta: { title: '已创建班级', icon: 'education' }
+      },
+      {
+        path: 'join',
+        name: 'Join',
+        component: () => import('@/views/classroom/join/index'),
+        meta: { title: '创建班级', icon: 'peoples' }
       }
     ]
   },
 
+  {
+    path: '/correct',
+    component: Layout,
+    children: [
+      {
+        path: 'correct',
+        name: 'Correct',
+        component: () => import('@/views/correct/index'),
+        meta: { title: '批改试卷', icon: 'el-icon-finished' }
+      },
+      {
+        path: 'work',
+        name: 'Work',
+        component: () => import('@/views/correct/work/index'),
+        hidden: true
+      }
+    ]
+  },
+  {
+    path: '/group',
+    component: Layout,
+    children: [
+      {
+        path: 'teacher-group',
+        name: 'TeacherGroup',
+        component: () => import('@/views/group/index'),
+        meta: { title: '教师组', icon: 'peoples' }
+      }
+    ]
+  },
+
+  {
+    path: '/personal',
+    component: Layout,
+    children: [
+      {
+        path: 'personal',
+        name: 'Personal',
+        component: () => import('@/views/personal/index'),
+        meta: { title: '个人中心', icon: 'user' }
+      }
+    ]
+  },
+  //
+  // {
+  //   path: '/test',
+  //   component: () => import('@/views/test'),
+  //   meta: { title: '测试', icon: 'peoples' }
+  // },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
