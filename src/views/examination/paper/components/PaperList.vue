@@ -22,6 +22,11 @@
           >查看</el-button>
           <el-button
             size="mini"
+            type="primary"
+            @click="handleLock(scope.$index, scope.row)"
+          >封存</el-button>
+          <el-button
+            size="mini"
             @click="handleEdit(scope.$index, scope.row)"
           >编辑</el-button>
           <el-button
@@ -68,6 +73,10 @@ export default {
         return 'success-row'
       }
       return ''
+    },
+    // 封存试卷
+    handleLock(index, row) {
+      this.$emit('handleLock', row.name)
     }
   }
 }

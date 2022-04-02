@@ -4,7 +4,7 @@
       <el-row type="flex" justify="end">
         <el-button @click="createDialog =true">创建新的试卷</el-button>
       </el-row>
-      <paper-list />
+      <paper-list @handleLock="handleLock" />
     </el-card>
     <!--TODO: 修改图片-->
     <el-dialog :visible.sync="createDialog" width="80%" title="创建试卷">
@@ -60,6 +60,7 @@
           </el-card>
         </el-col>
       </el-row>
+      <!--创建试卷对话框-->
       <el-dialog
         width="50%"
         title="分享创建"
@@ -86,26 +87,41 @@
         <el-button :loading="shareButtonLoading" @click="handleConfirm">确认添加</el-button>
       </el-dialog>
     </el-dialog>
+    <!--封存试卷对话框-->
+    <el-dialog
+      width="50%"
+      title="分享创建"
+      :visible.sync="LockDialog"
+      append-to-body
+    >
+      <LockPaper :name="paperName" @closeDialog="closeDialog" />
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import PaperList from './components/PaperList'
+import LockPaper from './components/LockPaper'
 export default {
   name: 'Index',
-  components: { PaperList },
+  components: {
+    PaperList,
+    LockPaper
+  },
   data() {
     return {
       createDialog: false,
       shareId: '',
       shareDialog: false,
+      LockDialog: false,
       share: {
         id: '1000075886',
         date: '2022-03-01',
         name: '2021-2022-2普本C++程序设计基础期末考试',
         origin: 'CW'
       },
-      shareButtonLoading: false
+      shareButtonLoading: false,
+      paperName: ''
     }
   },
   methods: {
@@ -142,6 +158,15 @@ export default {
           type: 'success'
         })
       }, 3000)
+    },
+    // 关闭对话框
+    closeDialog() {
+      this.LockDialog = false
+    },
+    // 打开封存
+    handleLock(name) {
+      this.paperName = name
+      this.LockDialog = true
     }
   }
 }
