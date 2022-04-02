@@ -34,10 +34,11 @@ export default {
     questions: [
       {
         id: 101,
-        name: '123',
+        name: '写作',
         difficulty: '简单',
         category: 'choice',
         content: '这是一道选择题',
+        knowledge:['写作题','四级'],
         answers: {
           A: '123',
           B: '2',
@@ -52,6 +53,8 @@ export default {
         difficulty: '中等',
         category: 'judge',
         content: '这是一道判断题',
+        knowledge:['写作题','四级'],
+
         answers: {
           A: '12',
           B: '2'
@@ -64,6 +67,7 @@ export default {
         difficulty: '困难',
         category: 'blank',
         content: ' 这是一道填空题',
+        knowledge:['十五选十','四级'],
         correct: ''
       },
       {
@@ -72,6 +76,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
+        knowledge:['听力','四级'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {

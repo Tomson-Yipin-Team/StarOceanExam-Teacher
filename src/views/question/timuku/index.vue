@@ -26,7 +26,6 @@
             </el-table-column>
             <el-table-column
               label="试题类型"
-              width="180"
               column-key="name"
               :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
               :filter-method="filterHandler"
@@ -49,11 +48,11 @@
               width="150px"
             />
             <el-table-column
-              label="标签"
+              label="被使用次数"
               width="150px"
             >
               <template #default="scope">
-                <el-tag>{{ scope.row.tag }}</el-tag>
+               {{ scope.row.tag }}
               </template>
             </el-table-column>
 
@@ -91,6 +90,12 @@
         <el-table-column #default="scope" label="名称">
           {{ scope.row.name }}
         </el-table-column>
+        <el-table-column label="标签" #default="scope">
+          <el-tag v-for="item in scope.row.knowledge" class="tag">
+            {{item}}
+          </el-tag>
+        </el-table-column>
+
         <el-table-column #default="scope" label="难易度" fixed="right" width="100px">
           <el-tag :type="difficultyType(scope.row)">{{ scope.row.difficulty }}</el-tag>
         </el-table-column>
@@ -204,5 +209,8 @@ export default {
   margin:0;
   padding-top: 10px;
   padding-bottom: 20px;
+}
+.tag{
+  margin-right: 5px;
 }
 </style>
