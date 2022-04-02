@@ -52,7 +52,7 @@
               width="150px"
             >
               <template #default="scope">
-               {{ scope.row.tag }}
+                {{ scope.row.tag }}
               </template>
             </el-table-column>
 
@@ -90,9 +90,9 @@
         <el-table-column #default="scope" label="名称">
           {{ scope.row.name }}
         </el-table-column>
-        <el-table-column label="标签" #default="scope">
-          <el-tag v-for="item in scope.row.knowledge" class="tag">
-            {{item}}
+        <el-table-column #default="scope" label="标签">
+          <el-tag v-for="(item,index) in scope.row.knowledge" :key="index"  class="tag">
+            {{ item }}
           </el-tag>
         </el-table-column>
 
