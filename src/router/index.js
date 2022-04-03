@@ -114,7 +114,7 @@ export const constantRoutes = [
     path: '/question',
     component: Layout,
     redirect: '/question/question-database',
-    meta: { title: '管理题目', icon: 'list' },
+    meta: { title: '管理题目', icon: 'el-icon-document' },
     children: [{
       path: 'question-database',
       name: 'QuestionDB',
@@ -132,7 +132,7 @@ export const constantRoutes = [
     path: '/classroom',
     component: Layout,
     redirect: '/classroom/joined',
-    meta: { title: '管理班级', icon: 'list' },
+    meta: { title: '管理班级', icon: 'peoples' },
     children: [
       {
         path: 'joined',
@@ -175,7 +175,7 @@ export const constantRoutes = [
         path: 'teacher-group',
         name: 'TeacherGroup',
         component: () => import('@/views/group/index'),
-        meta: { title: '教师组', icon: 'peoples' }
+        meta: { title: '教师组', icon: 'el-icon-chat-line-square' }
       }
     ]
   },
