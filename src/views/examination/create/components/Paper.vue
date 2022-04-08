@@ -5,12 +5,12 @@
         <span style="text-align: center;display: block">编辑试卷</span>
       </div>
       <el-row class="button" type="flex" justify="end" />
-      <el-row>
+      <el-row type="flex" justify="space-between">
         <el-col :span="6">
           您当前正在浏览<br>
           <span class="question-number">{{ questionNumber+1 }}/{{ totalNumber }}题</span>
         </el-col>
-        <el-col :span="14" :offset="4">
+        <el-col :span="7">
           <el-button-group>
             <el-button @click="getNextPage">下一题</el-button>
             <el-button @click="getPreviousPage">上一题</el-button>

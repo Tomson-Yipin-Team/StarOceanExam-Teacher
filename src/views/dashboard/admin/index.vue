@@ -6,11 +6,12 @@
         <Welcome />
       </el-col>
       <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
-        <panel-group panel-name="班级数量" :panel-number="12" svg-name="peoples" color-style="#40c9c6" />
+        <panel-group panel-name="班级数量" :panel-number="12" svg-name="pull-door" color-style="#40c9c6" />
         <panel-group panel-name="学生数量" :panel-number="230" svg-name="peoples" color-style="#40c9c6" />
-        <panel-group panel-name="等待批阅" :panel-number="2" svg-name="message" color-style="#518ff9" />
-        <panel-group panel-name="即将进行" :panel-number="1" svg-name="message" color-style="#518ff9" />
-        <Tips />
+        <panel-group panel-name="等待批阅" :panel-number="2" svg-name="log" color-style="#518ff9" />
+        <panel-group panel-name="即将进行" :panel-number="1" svg-name="hourglass-full" color-style="#518ff9" />
+        <panel-group panel-name="正在考试" :panel-number="1" svg-name="pie-five" color-style="#518ff9" />
+        <!--<Tips />-->
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <announcement />

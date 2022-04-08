@@ -103,7 +103,12 @@ export default {
   methods: {
     // TODO: 补充编辑功能
     handleEdit(index, row) {
-      console.log(index, row.id)
+      this.$router.push({
+        name: 'Release',
+        params: {
+          paperInfo: row.paperInfo
+        }
+      })
     },
     // TODO: 补充删除功能
     handleDelete(index, row) {
@@ -149,5 +154,7 @@ export default {
 </script>
 
 <style scoped>
-
+.container{
+  margin:10px
+}
 </style>

@@ -64,7 +64,7 @@ export const constantRoutes = [
   {
     path: '/examination',
     component: Layout,
-    redirect: '/examination/see',
+    redirect: '/examination/all',
     name: 'Exam',
     meta: { title: '管理考试', icon: 'el-icon-s-help' },
     children: [

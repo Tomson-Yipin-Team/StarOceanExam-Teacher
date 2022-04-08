@@ -91,7 +91,7 @@
           {{ scope.row.name }}
         </el-table-column>
         <el-table-column #default="scope" label="标签">
-          <el-tag v-for="(item,index) in scope.row.knowledge" :key="index"  class="tag">
+          <el-tag v-for="(item,index) in scope.row.knowledge" :key="index" class="tag">
             {{ item }}
           </el-tag>
         </el-table-column>

@@ -1,6 +1,12 @@
 <template>
   <div class="app-container">
-    <el-card class="container" style="width: 70%">
+    <el-card
+      v-loading="loading"
+      class="container"
+      style="width: 70%"
+      element-loading-text="正在加载数据"
+      element-loading-spinner="el-icon-loading"
+    >
       <!--表单-->
       <!--<el-row type="flex" justify="center">-->
       <el-form ref="basicForm" :rules="rules" :model="basicForm" label-width="120px">
@@ -11,14 +17,14 @@
           </el-col>
         </el-form-item>
         <!--试卷类型-->
-        <el-form-item label="试卷类型" prop="category">
-          <el-select v-model="basicForm.category" placeholder="请选择试卷类型">
-            <el-option label="A卷" value="shanghai" />
-            <el-option label="B卷" value="beijing" />
-          </el-select>
-        </el-form-item>
+        <!--<el-form-item label="试卷类型" prop="category">-->
+        <!--  <el-select v-model="basicForm.category" placeholder="请选择试卷类型">-->
+        <!--    <el-option label="A卷" value="shanghai" />-->
+        <!--    <el-option label="B卷" value="beijing" />-->
+        <!--  </el-select>-->
+        <!--</el-form-item>-->
         <!--选择试卷-->
-        <el-form-item label="选择试卷" required>
+        <el-form-item label="选择试卷" prop="paper" required>
           <el-select v-model="basicForm.paper" placeholder="请选择试卷">
             <el-option
               v-for="item in papers"
@@ -34,7 +40,7 @@
           <el-cascader v-model="basicForm.classrooms" :options="classrooms.choices" :props="props" />
         </el-form-item>
         <!--考试时间 设置-->
-        <el-form-item label="考试时间" required prop="date1">
+        <el-form-item label="考试时间" prop="date1">
           <el-row>
             <el-col :span="6">
               <el-date-picker v-model="basicForm.date1" type="date" placeholder="选择考试日期" style="width: 100%;" />
@@ -69,8 +75,7 @@
         <!--工具箱功能-->
         <el-form-item v-if="advanceForm.toolsMode" label="工具箱功能">
           <el-checkbox-group v-model="advanceForm.tools">
-            <el-checkbox label="铅笔批注" />
-            <el-checkbox label="荧光笔批注" />
+            <el-checkbox label="批注" />
             <el-checkbox label="时钟计时" />
             <el-checkbox label="草稿纸 " />
           </el-checkbox-group>
@@ -81,7 +86,7 @@
             <el-checkbox label="题目乱序" />
             <el-checkbox label="选项乱序" />
             <el-checkbox label="学生离开页面强制收卷">
-              学生离开><el-input style="width: 50px" />次，自动收卷
+              学生离开><el-input style="width: 50px" class="inline-input" />次，自动收卷
             </el-checkbox>
           </el-checkbox-group>
         </el-form-item>
@@ -106,7 +111,7 @@
             height="200px"
           />
           <el-checkbox v-model="advanceForm.examBeforeFinishCheck" label="考试结束前提醒">
-            考试结束前 <el-input v-model="advanceForm.beforeMin" style="width: 50px" />分钟提醒
+            考试结束前<el-input v-model="advanceForm.beforeMin" class="inline-input" style="width: 50px" />分钟提醒
           </el-checkbox>
           <markdown-editor
             v-if="advanceForm.examBeforeFinishCheck"
@@ -117,11 +122,11 @@
             height="200px"
           />
         </el-form-item>
-
+        <!--多人阅卷-->
         <el-form-item label="分配到教学组">
           <el-switch v-model="advanceForm.groupsMode" />
         </el-form-item>
-
+        <!--分配教师-->
         <el-form-item v-if="advanceForm.groupsMode" label="选择教学组">
           <el-select v-model="advanceForm.groupsContent" multiple placeholder="请选择">
             <el-option
@@ -132,7 +137,18 @@
             />
           </el-select>
         </el-form-item>
-
+        <!--阅卷方式-->
+        <el-form-item v-if="advanceForm.groupsMode" label="阅卷方式">
+          <el-select v-model="advanceForm.correctWay" placeholder="请选择">
+            <el-option
+              v-for="item in correct"
+              :key="item.id"
+              :label="item.value"
+              :value="item.value"
+            />
+          </el-select>
+        </el-form-item>
+        <!--备注-->
         <el-form-item label="组卷备注">
           <el-input v-model="basicForm.desc" type="textarea" />
         </el-form-item>
@@ -236,7 +252,7 @@ export default {
       active: 0,
       basicForm: {
         name: '',
-        category: '',
+        // category: '',
         date1: '',
         paper: '',
         beginTime: '',
@@ -246,7 +262,7 @@ export default {
         desc: '',
         subject: '',
         advanceMode: true,
-        classrooms: ''
+        classrooms: []
       },
       advanceForm: {
         toolsMode: false,
@@ -260,7 +276,8 @@ export default {
         examBeforeFinishCheck: false,
         paperSetting: [],
         groupsMode: false,
-        groupsContent: []
+        groupsContent: [],
+        correctWay: ''
       },
       classrooms,
       props: {
@@ -271,17 +288,31 @@ export default {
           { required: true, message: '请输入试卷名称', trigger: 'blur' },
           { min: 1, max: 30, message: '长度在 1 到 30 个字符', trigger: 'blur' }
         ],
-        category: [
-          { required: true, message: '请选择试卷', trigger: 'change' }
-        ],
+        // category: [
+        //   { required: true, message: '请选择试卷', trigger: 'change' }
+        // ],
         classrooms: [
           { required: true, message: '请选择班级', trigger: 'change' }
+        ],
+        date1: [
+          { required: true, message: '请输入考试时间', trigger: 'change' }
+        ],
+        paper: [
+          { required: true, message: '请选择试卷', trigger: 'change' }
         ]
       },
       groups: groups.manager,
       submitDialog: false,
       confirmLoading: false,
-      papers: paperContent.papers
+      papers: paperContent.papers,
+      correct: [{
+        id: 1,
+        value: '流水批阅'
+      }, {
+        id: 2,
+        value: '普通阅卷'
+      }],
+      loading: true
     }
   },
   computed: {
@@ -306,7 +337,26 @@ export default {
     }
 
   },
+  mounted() {
+    this.getParams()
+  },
   methods: {
+    getParams() {
+      const paperInfo = this.$route.params.paperInfo
+      console.log(paperInfo)
+      if (paperInfo) {
+        setTimeout(() => {
+          this.basicForm = paperInfo.basicForm
+          this.advanceForm = paperInfo.advanceForm
+          this.loading = false
+        }, 2000)
+      } else {
+        setTimeout(() => {
+          this.loading = false
+        }, 1000)
+      }
+    },
+    // 下一步
     onNext(basicForm) {
       this.$refs[basicForm].validate((valid) => {
         if (valid) {
@@ -369,6 +419,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.inline-input{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 </style>
 

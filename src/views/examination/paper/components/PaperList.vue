@@ -63,7 +63,13 @@ export default {
     // 跳转试卷查看
     handleSee(index, row) {
       console.log('正在查看试卷' + row.id)
-      this.$router.push({ path: '/examination/create', query: { name: row.name }})
+      this.$router.push({
+        path: '/examination/create',
+        query: {
+          name: row.name,
+          number: row.number
+        }
+      })
     },
     // 状态颜色
     tableRowClassName(index, row) {

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="card-container">
     <el-card>
       <el-row type="flex" justify="end">
-        <el-button @click="createDialog =true">创建新的试卷</el-button>
+        <el-button class="button" @click="createDialog =true">创建新的试卷</el-button>
       </el-row>
       <paper-list @handleLock="handleLock" />
     </el-card>
@@ -19,7 +19,7 @@
             </el-image>
             <!--<img src="https://source.jujuh.top/picture/1.jpg" class="image" style="width: 100%">-->
             <div style="padding: 14px;">
-              <span class="text">智能组卷</span>
+              <div class="text">智能组卷</div>
               <div>
                 <el-button type="text" class="button" @click="toAIPaper">使用</el-button>
               </div>
@@ -32,10 +32,13 @@
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
               </div>
+              <div slot="error" class="image-slot">
+                <i class="el-icon-picture-outline" />
+              </div>
             </el-image>
             <!--<img src="https://source.jujuh.top/picture/2.jpg" class="image" style="width: 100%">-->
             <div style="padding: 14px;">
-              <span class="text">手动创建</span>
+              <div class="text">手动创建</div>
               <div>
                 <el-button type="text" class="button" @click="toCreate">使用</el-button>
               </div>
@@ -51,8 +54,8 @@
             </el-image>
             <!--<img src="https://source.jujuh.top/picture/2.jpg" class="image" style="width: 100%">-->
             <div style="padding: 14px;">
-              <span class="text">通过分享导入</span>
-              <el-input v-model="shareId" placeholder="请输入ID" />
+              <div class="text">通过分享导入</div>
+              <el-input v-model="shareId" placeholder="请输入ID" style="width: 50%" />
               <div>
                 <el-button type="text" class="button" @click="toShare">提交</el-button>
               </div>
@@ -177,5 +180,16 @@ export default {
   text-align: center;
   margin-top: 10px;
 }
+.card-container{
+  margin: 10px;
+}
 
+.button{
+  margin-bottom: 10px;
+}
+
+.text{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 </style>

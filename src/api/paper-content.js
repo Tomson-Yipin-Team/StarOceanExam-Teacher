@@ -2,15 +2,47 @@ export default {
   examinations: [
     {
       id: '1000075885',
-      date: '2022-03-01',
-      name: '2021-2022-1普本大学英语三期末考试',
+      date: '2022-04-01',
+      name: '2019年6月全国大学生英语四级考试-模拟',
       origin: '张三',
       join: 26,
       waitCorrect: 0,
       finishCorrect: 26,
       status: '正在进行',
-      beginTime: '2021-12-27 13:28:40',
-      endTime: '2021-12-27 15:09:42'
+      beginTime: '2022-04-01 16:00:00',
+      endTime: '2022-04-01 18:00:40',
+      paperInfo: {
+        basicForm: {
+          name: '2019年6月全国大学生英语四级考试-模拟',
+          category: '',
+          date1: new Date(2022, 3, 1, 0, 0, 0),
+          paper: '2019年6月全国大学生英语四级考试-模拟',
+          beginTime: new Date(2022, 3, 1, 14, 0, 0),
+          endTime: new Date(2022, 3, 1, 16, 0, 0),
+          delivery: false,
+          resource: '',
+          desc: '',
+          subject: '',
+          advanceMode: true,
+          classrooms: [[1, 2], [1, 3]]
+        },
+        advanceForm: {
+          toolsMode: false,
+          tools: ['批注', '时钟计时'],
+          antiCheat: ['题目乱序', '选项乱序'],
+          toastSetting: [],
+          examBeginContent: `# 考试信息
+本场考试为四级模拟考试，考试时间为16：00 - 18：00`,
+          examBeforeFinishContent: '',
+          beforeMin: '',
+          examBeginCheck: true,
+          examBeforeFinishCheck: false,
+          paperSetting: ['允许学生考后查看试卷', '允许学生查看分数', '允许学生查看排名'],
+          groupsMode: false,
+          groupsContent: [],
+          correctWay: ''
+        }
+      }
     },
     {
       id: '1000075886',
@@ -22,7 +54,39 @@ export default {
       finishCorrect: 36,
       status: '已结束',
       beginTime: '2021-12-27 13:28:40',
-      endTime: '2021-12-27 15:09:42'
+      endTime: '2021-12-27 15:09:42',
+      paperInfo: {
+        basicForm: {
+          name: '2019年6月全国大学生英语四级考试-模拟',
+          category: '',
+          date1: new Date(2022, 3, 1, 0, 0, 0),
+          paper: '2019年6月全国大学生英语四级考试-模拟',
+          beginTime: new Date(2022, 3, 1, 14, 0, 0),
+          endTime: new Date(2022, 3, 1, 16, 0, 0),
+          delivery: false,
+          resource: '',
+          desc: '',
+          subject: '',
+          advanceMode: true,
+          classrooms: [[1, 2], [1, 3]]
+        },
+        advanceForm: {
+          toolsMode: false,
+          tools: ['批注', '时钟计时'],
+          antiCheat: ['题目乱序', '选项乱序'],
+          toastSetting: [],
+          examBeginContent: `# 考试信息
+本场考试为四级模拟考试，考试时间为16：00 - 18：00`,
+          examBeforeFinishContent: '',
+          beforeMin: '',
+          examBeginCheck: true,
+          examBeforeFinishCheck: false,
+          paperSetting: ['允许学生考后查看试卷', '允许学生查看分数', '允许学生查看排名'],
+          groupsMode: false,
+          groupsContent: [],
+          correctWay: ''
+        }
+      }
     },
     {
       id: '1000075888',
@@ -34,7 +98,39 @@ export default {
       finishCorrect: 36,
       status: '即将开始',
       beginTime: '2021-12-27 13:28:40',
-      endTime: '2021-12-27 15:09:42'
+      endTime: '2021-12-27 15:09:42',
+      paperInfo: {
+        basicForm: {
+          name: '2019年6月全国大学生英语四级考试-模拟',
+          category: '',
+          date1: new Date(2022, 3, 1, 0, 0, 0),
+          paper: '2019年6月全国大学生英语四级考试-模拟',
+          beginTime: new Date(2022, 3, 1, 14, 0, 0),
+          endTime: new Date(2022, 3, 1, 16, 0, 0),
+          delivery: false,
+          resource: '',
+          desc: '',
+          subject: '',
+          advanceMode: true,
+          classrooms: [[1, 2], [1, 3]]
+        },
+        advanceForm: {
+          toolsMode: false,
+          tools: ['批注', '时钟计时'],
+          antiCheat: ['题目乱序', '选项乱序'],
+          toastSetting: [],
+          examBeginContent: `# 考试信息
+          本场考试为四级模拟考试，考试时间为16：00 - 18：00`,
+          examBeforeFinishContent: '',
+          beforeMin: '',
+          examBeginCheck: true,
+          examBeforeFinishCheck: false,
+          paperSetting: ['允许学生考后查看试卷', '允许学生查看分数', '允许学生查看排名'],
+          groupsMode: false,
+          groupsContent: [],
+          correctWay: ''
+        }
+      }
     },
     {
       id: '1000074886',
@@ -46,7 +142,39 @@ export default {
       waitCorrect: 12,
       finishCorrect: 24,
       beginTime: '2021-12-27 13:28:40',
-      endTime: '2021-12-27 15:09:42'
+      endTime: '2021-12-27 15:09:42',
+      paperInfo: {
+        basicForm: {
+          name: '2019年6月全国大学生英语四级考试-模拟',
+          category: '',
+          date1: new Date(2022, 3, 1, 0, 0, 0),
+          paper: '2019年6月全国大学生英语四级考试-模拟',
+          beginTime: new Date(2022, 3, 1, 14, 0, 0),
+          endTime: new Date(2022, 3, 1, 16, 0, 0),
+          delivery: false,
+          resource: '',
+          desc: '',
+          subject: '',
+          advanceMode: true,
+          classrooms: [[1, 2], [1, 3]]
+        },
+        advanceForm: {
+          toolsMode: false,
+          tools: ['批注', '时钟计时'],
+          antiCheat: ['题目乱序', '选项乱序'],
+          toastSetting: [],
+          examBeginContent: `# 考试信息
+          本场考试为四级模拟考试，考试时间为16：00 - 18：00`,
+          examBeforeFinishContent: '',
+          beforeMin: '',
+          examBeginCheck: true,
+          examBeforeFinishCheck: false,
+          paperSetting: ['允许学生考后查看试卷', '允许学生查看分数', '允许学生查看排名'],
+          groupsMode: false,
+          groupsContent: [],
+          correctWay: ''
+        }
+      }
     }
   ],
   students: [
@@ -144,20 +272,24 @@ export default {
     {
       id: '1000075885',
       date: '2022-03-01',
-      name: '2021-2022-1普本大学英语三期末考试',
-      origin: '张三'
+      name: '2019年6月全国大学生英语四级考试-模拟',
+      origin: '张三',
+      number: 22
     },
     {
       id: '1000075886',
       date: '2022-03-01',
       name: '2021-2022-2普本大学英语三期末考试',
-      origin: '张三'
+      origin: '张三',
+      number: 22
+
     },
     {
       id: '1000075888',
       date: '2022-03-01',
       name: '2019-2020-2普本大学英语三期末考试',
-      origin: '张三'
+      origin: '张三',
+      number: 22
     }
   ]
 }
