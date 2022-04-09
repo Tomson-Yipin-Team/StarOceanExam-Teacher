@@ -31,7 +31,7 @@ export default {
         },
         xAxis: {
           type: 'category',
-          data: ['听力sectionA', '听力sectionB', '听力sectionC', '十五选十', '段落信息匹配', '阅读理解', '句子翻译','书面表达']
+          data: ['听力sectionA', '听力sectionB', '听力sectionC', '十五选十', '段落信息匹配', '阅读理解', '句子翻译', '书面表达']
         },
         yAxis: [
           { type: 'value' },

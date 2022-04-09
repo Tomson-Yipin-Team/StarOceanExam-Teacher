@@ -237,7 +237,7 @@
 
 // import Create from '@/views/examination/release/components/Create'
 // import Question from '@/views/examination/release/components/Question'
-import classrooms from '@/api/classrooms'
+import classrooms from '@/api/class-info'
 import markdownEditor from '@/components/MarkdownEditor'
 import groups from '@/api/groups'
 import moment from 'moment'
@@ -279,10 +279,10 @@ export default {
         groupsContent: [],
         correctWay: ''
       },
-      classrooms,
       props: {
         multiple: true
       },
+      classrooms: classrooms,
       rules: {
         name: [
           { required: true, message: '请输入试卷名称', trigger: 'blur' },
@@ -320,7 +320,7 @@ export default {
       let crs = []
       // console.log(this.basicForm.classrooms)
       for (const basicIndex in this.basicForm.classrooms) {
-        const temp = classrooms.ownClassroom.filter((item) => {
+        const temp = classrooms.classrooms.filter((item) => {
           return item.id === this.basicForm.classrooms[basicIndex][1]
         })
         crs = crs.concat(temp)

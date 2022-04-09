@@ -1,7 +1,19 @@
 <template>
   <div id="correct-container">
-    <panel-group />
-    <paper-list />
+    <el-row :gutter="20" style="margin: 10px">
+
+      <el-col :span="8">
+        <panel-group panel-name="等待批阅" :panel-number="6" svg-name="log" color-style="#40c9c6" />
+      </el-col>
+      <el-col :span="8">
+        <panel-group panel-name="正在批阅" :panel-number="3" svg-name="pie-five" color-style="#40c9c6" />
+      </el-col>
+      <el-col :span="8">
+        <panel-group panel-name="今日完成" :panel-number="16" svg-name="skill" color-style="#40c9c6" />
+      </el-col>
+    </el-row>
+
+    <paper-list style="margin: 10px" />
   </div>
 </template>
 

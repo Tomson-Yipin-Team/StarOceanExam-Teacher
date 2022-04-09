@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import classrooms from '@/api/classrooms'
+// import classrooms from '@/api/classrooms'
 import ClassInfo from '@/api/class-info'
 import moment from 'moment'
 
@@ -85,7 +85,7 @@ export default {
   name: 'StudentTable',
   data() {
     return {
-      tableData: classrooms.ownClassroom,
+      // tableData: classrooms.ownClassroom,
       classrooms: ClassInfo.classrooms
     }
   },

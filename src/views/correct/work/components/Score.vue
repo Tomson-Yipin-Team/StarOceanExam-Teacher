@@ -1,4 +1,4 @@
-<template>
+<template xmlns:el-col="http://www.w3.org/1999/html">
   <div>
     <!--学生信息-->
     <el-descriptions label-class-name="item" border :column="1" :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS">
@@ -6,28 +6,41 @@
       <el-descriptions-item label="当前学生">{{ form.correctNumber+1 }} / {{ students.length }}</el-descriptions-item>
     </el-descriptions>
     <!--评分控件-->
-    <el-form label-width="50px">
+    <el-form label-width="120px" class="form">
+      <!--分数显示-->
       <el-form-item label="分数">
-        <el-input v-model="form.score">
-          <template slot="append">/ 10 分</template>
-        </el-input>
+        <el-col :span="12">
+          <el-input v-model="form.score[form.correctNumber]">
+            <template slot="append"> / 10 分</template>
+          </el-input>
+        </el-col>
       </el-form-item>
-      <el-form-item>
-        <el-button-group>
-          <el-button type="primary" plain @click="previousStudent">上一个</el-button>
-          <el-button type="primary" @click="nextStudent">下一个</el-button>
-        </el-button-group>
-        <el-button-group>
-          <el-button type="warning" @click="reportStudent">报告</el-button>
-          <el-button class="drawer-button" @click="openDrawer">批注</el-button>
-        </el-button-group>
+      <!--操作区域-->
+      <el-form-item label="显示原题">
+        <el-switch v-model="form.show.question" />
+      </el-form-item>
+      <el-form-item label="显示参考答案">
+        <el-switch v-model="form.show.trueAnswer" />
+      </el-form-item>
+      <el-form-item label="切换题目">
+        <el-button type="primary" plain @click="nextStudent">上一题</el-button>
+        <el-button type="primary" @click="nextStudent">下一题</el-button>
+      </el-form-item>
+      <el-form-item label="切换学生">
+        <el-button type="primary" plain @click="previousStudent">上一个</el-button>
+        <el-button type="primary" @click="nextStudent">下一个</el-button>
+      </el-form-item>
+      <el-form-item label="操作">
+        <el-button type="warning" @click="reportStudent">报告</el-button>
+        <el-button class="drawer-button" @click="openDrawer">批注</el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script>
-import classrooms from '@/api/classrooms'
+// import classrooms from '@/api/classrooms'
+import ClassInfo from '@/api/class-info'
 export default {
   name: 'Score',
   data() {
@@ -49,11 +62,25 @@ export default {
         }
       },
       form: {
-        score: '',
-        correctNumber: 0
+        score: [],
+        correctNumber: 0,
+        show: {
+          question: true,
+          trueAnswer: true
+        }
       },
-      students: classrooms.students,
+      students: ClassInfo.students,
       content: ''
+    }
+  },
+  watch: {
+    form: {
+      immediate: true,
+      deep: true,
+      handler(newValue) {
+        console.log(newValue)
+        this.$emit('status', this.form.show)
+      }
     }
   },
   methods: {
@@ -61,11 +88,13 @@ export default {
       if (this.form.correctNumber < this.students.length - 1) {
         this.form.correctNumber += 1
       }
+      this.$emit('chang-number', this.form.correctNumber)
     },
     previousStudent() {
       if (this.form.correctNumber > 0) {
         this.form.correctNumber -= 1
       }
+      this.$emit('change-number', this.form.correctNumber)
     },
     reportStudent() {
       this.$confirm('这将会将该学生报告给教学秘书，是否继续？', '提示', {
@@ -91,9 +120,8 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
 <style scoped>
-
+.form{
+  margin-top: 20px;
+}
 </style>

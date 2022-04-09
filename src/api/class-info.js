@@ -1,6 +1,7 @@
 export default {
+  // 修改时 classrooms 和 choices 中的 id 需要一一对应
   classrooms: [{
-    id: 1,
+    id: 2,
     date: '2021-2022第一学期',
     name: '大学英语',
     classrooms: ['软嵌201', '软嵌202'],
@@ -10,7 +11,7 @@ export default {
     beginTime: new Date(2021, 4, 3),
     endTime: new Date(2022, 4, 1)
   }, {
-    id: 2,
+    id: 3,
     date: '2021-2022第二学期',
     name: '大学物理',
     classrooms: ['软嵌201', '软嵌202'],
@@ -19,5 +20,85 @@ export default {
     number: '22',
     beginTime: new Date(2021, 4, 3),
     endTime: new Date(2022, 4, 1)
+  }],
+  students: [{
+    id: '2030110123',
+    name: '宇文紫'
+  }, {
+    id: '2030110124',
+    name: '张佳'
+  }, {
+    id: '2030110125',
+    name: '王涛'
+  }, {
+    id: '2030110126',
+    name: '张程'
+  }, {
+    id: '2030110127',
+    name: '林天文'
+  }, {
+    id: '2030110128',
+    name: '杨凯'
+  }, {
+    id: '2030110128',
+    name: '刘赟涛'
+  }, {
+    id: '2030110128',
+    name: '高佳洛'
+  }, {
+    id: '2030110128',
+    name: '段智亮'
+  }, {
+    id: '2030110128',
+    name: '蒋来'
+  }, {
+    id: '2030110128',
+    name: '杨可欣'
+  }, {
+    id: '2030110128',
+    name: '范文骁'
+  }, {
+    id: '2030110128',
+    name: '王鼎'
+  }, {
+    id: '2030110128',
+    name: '王宇墨'
+  }, {
+    id: '2030110128',
+    name: '何宁'
+  }, {
+    id: '2030110128',
+    name: '李梓豪'
+  }, {
+    id: '2030110128',
+    name: '张浩然'
+  }, {
+    id: '2030110128',
+    name: '韩伟'
+  }, {
+    id: '2030110128',
+    name: '高婷婷'
+  }, {
+    id: '2030110128',
+    name: '葛鑫奇'
+  }, {
+    id: '2030110128',
+    name: '汪子晗'
+  }],
+  choices: [{
+    value: 1,
+    label: '专业英语',
+    children: [
+      { value: 2, label: '经管202' },
+      { value: 3, label: '英语202' }
+    ]
+  }, {
+    value: 4,
+    label: '大学英语',
+    children: [
+      { value: 5, label: '软嵌201' },
+      { value: 6, label: '软工202' },
+      { value: 7, label: '大数据202' }
+    ]
   }]
 }

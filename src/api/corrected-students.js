@@ -26,7 +26,6 @@ export default {
       name: '选择2',
       score: '6'
     }]
-
   }]
 
 }

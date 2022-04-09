@@ -99,7 +99,7 @@ export default {
     rest: '45',
     origin: '查看',
     tag: '30'
-  }, 
+  },
   // {
   //   id: 3,
   //   name: '完型填空',
@@ -107,7 +107,7 @@ export default {
   //   rest: '2',
   //   origin: '查看',
   //   tag: '1'
-  // }, 
+  // },
   {
     id: 3,
     name: '十五选十',
