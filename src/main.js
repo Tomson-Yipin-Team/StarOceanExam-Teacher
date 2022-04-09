@@ -16,7 +16,10 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 import * as echarts from 'echarts'
+import moment from 'moment'
+moment.locale('zh-cn')
 
+Vue.prototype.$moment = moment
 Vue.prototype.$echarts = echarts
 /**
  * If you don't want to use mock-server

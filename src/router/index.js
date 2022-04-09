@@ -62,6 +62,13 @@ export const constantRoutes = [
   },
 
   {
+    path: '/preview',
+    name: 'Preview',
+    component: () => import('@/views/preview/index'),
+    meta: { title: '预览考试' },
+    hidden: true
+  },
+  {
     path: '/examination',
     component: Layout,
     redirect: '/examination/all',
