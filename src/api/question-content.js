@@ -27,18 +27,18 @@ export default {
   timuku: [{
     id: 1,
     name: '听力',
-    totalNumber: '105',
-    rest: '42',
+    totalNumber: '42',
+    rest: '15',
     origin: '查看',
-    tag: '选择',
+    tag: '12',
     questions: [
       {
         id: 101,
-        name: '写作',
+        name: '1',
         difficulty: '简单',
         category: 'choice',
         content: '这是一道选择题',
-        knowledge: ['写作题', '四级'],
+        knowledge: ['短篇新闻', 'cet4'],
         answers: {
           A: '123',
           B: '2',
@@ -49,11 +49,11 @@ export default {
       },
       {
         id: 102,
-        name: '234',
+        name: '2',
         difficulty: '中等',
         category: 'judge',
         content: '这是一道判断题',
-        knowledge: ['写作题', '四级'],
+        knowledge: ['短篇新闻', 'cet4'],
 
         answers: {
           A: '12',
@@ -63,20 +63,20 @@ export default {
       },
       {
         id: 103,
-        name: '123123',
+        name: '3',
         difficulty: '困难',
         category: 'blank',
         content: ' 这是一道填空题',
-        knowledge: ['十五选十', '四级'],
+        knowledge: ['长对话', 'cet6'],
         correct: ''
       },
       {
         id: 104,
-        name: '听力',
+        name: '4',
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力', '四级'],
+        knowledge: ['讲座/对话', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -95,65 +95,74 @@ export default {
   }, {
     id: 2,
     name: '单项选择',
-    totalNumber: '807',
-    rest: '301',
+    totalNumber: '30',
+    rest: '45',
     origin: '查看',
-    tag: '选择'
+    tag: '30'
   }, {
     id: 3,
     name: '完型填空',
-    totalNumber: '104',
-    rest: '9',
-    origin: '查看'
+    totalNumber: '10',
+    rest: '2',
+    origin: '查看',
+    tag: '1'
   }, {
     id: 4,
     name: '十五选十',
-    totalNumber: '88',
-    rest: '44',
-    origin: '查看'
+    totalNumber: '5',
+    rest: '2',
+    origin: '查看',
+    tag: '3'
   },
   {
     id: 5,
     name: '段落信息匹配',
-    totalNumber: '62',
+    totalNumber: '5',
     rest: '21',
-    origin: '查看'
+    origin: '查看',
+    tag: '12'
   },
   {
     id: 6,
     name: '阅读理解',
-    totalNumber: '533',
+    totalNumber: '10',
     rest: '115',
-    origin: '查看'
+    origin: '查看',
+    tag: '12'
   },
   {
     id: 7,
     name: '句子翻译',
-    totalNumber: '78',
+    totalNumber: '5',
     rest: '45',
-    origin: '查看'
+    origin: '查看',
+    tag: '12'
   },
   {
     id: 8,
     name: '任务型阅读',
     totalNumber: '67',
-    rest: '44',
-    origin: '查看'
+    rest: '5',
+    origin: '查看',
+    tag: '12'
   },
   {
     id: 9,
     name: '书面表达',
-    totalNumber: '68',
-    rest: '32',
-    origin: '查看'
+    totalNumber: '5',
+    rest: '5',
+    origin: '查看',
+    tag: '4'
   },
-  {
-    id: 10,
-    name: '算法设计',
-    totalNumber: '21',
-    rest: '10',
-    origin: '查看'
-  }],
+  // {
+  //   id: 10,
+  //   name: '算法设计',
+  //   totalNumber: '21',
+  //   rest: '10',
+  //   origin: '查看',
+  //   tag: '12'  
+  // }
+],
   category: [
     {
       id: 1,
