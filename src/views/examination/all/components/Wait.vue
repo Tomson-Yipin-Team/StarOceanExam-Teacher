@@ -131,7 +131,10 @@ import notify from '@/views/examination/all/components/Notify'
 export default {
   name: 'Wait',
   components: { notify },
-  props: ['seeId', 'seeName'],
+  props: {
+    seeId: String || Number,
+    seeName: String
+  },
   data() {
     return {
       activeName: 'first',

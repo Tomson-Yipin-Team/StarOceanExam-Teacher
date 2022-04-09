@@ -27,15 +27,14 @@ import PanelGroup from './components/PanelGroup'
 import Announcement from '@/views/dashboard/admin/components/Announcement'
 import UserLogs from '@/views/dashboard/admin/components/UserLogs'
 import Welcome from '@/views/dashboard/admin/components/Welcome'
-import Tips from '@/views/dashboard/admin/components/Tips'
+// import Tips from '@/views/dashboard/admin/components/Tips'
 export default {
   name: 'DashboardAdmin',
   components: {
     PanelGroup,
     Announcement,
     UserLogs,
-    Welcome,
-    Tips
+    Welcome
   },
   data() {
     return {

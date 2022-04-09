@@ -16,12 +16,12 @@ export default {
       id: 3,
       category: '选择题',
       question: '# 这是一道选择题',
-      answers: {
+      answers: [{
         A: 'A',
         B: 'B',
         C: 'C',
         D: 'D'
-      }
+      }]
     }
   ],
   timuku: [{

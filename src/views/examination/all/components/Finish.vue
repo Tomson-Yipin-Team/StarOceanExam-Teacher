@@ -98,7 +98,10 @@ import paperContent from '@/api/paper-content'
 
 export default {
   name: 'Finish',
-  props: ['seeId', 'seeName'],
+  props: {
+    seeId: String || Number,
+    seeName: String
+  },
   data() {
     return {
       activeName: 'first',

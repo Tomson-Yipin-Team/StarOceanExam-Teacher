@@ -62,6 +62,13 @@ export const constantRoutes = [
   },
 
   {
+    path: '/preview',
+    name: 'Preview',
+    component: () => import('@/views/preview/index'),
+    meta: { title: '预览考试' },
+    hidden: true
+  },
+  {
     path: '/examination',
     component: Layout,
     redirect: '/examination/all',
@@ -78,13 +85,13 @@ export const constantRoutes = [
         path: 'release',
         name: 'Release',
         component: () => import('@/views/examination/release/index'),
-        meta: { title: '发布考试', icon: 'edit' }
+        meta: { title: '发布考试', icon: 'el-icon-upload2' }
       },
       {
         path: 'paper',
         name: 'Paper',
         component: () => import('@/views/examination/paper/index'),
-        meta: { title: '卷库', icon: 'edit' }
+        meta: { title: '卷库', icon: 'el-icon-s-management' }
       },
       {
         path: 'create',
@@ -119,7 +126,7 @@ export const constantRoutes = [
       path: 'question-database',
       name: 'QuestionDB',
       component: () => import('@/views/question/timuku/index.vue'),
-      meta: { title: '题库', icon: 'edit' }
+      meta: { title: '题库', icon: 'el-icon-tickets' }
     }, {
       path: 'create-question',
       name: 'CreateQuestion',
