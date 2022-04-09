@@ -20,7 +20,7 @@
         <el-table-column
           label="试题类型"
           column-key="name"
-          :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
+          :filters="[{text: '听力', value: '听力'}, {text: '单项选择', value: '单项选择'}, {text: '十五选十', value: '十五选十'}, {text: '段落信息匹配', value: '段落信息匹配'}, {text: '阅读理解', value: '阅读理解'}, {text: '句子翻译', value: '句子翻译'}, {text: '书面表达', value: '书面表达'}]"
           :filter-method="filterHandler"
         >
           <template #default="scope">
