@@ -27,7 +27,7 @@
             <el-table-column
               label="试题类型"
               column-key="name"
-              :filters="[{text: '听力', value: '听力'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
+              :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
               :filter-method="filterHandler"
             >
               <template #default="scope">
