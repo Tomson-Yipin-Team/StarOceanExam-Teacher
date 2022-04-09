@@ -77,7 +77,7 @@
         :data="subQuestion"
         style="width: 100%"
       >
-        <el-table-column #default="scope" label="名称">
+        <el-table-column #default="scope" label="序号">
           {{ scope.row.name }}
         </el-table-column>
         <el-table-column #default="scope" label="难易度" fixed="right" width="100px">
