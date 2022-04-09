@@ -8,9 +8,9 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              等待批阅
+              等待批阅的题目数量  
             </div>
-            <count-to :start-val="0" :end-val="24" :duration="2600" class="card-panel-num" />
+            <count-to :start-val="0" :end-val="40" :duration="2600" class="card-panel-num" />
           </div>
         </div>
       </el-col>
@@ -21,9 +21,9 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              已完成
+              已完成批改的题目数量
             </div>
-            <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" />
+            <count-to :start-val="0" :end-val="38" :duration="3000" class="card-panel-num" />
           </div>
         </div>
       </el-col>

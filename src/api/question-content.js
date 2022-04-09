@@ -99,15 +99,17 @@ export default {
     rest: '45',
     origin: '查看',
     tag: '30'
-  }, {
+  }, 
+  // {
+  //   id: 3,
+  //   name: '完型填空',
+  //   totalNumber: '10',
+  //   rest: '2',
+  //   origin: '查看',
+  //   tag: '1'
+  // }, 
+  {
     id: 3,
-    name: '完型填空',
-    totalNumber: '10',
-    rest: '2',
-    origin: '查看',
-    tag: '1'
-  }, {
-    id: 4,
     name: '十五选十',
     totalNumber: '5',
     rest: '2',
@@ -115,7 +117,7 @@ export default {
     tag: '3'
   },
   {
-    id: 5,
+    id: 4,
     name: '段落信息匹配',
     totalNumber: '5',
     rest: '21',
@@ -123,7 +125,7 @@ export default {
     tag: '12'
   },
   {
-    id: 6,
+    id: 5,
     name: '阅读理解',
     totalNumber: '10',
     rest: '115',
@@ -131,23 +133,23 @@ export default {
     tag: '12'
   },
   {
-    id: 7,
+    id: 6,
     name: '句子翻译',
     totalNumber: '5',
     rest: '45',
     origin: '查看',
     tag: '12'
   },
+  // {
+  //   id: 8,
+  //   name: '任务型阅读',
+  //   totalNumber: '67',
+  //   rest: '5',
+  //   origin: '查看',
+  //   tag: '12'
+  // },
   {
-    id: 8,
-    name: '任务型阅读',
-    totalNumber: '67',
-    rest: '5',
-    origin: '查看',
-    tag: '12'
-  },
-  {
-    id: 9,
+    id: 7,
     name: '书面表达',
     totalNumber: '5',
     rest: '5',

@@ -26,12 +26,12 @@ export default {
             '60岁全程接种量',
             '80岁任务数',
             '80岁全程接种量',
-            '完成率'
+            '班级最高分'
           ]
         },
         xAxis: {
           type: 'category',
-          data: ['街道1', '街道2', '街道3', '街道4', '街道5', '街道6', '街道7']
+          data: ['听力sectionA', '听力sectionB', '听力sectionC', '十五选十', '段落信息匹配', '阅读理解', '句子翻译','书面表达']
         },
         yAxis: [
           { type: 'value' },
@@ -159,7 +159,7 @@ export default {
             type: 'bar'
           },
           {
-            name: '完成率',
+            name: '班级最高分',
             data: [50, 130, 124, 18, 35, 47, 160],
             yAxisIndex: 1,
             type: 'line',

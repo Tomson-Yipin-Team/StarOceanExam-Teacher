@@ -120,7 +120,7 @@ export default {
       share: {
         id: '1000075886',
         date: '2022-03-01',
-        name: '2021-2022-2普本C++程序设计基础期末考试',
+        name: '2021-2022-2大学英语六级模拟考试（1）',
         origin: 'CW'
       },
       shareButtonLoading: false,
