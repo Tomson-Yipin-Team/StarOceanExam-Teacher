@@ -274,14 +274,14 @@ export default {
       date: '2022-03-01',
       name: '2019年6月全国大学生英语四级考试-模拟',
       origin: '张三',
-      number: 22
+      number: 20
     },
     {
       id: '1000075886',
       date: '2022-03-01',
       name: '2021-2022-2普本大学英语三期末考试',
       origin: '张三',
-      number: 22
+      number: 20
 
     },
     {
@@ -289,7 +289,7 @@ export default {
       date: '2022-03-01',
       name: '2019-2020-2普本大学英语三期末考试',
       origin: '张三',
-      number: 22
+      number: 20
     }
   ]
 }
