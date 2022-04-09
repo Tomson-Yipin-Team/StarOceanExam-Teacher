@@ -45,6 +45,7 @@
             <el-table-column
               #default="scope"
               label="教授班级"
+              width="250"
               sortable
             >
               <span v-for="(item,index) in scope.row.classrooms" :key="index">{{ item }} </span>

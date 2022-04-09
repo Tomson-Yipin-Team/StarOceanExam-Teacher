@@ -10,8 +10,10 @@
         <div class="classroom">课程码: {{ classInfo.code }}</div>
       </div>
       <div class="manager">
-        <span style="float: left">教师: {{ classInfo.teacher }}</span>
-        <span><el-button type="text" style="float: right;padding: 0px">退出</el-button></span>
+        <span>教师: {{ classInfo.teacher }}</span>
+        <span>
+          <el-button type="text">管理</el-button>
+        </span>
       </div>
     </el-card>
   </div>
@@ -65,10 +67,20 @@ export default {
   color: #99a9bf;
   font-size: 15px;
 }
+/*.manager{*/
+/*  position: relative;*/
+/*  top: 23px;*/
+/*  padding: 20px;*/
+/*  width: 100%;*/
+/*}*/
 .manager{
   position: relative;
-  top: 23px;
-  padding: 20px;
-  width: 100%;
+  top: 35px;
+  left: 15px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 </style>

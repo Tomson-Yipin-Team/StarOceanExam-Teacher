@@ -153,16 +153,16 @@ export default {
     rest: '5',
     origin: '查看',
     tag: '4'
-  },
+  }
   // {
   //   id: 10,
   //   name: '算法设计',
   //   totalNumber: '21',
   //   rest: '10',
   //   origin: '查看',
-  //   tag: '12'  
+  //   tag: '12'
   // }
-],
+  ],
   category: [
     {
       id: 1,
