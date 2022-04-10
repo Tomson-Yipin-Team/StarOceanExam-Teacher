@@ -4,22 +4,22 @@ export default {
     id: 2,
     date: '2021-2022第一学期',
     name: '大学英语',
-    classrooms: ['软嵌201', '软嵌202'],
+    classrooms: ['软工201', '软工202'],
     code: '12edxf2',
-    teacher: '老师',
+    teacher: '方慧敏',
     number: '12',
-    beginTime: new Date(2021, 4, 3),
-    endTime: new Date(2022, 4, 1)
+    beginTime: new Date(2022, 2, 3),
+    endTime: new Date(2022, 5, 30)
   }, {
     id: 3,
     date: '2021-2022第二学期',
-    name: '大学物理',
-    classrooms: ['软嵌201', '软嵌202'],
+    name: '综合英语',
+    classrooms: ['英师191', '英师192'],
     code: '12edxf2',
-    teacher: '老师',
+    teacher: '方慧敏',
     number: '22',
-    beginTime: new Date(2021, 4, 3),
-    endTime: new Date(2022, 4, 1)
+    beginTime: new Date(2022, 2, 4),
+    endTime: new Date(2022, 5, 30)
   }],
   students: [{
     id: '2030110123',

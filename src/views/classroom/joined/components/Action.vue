@@ -55,13 +55,13 @@ export default {
   data() {
     return {
       tableData: [{
-        date: '2022-03-14',
-        name: '程大伟',
-        tip: '放我进去！！！'
+        date: '2022-03-03',
+        name: '蒋来',
+        tip: '我是软工202蒋来'
       }, {
-        date: '2022-03-15',
-        name: '程小伟',
-        tip: '再不放我进去，我可要'
+        date: '2022-03-03',
+        name: '刘赟涛',
+        tip: '软工201班长刘赟涛'
       }]
     }
   },

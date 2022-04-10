@@ -1,7 +1,7 @@
 export default {
   studentAnswer: [{
     studentId: 0,
-    name: '张三',
+    name: '方慧敏',
     answer: [{
       questionId: 0,
       content: '123123'
@@ -11,7 +11,7 @@ export default {
     }]
   }, {
     studentId: 1,
-    name: '张三',
+    name: '方慧敏',
     answer: [{
       questionId: 0,
       content: '123123'

@@ -15,7 +15,7 @@ export default {
   name: 'Welcome',
   data() {
     return {
-      name: '张三',
+      name: '方慧敏',
       cardStyle: {
         padding: '0px'
       }

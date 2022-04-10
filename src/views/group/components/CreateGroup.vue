@@ -46,11 +46,11 @@ export default {
         id: '114',
         name: this.form.name,
         users: [{
-          name: 'cdw(自己)',
+          name: '方慧敏',
           userId: '1'
         }],
         manager: {
-          name: 'cdw(自己)',
+          name: '方慧敏',
           userId: '1'
         }
       }

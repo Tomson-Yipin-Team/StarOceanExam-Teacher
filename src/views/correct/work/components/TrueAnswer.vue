@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      questionContent: '## 题目答案'
+      questionContent: 'Lanterns originated in the Eastern Han Dynasty, and were at first used primarily for lighting. In the Tang Dynasty, people used red lanterns to celebrate a stable life. Since then, lanterns have became popular in many parts of China. Lanterns are usually made of brightly-colored tissue paper in a variety of shapes and sizes. In traditional Chinese culture, red lanterns symbolize a happy life and flourishing business, usually hung during festivals like the Spring Festival, Lantern Festival and National Day. Today, red lanterns can be seen in many other parts of the world.'
     }
   }
 }
