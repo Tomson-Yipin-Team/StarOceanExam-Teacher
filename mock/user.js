@@ -13,7 +13,7 @@ const users = {
     roles: ['教师'],
     introduction: 'I am a super administrator',
     avatar: 'https://lsky-picture.stdcdn.com/uploads/2022/04/432027a781e142ec5d5b20e2fc8f3cea.png',
-    name: '张三'
+    name: '方慧敏'
   },
   'editor-token': {
     roles: ['editor'],

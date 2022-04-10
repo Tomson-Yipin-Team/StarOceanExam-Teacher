@@ -164,7 +164,7 @@ export default {
     },
     // 报告学生
     reportStudent() {
-      this.$confirm('这将会将该学生报告给教学秘书，是否继续？', '提示', {
+      this.$confirm('这将会将该学生的试卷报告给课程组组长，是否继续？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
