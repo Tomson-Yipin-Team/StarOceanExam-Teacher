@@ -7,19 +7,31 @@
           <div slot="header">
             学生回答
           </div>
-          <Answer />
+          <div v-loading="loading.answer" element-loading-text="加载内容中" style="min-height: 300px">
+            <transition name="el-fade-in-linear">
+              <Viewer v-if="show.answerContent" :initial-value="studentAnswerContent" />
+            </transition>
+          </div>
         </el-card>
         <el-card v-if="show.question" class="question-container">
           <div slot="header">
             原题
           </div>
-          <Question />
+          <div v-loading="loading.question" element-loading-text="加载内容中" style="min-height: 200px">
+            <transition name="el-fade-in-linear">
+              <Viewer v-if="show.questionContent" :initial-value="questionContent" height="500px" />
+            </transition>
+          </div>
         </el-card>
         <el-card v-if="show.trueAnswer" class="ture-answer-container">
           <div slot="header">
             参考答案
           </div>
-          <TrueAnswer />
+          <div v-loading="loading.trueAnswer" element-loading-text="加载内容中" style="min-height: 200px">
+            <transition name="el-fade-in-linear">
+              <Viewer v-if="show.trueContent" :initial-value="trueAnswerContent" height="500px" />
+            </transition>
+          </div>
         </el-card>
       </el-col>
       <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
@@ -35,7 +47,7 @@
               <el-col :span="4">评分</el-col>
             </el-row>
           </div>
-          <Score @open="openDrawer" @change-number="changeNumber" @status="changeStatus" />
+          <Score @open="openDrawer" @change-number="changeNumber" @status="changeStatus" @change-question="changeQuestion" />
         </el-card>
       </el-col>
     </el-row>
@@ -60,20 +72,21 @@
 
 <script>
 import WorkInfo from '@/views/correct/work/components/WorkInfo'
-import Question from '@/views/correct/work/components/Question'
-import Answer from '@/views/correct/work/components/Answer'
-import TrueAnswer from '@/views/correct/work/components/TrueAnswer'
 import Score from '@/views/correct/work/components/Score'
 import MarkdownEditor from '@/components/MarkdownEditor'
+import CorrectContent from '@/api/correct-content'
+import '@toast-ui/editor/dist/i18n/zh-cn.js'
+import '@toast-ui/editor/dist/toastui-editor.css'
+import 'codemirror/lib/codemirror.css'
+import { Viewer } from '@toast-ui/vue-editor'
+
 export default {
   name: 'Work',
   components: {
     WorkInfo,
-    Question,
-    Answer,
-    TrueAnswer,
     Score,
-    MarkdownEditor
+    MarkdownEditor,
+    Viewer
   },
   data() {
     return {
@@ -81,20 +94,81 @@ export default {
       content: '',
       show: {
         question: true,
-        trueAnswer: true
+        trueAnswer: true,
+        answerContent: true,
+        questionContent: true,
+        trueContent: true,
+        answer: true
       },
-      studentIndex: 0
+      studentIndex: 0,
+      questionIndex: 0,
+      studentAnswerContent: '',
+      questionContent: '',
+      questions: CorrectContent.question,
+      students: CorrectContent.studentAnswer,
+      currentStudent: {},
+      trueAnswerContent: '',
+      loading: {
+        question: false,
+        answer: false,
+        trueAnswer: false
+      }
     }
   },
+  // watch: {
+  //   studentIndex: {
+  //     handle(newValue) {
+  //       console.log(newValue)
+  //       this.show.answer = false
+  //       this.currentStudent = this.students[this.studentIndex]
+  //       this.studentAnswerContent = this.currentStudent.answer[this.questionIndex].content
+  //       setTimeout(() => {
+  //         this.show.answer = true
+  //         this.show.answerContent = false
+  //       }, 2000)
+  //     }
+  //   }
+  // },
   methods: {
     openDrawer(open) {
       this.drawer = open
     },
+    // 更改学生
     changeNumber(number) {
       this.studentIndex = number
+      this.loading.answer = true
+      this.show.answerContent = false
+      this.currentStudent = this.students[this.studentIndex]
+      this.studentAnswerContent = this.currentStudent.answer[this.questionIndex].content
+      setTimeout(() => {
+        this.loading.answer = false
+        this.show.answerContent = true
+      }, 1000)
     },
     changeStatus(show) {
       this.show = show
+    },
+    // 改变题目
+    changeQuestion(number) {
+      this.loading.answer = true
+      this.show.answerContent = false
+      this.loading.question = true
+      this.loading.trueAnswer = true
+      this.show.questionContent = false
+      this.show.trueContent = false
+      this.questionIndex = number
+      this.currentStudent = this.students[this.studentIndex]
+      this.studentAnswerContent = this.currentStudent.answer[this.questionIndex].content
+      this.questionContent = this.questions[this.questionIndex].content
+      this.trueAnswerContent = this.questions[this.questionIndex].trueAnswer
+      setTimeout(() => {
+        this.loading.answer = false
+        this.show.answerContent = true
+        this.loading.question = false
+        this.loading.trueAnswer = false
+        this.show.questionContent = true
+        this.show.trueContent = true
+      }, 1000)
     }
   }
 }

@@ -4,6 +4,7 @@
     <el-descriptions label-class-name="item" border :column="1" :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS">
       <el-descriptions-item label="学生姓名">{{ students[form.correctNumber].name }}</el-descriptions-item>
       <el-descriptions-item label="当前学生">{{ form.correctNumber+1 }} / {{ students.length }}</el-descriptions-item>
+      <el-descriptions-item label="当前题目">{{ questionIndex + 1 }} / {{ correctContent.question.length }}</el-descriptions-item>
     </el-descriptions>
     <!--评分控件-->
     <el-form label-width="120px" class="form">
@@ -23,28 +24,65 @@
         <el-switch v-model="form.show.trueAnswer" />
       </el-form-item>
       <el-form-item label="切换题目">
-        <el-button type="primary" plain @click="nextStudent">上一题</el-button>
-        <el-button type="primary" @click="nextStudent">下一题</el-button>
+        <el-button type="primary" plain @click="previousQuestion">上一题</el-button>
+        <el-button type="primary" @click="nextQuestion">下一题</el-button>
+        <el-button @click="openAllQuestion">查看全部题目</el-button>
       </el-form-item>
       <el-form-item label="切换学生">
         <el-button type="primary" plain @click="previousStudent">上一个</el-button>
         <el-button type="primary" @click="nextStudent">下一个</el-button>
+        <el-button @click="openAllStudent">查看全部学生</el-button>
       </el-form-item>
       <el-form-item label="操作">
         <el-button type="warning" @click="reportStudent">报告</el-button>
         <el-button class="drawer-button" @click="openDrawer">批注</el-button>
       </el-form-item>
     </el-form>
+    <!--查看全部学生-->
+    <el-dialog
+      title="学生"
+      :visible.sync="showAllStudents"
+      width="50%"
+    >
+      <el-table :data="students">
+        <el-table-column label="学生id" prop="id" />
+        <el-table-column label="学生姓名" prop="name" />
+        <el-table-column #default="scope" label="操作" width="100" fixed="right">
+          <el-button type="text" @click="jumpStudent(scope.$index)">跳转</el-button>
+        </el-table-column>
+      </el-table>
+    </el-dialog>
+    <!--查看全部题目-->
+    <el-dialog
+      title="题目"
+      :visible.sync="showAllQuesiton"
+      width="50%"
+    >
+      <el-table :data="correctContent.question">
+        <el-table-column label="题目id" prop="questionId" />
+        <el-table-column label="题目类型" prop="category" />
+        <el-table-column #default="scope" label="题干">
+          {{ scope.row.content.slice(0,10) }}...
+        </el-table-column>
+        <el-table-column #default="scope" label="操作" width="100" fixed="right">
+          <el-button type="text" @click="jumpQuestion(scope.$index)">跳转</el-button>
+        </el-table-column>
+      </el-table>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 // import classrooms from '@/api/classrooms'
 import ClassInfo from '@/api/class-info'
+import CorrectContent from '@/api/correct-content'
+
 export default {
   name: 'Score',
   data() {
     return {
+      showAllQuesiton: false,
+      showAllStudents: false,
       descriptionsPram: {
         CS: {
           'text-align': 'center', // 文本居中
@@ -66,11 +104,17 @@ export default {
         correctNumber: 0,
         show: {
           question: true,
-          trueAnswer: true
+          trueAnswer: true,
+          answerContent: true,
+          questionContent: true,
+          trueContent: true,
+          answer: true
         }
       },
       students: ClassInfo.students,
-      content: ''
+      content: '',
+      correctContent: CorrectContent,
+      questionIndex: 0
     }
   },
   watch: {
@@ -78,24 +122,47 @@ export default {
       immediate: true,
       deep: true,
       handler(newValue) {
-        console.log(newValue)
+        // console.log(newValue)
         this.$emit('status', this.form.show)
       }
     }
   },
+  mounted() {
+    this.$emit('change-question', this.questionIndex)
+    this.$emit('change-number', this.form.correctNumber)
+  },
   methods: {
+    jumpQuestion(index) {
+      this.questionIndex = index
+      this.$emit('change-question', this.questionIndex)
+      this.showAllQuesiton = false
+    },
+    jumpStudent(index) {
+      this.form.correctNumber = index
+      this.$emit('change-number', this.form.correctNumber)
+      this.showAllStudents = false
+    },
+    openAllQuestion() {
+      this.showAllQuesiton = true
+    },
+    openAllStudent() {
+      this.showAllStudents = true
+    },
+    // 下一个学生
     nextStudent() {
       if (this.form.correctNumber < this.students.length - 1) {
         this.form.correctNumber += 1
       }
-      this.$emit('chang-number', this.form.correctNumber)
+      this.$emit('change-number', this.form.correctNumber)
     },
+    // 上一个学生
     previousStudent() {
       if (this.form.correctNumber > 0) {
         this.form.correctNumber -= 1
       }
       this.$emit('change-number', this.form.correctNumber)
     },
+    // 报告学生
     reportStudent() {
       this.$confirm('这将会将该学生报告给教学秘书，是否继续？', '提示', {
         confirmButtonText: '确定',
@@ -113,8 +180,24 @@ export default {
         })
       })
     },
+    // 打开抽屉
     openDrawer() {
       this.$emit('open', true)
+    },
+    // 下一道题目
+    nextQuestion() {
+      if (this.questionIndex < this.correctContent.question.length - 1) {
+        this.questionIndex += 1
+      }
+      // console.log(this.correctContent.question.length)
+      this.$emit('change-question', this.questionIndex)
+    },
+    // 上一道题目
+    previousQuestion() {
+      if (this.questionIndex > 0) {
+        this.questionIndex -= 1
+      }
+      this.$emit('change-question', this.questionIndex)
     }
   }
 }
