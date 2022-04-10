@@ -3,7 +3,7 @@
     <el-card style="height: 450px">
       <el-button>导出所有成绩</el-button>
       <!--表格-->
-      <el-table ref="scoreTable" :data="students">
+      <el-table ref="scoreTable" :data="students" max-height="400px">
         <el-table-column label="姓名" fixed width="120" prop="name" />
         <el-table-column label="学号" width="120" prop="id" />
         <el-table-column label="总分数" prop="totalScore" />

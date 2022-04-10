@@ -2,10 +2,10 @@
   <div>
     <el-card>
       <div slot="header"><span style="text-align: center;display: block">题目信息</span></div>
-      <el-row type="flex" justify="center">
-        <el-form>
+      <el-row>
+        <el-form label-width="180px">
           <!--题目类型-->
-          <el-form-item label="题型" label-width="150px">
+          <el-form-item label="题型">
             <el-select v-model="value" placeholder="请选择">
               <el-option-group
                 v-for="group in options"
@@ -61,6 +61,15 @@ export default {
         }, {
           value: 'write',
           label: '写作题'
+        }, {
+          value: 'reading',
+          label: '阅读理解'
+        }, {
+          value: 'match',
+          label: '信息匹配'
+        }, {
+          value: 'choose',
+          label: '十五选十'
         }]
       }, {
         label: '计算机',

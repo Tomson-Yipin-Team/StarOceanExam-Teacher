@@ -7,29 +7,38 @@
       <!--el标签页-->
       <el-tabs v-model="activeName" v-loading="show.tabLoading">
         <!--编辑题目页面-->
-        <el-tab-pane label="题目" name="edit">
-          <div class="editor-container">
-            <markdown-editor
-              v-if="show.markdown"
-              ref="markdownEditor"
-              v-model="content"
-              language="zh"
-              :options="{hideModeSwitch:true,previewStyle: 'tab'}"
-              height="400px"
-            />
-          </div>
+        <el-tab-pane label="编辑题目" name="edit">
+          <markdown-editor
+            v-if="show.markdown"
+            ref="markdownEditor"
+            v-model="content"
+            language="zh"
+            :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+            height="400px"
+          />
 
           <!--编辑答案-->
-          <el-row v-for="(questionItem, questionIndex) in question.answers" :key="questionIndex">
+          <el-row v-for="(questionItem, questionIndex) in answers" :key="questionIndex">
             <el-divider />
             <el-row>
-              答案
+              单词
             </el-row>
+            <div>
+              <markdown-editor
+                v-if="choiceContent"
+                ref="markdownEditor"
+                v-model="questionItem.content"
+                language="zh"
+                :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+                height="100px"
+                class="editor-container"
+              />
+            </div>
             <el-divider />
             <div v-for="(item, index ) in questionItem" :key="index">
-              <el-row v-if="index!=='correct'" style="margin-top: 20px">
+              <el-row v-if="radioControl(index)">
                 <el-col :span="2">
-                  <el-radio v-model="questionItem.correct" :label="index" class="answer-radio" />
+                  {{ index }}.
                 </el-col>
                 <el-col :span="16">
                   <div class="editor-container">
@@ -45,9 +54,14 @@
                 </el-col>
               </el-row>
             </div>
+            <div>
+              <el-divider />
+
+            </div>
           </el-row>
 
         </el-tab-pane>
+
         <!--预览题目-->
         <el-tab-pane label="预览" name="preview">
           <div class="editor-container">
@@ -72,7 +86,7 @@ import '@toast-ui/editor/dist/i18n/zh-cn.js'
 import questionContent from '@/api/question-content'
 
 export default {
-  name: 'Judge',
+  name: 'Choice',
   components: { Viewer, MarkdownEditor },
   data() {
     return {
@@ -82,11 +96,20 @@ export default {
         language: 'zh-CN'
       },
       activeName: 'edit',
-      question: questionContent.timuku[0].questions[1],
+      answers: questionContent.timuku[2].questions[0].answers,
       show: {
         tabLoading: false,
         markdown: true
-      }
+      },
+      answerExample: {
+        A: '1',
+        B: '2',
+        C: '3',
+        D: '4',
+        correct: 'A'
+      },
+      multiply: false,
+      choiceContent: false
     }
   },
   computed: {
@@ -95,14 +118,14 @@ export default {
       // for (const key in this.answers) {
       //   answerContent += key + ':' + this.answers[key] + '\n'
       // }
-      return '123'
+      return ''
     }
   },
   watch: {
     content: {
       immediate: true,
       handler(newValue) {
-        this.content = questionContent.timuku[0].questions[1].content
+        this.content = questionContent.timuku[2].questions[0].content
         // console.log(newValue)
       }
     }
@@ -118,13 +141,44 @@ export default {
         this.show.tabLoading = false
         this.show.markdown = true
       }, 1000)
+    },
+    // 添加题目
+    addQuestion() {
+      this.answers.push(this.answerExample)
+    },
+    // 删除题目
+    deleteQuestion() {
+      if (this.answers.length > 1) {
+        this.answers.splice(this.answers.length - 1, 1)
+      } else {
+        this.$notify({
+          title: '警告',
+          message: '请至少保留一道题目！',
+          type: 'warning'
+        })
+      }
+    },
+    radioControl(index) {
+      if (index === 'content' || index === 'correct') {
+        return false
+      } else {
+        return true
+      }
     }
   }
 }
 </script>
 
 <style scoped>
+.button{
+  margin-top: 20px;
+}
+.answer-radio{
+  margin: 10px;
+  position: relative;
+  top: 10px;
+}
 .editor-container{
-
+  margin: 10px;
 }
 </style>

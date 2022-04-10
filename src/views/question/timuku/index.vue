@@ -90,6 +90,7 @@
         <el-table-column #default="scope" label="名称">
           {{ scope.row.name }}
         </el-table-column>
+        <el-table-column label="分值" prop="score" />
         <el-table-column #default="scope" label="标签">
           <el-tag v-for="(item,index) in scope.row.knowledge" :key="index" class="tag">
             {{ item }}

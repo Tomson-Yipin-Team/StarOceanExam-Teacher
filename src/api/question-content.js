@@ -17,6 +17,7 @@ export default {
       category: '选择题',
       question: '# 这是一道选择题',
       answers: [{
+
         A: 'A',
         B: 'B',
         C: 'C',
@@ -35,17 +36,19 @@ export default {
       {
         id: 101,
         name: '1',
+        score: '6',
         difficulty: '简单',
         category: 'choice',
         content: '这是一道选择题',
         knowledge: ['短篇新闻', 'cet4'],
-        answers: {
+        answers: [{
+          content: '这是题干',
           A: '123',
           B: '2',
           C: '3',
-          D: '4'
-        }
-        // correct: this.answers.a3
+          D: '4',
+          correct: 'A'
+        }]
       },
       {
         id: 102,
@@ -55,10 +58,11 @@ export default {
         content: '这是一道判断题',
         knowledge: ['短篇新闻', 'cet4'],
 
-        answers: {
-          A: '12',
-          B: '2'
-        }
+        answers: [{
+          '对': '12',
+          '错': '2',
+          correct: '对'
+        }]
         // correct: this.answers.a1
       },
       {
@@ -68,7 +72,7 @@ export default {
         category: 'blank',
         content: ' 这是一道填空题',
         knowledge: ['长对话', 'cet6'],
-        correct: ''
+        correct: '123123'
       },
       {
         id: 104,
@@ -82,12 +86,16 @@ export default {
           {
             A: '1',
             B: '2',
-            C: '3'
+            C: '3',
+            D: '4',
+            correct: 'A'
           },
           {
             A: '4',
             B: '5',
-            C: '6'
+            C: '6',
+            D: '7',
+            correct: 'B'
           }
         ]
       }
@@ -100,21 +108,41 @@ export default {
     origin: '查看',
     tag: '30'
   },
-  // {
-  //   id: 3,
-  //   name: '完型填空',
-  //   totalNumber: '10',
-  //   rest: '2',
-  //   origin: '查看',
-  //   tag: '1'
-  // },
   {
     id: 3,
     name: '十五选十',
     totalNumber: '5',
     rest: '2',
     origin: '查看',
-    tag: '3'
+    tag: '3',
+    questions: [{
+      id: 101,
+      name: '1',
+      difficulty: '简单',
+      category: 'choose',
+      content: '这是一道选择题',
+      knowledge: ['十五选十', 'cet4'],
+      answers: [{
+        content: '',
+        A: '123',
+        B: '2',
+        C: '3',
+        D: '4',
+        E: '5',
+        F: '6',
+        G: '7',
+        H: '8',
+        I: '9',
+        J: '10',
+        K: '11',
+        L: '12',
+        M: '13',
+        N: '14',
+        O: '15',
+        correct: ['A', 'C', 'D', 'B', 'I', 'J', 'K', 'M', 'G', 'H']
+      }]
+      // correct: this.answers.a3
+    }]
   },
   {
     id: 4,
@@ -123,6 +151,7 @@ export default {
     rest: '21',
     origin: '查看',
     tag: '12'
+
   },
   {
     id: 5,
@@ -130,7 +159,52 @@ export default {
     totalNumber: '10',
     rest: '115',
     origin: '查看',
-    tag: '12'
+    tag: '12',
+    questions: [
+      {
+        id: 101,
+        name: '1',
+        difficulty: '简单',
+        category: 'reading',
+        content: `这是一道选择题`,
+        knowledge: ['短篇新闻', 'cet4'],
+        answers: [{
+          content: `这是题干`,
+          A: '123',
+          B: '2',
+          C: '3',
+          D: '4',
+          correct: 'A'
+        }, {
+          content: `这是题干`,
+          A: '123',
+          B: '2',
+          C: '3',
+          D: '4',
+          correct: 'A'
+        }, {
+          content: `这是题干`,
+          A: '123',
+          B: '2',
+          C: '3',
+          D: '4',
+          correct: 'A'
+        }, {
+          content: `这是题干`,
+          A: '123',
+          B: '2',
+          C: '3',
+          D: '4',
+          correct: 'A'
+        }, {
+          content: `这是题干`,
+          A: '123',
+          B: '2',
+          C: '3',
+          D: '4',
+          correct: 'A'
+        }]
+      }]
   },
   {
     id: 6,

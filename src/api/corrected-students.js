@@ -39,7 +39,7 @@ export default {
       name: '全卷',
       score: '87.5'
     }]
-  },{
+  }, {
     id: '2050110765',
     name: '高佳洛',
     totalScore: '10',
