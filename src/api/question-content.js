@@ -36,11 +36,11 @@ export default {
       {
         id: 101,
         name: '1',
-        score: '6',
-        difficulty: '简单',
-        category: 'choice',
-        content: '这是一道选择题',
-        knowledge: ['短篇新闻', 'cet4'],
+        score: '4',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话', '日常生活','cet6'],
         answers: [{
           content: '这是题干',
           A: '123',
@@ -53,10 +53,11 @@ export default {
       {
         id: 102,
         name: '2',
-        difficulty: '中等',
-        category: 'judge',
-        content: '这是一道判断题',
-        knowledge: ['短篇新闻', 'cet4'],
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','幽默故事', 'cet4'],
 
         answers: [{
           '对': '12',
@@ -68,19 +69,1009 @@ export default {
       {
         id: 103,
         name: '3',
+        score: '4',
         difficulty: '困难',
-        category: 'blank',
-        content: ' 这是一道填空题',
-        knowledge: ['长对话', 'cet6'],
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','西方文化', 'cet6'],
         correct: '123123'
       },
       {
         id: 104,
         name: '4',
+        score: '4',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','日常生活', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '5',
+        score: '8',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','日常生活', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '6',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['讲座/演讲','名人传记', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '7',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','奇闻轶事', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '8',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['讲座/演讲','幽默故事', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '9',
+        score: '4',
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['讲座/对话', 'cet6'],
+        knowledge: ['听力篇章','调查研究', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '10',
+        score: '8',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','灾难危机', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '11',
+        score: '4',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','日常生活', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '12',
+        score: '3',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','西方文化', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '13',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','学校教育', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '14',
+        score: '3',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['短篇新闻','时事新闻', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '15',
+        score: '4',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','西方文化', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '16',
+        score: '2',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['短篇新闻','时事新闻', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '17',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['讲座/演讲','名人传记', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '18',
+        score: '6',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','奇闻轶事', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '19',
+        score: '4',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','日常生活', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '20',
+        score: '4',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','西方文化', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '21',
+        score: '8',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','灾难危机', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '22',
+        score: '4',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','西方文化', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '23',
+        score: '4',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','调查研究', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '24',
+        score: '4',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','西方文化', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '25',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['讲座/演讲','名人传记', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '26',
+        score: '4',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','奇闻轶事', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '27',
+        score: '4',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','学校教育', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '28',
+        score: '3',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','灾难危机', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '29',
+        score: '2',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['短篇新闻', '时事新闻','cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '30',
+        score: '8',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','名人传记', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '31',
+        score: '4',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话', '幽默故事','cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '32',
+        score: '4',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话', '日常生活','cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '33',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['讲座/对话','名人传记', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '34',
+        score: '3',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章', '调查研究','cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '35',
+        score: '4',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话','灾难危机', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '36',
+        score: '8',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','幽默故事', 'cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '37',
+        score: '4',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章', '学校教育','cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '38',
+        score: '4',
+        difficulty: '简单',
+        category: 'listen',
+        content: '长对话',
+        knowledge: ['讲座/对话', '奇闻轶事','cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '39',
+        score: '3',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['新闻听力', '时事新闻','cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '40',
+        score: '4',
+        difficulty: '简单',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['长对话', '西方文化','cet4'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '41',
+        score: '3',
+        difficulty: '中等',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['听力篇章','学校教育', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      },
+      {
+        id: 104,
+        name: '42',
+        score: '6',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['讲座/演讲', '名人传记','cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {

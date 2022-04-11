@@ -55,12 +55,12 @@ export default {
         birthday: '2022-03-22',
         password: '12345567',
         intro: '阳光大男孩',
-        school: 'NTU',
+        school: '超星大学',
         profession: ''
       },
       schoolOption: [{
-        name: '南通大学',
-        value: 'NTU'
+        name: '超星大学',
+        value: '超星大学'
       }],
       professionOptions: [{
         name: '信息科学技术学院',
