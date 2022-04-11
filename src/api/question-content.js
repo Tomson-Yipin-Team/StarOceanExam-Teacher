@@ -214,30 +214,31 @@ export default {
     origin: '查看',
     tag: '12'
   },
-  // {
-  //   id: 8,
-  //   name: '任务型阅读',
-  //   totalNumber: '67',
-  //   rest: '5',
-  //   origin: '查看',
-  //   tag: '12'
-  // },
   {
     id: 7,
     name: '书面表达',
     totalNumber: '5',
     rest: '5',
     origin: '查看',
-    tag: '4'
+    tag: '4',
+    questions: [{
+      id: 101,
+      name: '1',
+      score: '6',
+      difficulty: '简单',
+      category: 'choice',
+      content: '这是一道选择题',
+      knowledge: ['短篇新闻', 'cet4'],
+      answers: [{
+        content: '这是题干',
+        A: '123',
+        B: '2',
+        C: '3',
+        D: '4',
+        correct: 'A'
+      }]
+    }]
   }
-  // {
-  //   id: 10,
-  //   name: '算法设计',
-  //   totalNumber: '21',
-  //   rest: '10',
-  //   origin: '查看',
-  //   tag: '12'
-  // }
   ],
   category: [
     {

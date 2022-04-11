@@ -30,7 +30,12 @@
         <!-- <el-table-column label="操作" width="200px" fixed="right">
           <el-button>查看原卷</el-button> -->
       </el-table>
-      <el-button>导出该名学生的成绩</el-button>
+      <el-row type="flex" justify="end">
+        <el-button type="primary" plain style="margin: 10px">
+          导出该名学生的成绩
+          <svg-icon icon-class="share" />
+        </el-button>
+      </el-row>
     </el-dialog>
   </div>
 </template>

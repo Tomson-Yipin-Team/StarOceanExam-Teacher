@@ -73,7 +73,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/examination/all',
     name: 'Exam',
-    meta: { title: '管理考试', icon: 'el-icon-s-help' },
+    meta: { title: '考试管理', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'all',
@@ -131,7 +131,8 @@ export const constantRoutes = [
       path: 'create-question',
       name: 'CreateQuestion',
       component: () => import('@/views/question/upload/index.vue'),
-      meta: { title: '编辑题目', icon: 'edit' }
+      meta: { title: '编辑题目', icon: 'edit' },
+      hidden: true
     }]
   },
 
@@ -145,13 +146,14 @@ export const constantRoutes = [
         path: 'joined',
         name: 'Joined',
         component: () => import('@/views/classroom/joined/index'),
-        meta: { title: '已创建班级', icon: 'education' }
+        meta: { title: '班级管理', icon: 'education' }
       },
       {
         path: 'join',
         name: 'Join',
         component: () => import('@/views/classroom/join/index'),
-        meta: { title: '创建班级', icon: 'peoples' }
+        meta: { title: '创建班级', icon: 'peoples' },
+        hidden: true
       }
     ]
   },

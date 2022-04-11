@@ -2,21 +2,21 @@
   <div>
     <el-row>
       <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="16">
-        <SubHeadingChart />
+        <SubHeadingChart class="card-container" />
       </el-col>
       <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
-        <StudentsScore />
+        <StudentsScore class="card-container" />
       </el-col>
     </el-row>
     <el-row>
       <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-        <ExamDescriprion />
+        <ExamDescriprion class="card-container" />
       </el-col>
       <el-col :xs="24" :sm="24" :md="4" :lg="8" :xl="8">
-        <PieCharts />
+        <PieCharts class="card-container" />
       </el-col>
       <el-col :xs="24" :sm="24" :md="14" :lg="10" :xl="10">
-        <StudentChart />
+        <StudentChart class="card-container" />
       </el-col>
     </el-row>
   </div>
@@ -41,5 +41,7 @@ export default {
 </script>
 
 <style scoped>
-
+.card-container{
+  margin: 10px;
+}
 </style>

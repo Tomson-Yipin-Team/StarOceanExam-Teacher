@@ -85,6 +85,8 @@
           <el-checkbox-group v-model="advanceForm.antiCheat">
             <el-checkbox label="题目乱序" />
             <el-checkbox label="选项乱序" />
+            <el-checkbox label="考试中抓拍" />
+            <el-checkbox label="考试前人脸识别验证信息" />
             <el-checkbox label="学生离开页面强制收卷">
               学生离开><el-input style="width: 50px" class="inline-input" />次，自动收卷
             </el-checkbox>
