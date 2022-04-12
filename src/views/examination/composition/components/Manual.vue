@@ -1,12 +1,12 @@
 <template>
   <div>
     <el-row class="container" type="flex" justify="center">
-      <el-card header="请填写试卷信息" style="width: 70%">
+      <el-card header="请填写试卷信息" style="width: 70%;margin: 20px">
         <choose-question />
       </el-card>
     </el-row>
     <el-row class="container" type="flex" justify="center">
-      <el-card style="width: 100%">
+      <el-card style="width: 70%;">
         <div slot="header">
           <span>题库</span>
           <el-button icon="el-icon-top-right" class="header-button" type="text">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import QuestionList from './QuesitonList'
+import QuestionList from './QuestionList'
 import ChooseQuestion from '@/views/examination/composition/components/ChooseQuestion'
 export default {
   name: 'Manual',

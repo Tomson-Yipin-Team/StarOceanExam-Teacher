@@ -12,7 +12,7 @@ const users = {
   'admin-token': {
     roles: ['教师'],
     introduction: 'I am a super administrator',
-    avatar: 'https://lsky-picture.stdcdn.com/uploads/2022/04/432027a781e142ec5d5b20e2fc8f3cea.png',
+    avatar: 'https://lsky-picture.stdcdn.com/uploads/2022/04/3a0a8e75734f1bd42e2f20b64786d888.jpg',
     name: '方慧敏'
   },
   'editor-token': {

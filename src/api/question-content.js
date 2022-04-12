@@ -40,7 +40,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话', '日常生活','cet6'],
+        knowledge: ['长对话', '日常生活', 'cet6'],
         answers: [{
           content: '这是题干',
           A: '123',
@@ -57,7 +57,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','幽默故事', 'cet4'],
+        knowledge: ['听力篇章', '幽默故事', 'cet4'],
 
         answers: [{
           '对': '12',
@@ -73,7 +73,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','西方文化', 'cet6'],
+        knowledge: ['听力篇章', '西方文化', 'cet6'],
         correct: '123123'
       },
       {
@@ -83,7 +83,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','日常生活', 'cet6'],
+        knowledge: ['长对话', '日常生活', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -109,7 +109,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','日常生活', 'cet4'],
+        knowledge: ['听力篇章', '日常生活', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -135,7 +135,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['讲座/演讲','名人传记', 'cet6'],
+        knowledge: ['讲座/演讲', '名人传记', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -161,7 +161,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','奇闻轶事', 'cet4'],
+        knowledge: ['听力篇章', '奇闻轶事', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -187,7 +187,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['讲座/演讲','幽默故事', 'cet6'],
+        knowledge: ['讲座/演讲', '幽默故事', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -213,7 +213,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','调查研究', 'cet6'],
+        knowledge: ['听力篇章', '调查研究', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -239,7 +239,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','灾难危机', 'cet4'],
+        knowledge: ['听力篇章', '灾难危机', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -265,7 +265,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','日常生活', 'cet6'],
+        knowledge: ['长对话', '日常生活', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -291,7 +291,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','西方文化', 'cet6'],
+        knowledge: ['听力篇章', '西方文化', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -317,7 +317,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','学校教育', 'cet4'],
+        knowledge: ['听力篇章', '学校教育', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -343,7 +343,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['短篇新闻','时事新闻', 'cet4'],
+        knowledge: ['短篇新闻', '时事新闻', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -369,7 +369,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','西方文化', 'cet6'],
+        knowledge: ['长对话', '西方文化', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -395,7 +395,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['短篇新闻','时事新闻', 'cet4'],
+        knowledge: ['短篇新闻', '时事新闻', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -421,7 +421,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['讲座/演讲','名人传记', 'cet6'],
+        knowledge: ['讲座/演讲', '名人传记', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -447,7 +447,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','奇闻轶事', 'cet4'],
+        knowledge: ['听力篇章', '奇闻轶事', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -473,7 +473,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','日常生活', 'cet6'],
+        knowledge: ['长对话', '日常生活', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -499,7 +499,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','西方文化', 'cet4'],
+        knowledge: ['长对话', '西方文化', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -525,7 +525,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','灾难危机', 'cet4'],
+        knowledge: ['听力篇章', '灾难危机', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -551,7 +551,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','西方文化', 'cet6'],
+        knowledge: ['听力篇章', '西方文化', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -577,7 +577,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','调查研究', 'cet6'],
+        knowledge: ['听力篇章', '调查研究', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -603,7 +603,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','西方文化', 'cet6'],
+        knowledge: ['长对话', '西方文化', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -629,7 +629,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['讲座/演讲','名人传记', 'cet6'],
+        knowledge: ['讲座/演讲', '名人传记', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -655,7 +655,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','奇闻轶事', 'cet4'],
+        knowledge: ['长对话', '奇闻轶事', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -681,7 +681,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','学校教育', 'cet6'],
+        knowledge: ['听力篇章', '学校教育', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -707,7 +707,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','灾难危机', 'cet6'],
+        knowledge: ['听力篇章', '灾难危机', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -733,7 +733,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['短篇新闻', '时事新闻','cet4'],
+        knowledge: ['短篇新闻', '时事新闻', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -759,7 +759,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','名人传记', 'cet4'],
+        knowledge: ['听力篇章', '名人传记', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -785,7 +785,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话', '幽默故事','cet4'],
+        knowledge: ['长对话', '幽默故事', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -811,7 +811,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话', '日常生活','cet6'],
+        knowledge: ['长对话', '日常生活', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -837,7 +837,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['讲座/对话','名人传记', 'cet6'],
+        knowledge: ['讲座/对话', '名人传记', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -863,7 +863,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章', '调查研究','cet6'],
+        knowledge: ['听力篇章', '调查研究', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -889,7 +889,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话','灾难危机', 'cet4'],
+        knowledge: ['长对话', '灾难危机', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -915,7 +915,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','幽默故事', 'cet4'],
+        knowledge: ['听力篇章', '幽默故事', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -941,7 +941,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章', '学校教育','cet6'],
+        knowledge: ['听力篇章', '学校教育', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -967,7 +967,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '长对话',
-        knowledge: ['讲座/对话', '奇闻轶事','cet4'],
+        knowledge: ['讲座/对话', '奇闻轶事', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -993,7 +993,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['新闻听力', '时事新闻','cet4'],
+        knowledge: ['新闻听力', '时事新闻', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -1019,7 +1019,7 @@ export default {
         difficulty: '简单',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['长对话', '西方文化','cet4'],
+        knowledge: ['长对话', '西方文化', 'cet4'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -1045,7 +1045,7 @@ export default {
         difficulty: '中等',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['听力篇章','学校教育', 'cet6'],
+        knowledge: ['听力篇章', '学校教育', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
@@ -1071,7 +1071,7 @@ export default {
         difficulty: '困难',
         category: 'listen',
         content: '英语听力',
-        knowledge: ['讲座/演讲', '名人传记','cet6'],
+        knowledge: ['讲座/演讲', '名人传记', 'cet6'],
         audio: 'http://source.jujuh.top/audio/test.mp3',
         answers: [
           {
