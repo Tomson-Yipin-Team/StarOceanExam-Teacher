@@ -177,8 +177,8 @@ export default {
       id: '1002',
       name: '选择2',
       score: '6'
-    }, ]
-  },{
+    }]
+  }, {
     id: '2050110743',
     name: '范文骁',
     totalScore: '78',
@@ -191,7 +191,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110749',
     name: '李梓豪',
     totalScore: '78',
@@ -204,7 +204,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110747',
     name: '张浩然',
     totalScore: '78',
@@ -217,7 +217,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110792',
     name: '汪子涵',
     totalScore: '75',
@@ -230,7 +230,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110789',
     name: '段智亮',
     totalScore: '75',
@@ -243,7 +243,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110739',
     name: '杨可欣',
     totalScore: '69.5',
@@ -256,7 +256,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110770',
     name: '王鼎',
     totalScore: '65.5',
@@ -269,7 +269,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110754',
     name: '王宇墨',
     totalScore: '53',
@@ -282,7 +282,7 @@ export default {
       name: '选择2',
       score: '6'
     }]
-  },{
+  }, {
     id: '2050110769',
     name: '蒋来',
     totalScore: '缺考',

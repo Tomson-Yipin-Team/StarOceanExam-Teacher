@@ -154,6 +154,12 @@ export const constantRoutes = [
         component: () => import('@/views/classroom/join/index'),
         meta: { title: '创建班级', icon: 'peoples' },
         hidden: true
+      }, {
+        path: 'detail',
+        name: 'Detail',
+        component: () => import('@/views/classroom/joined/components/Detail'),
+        meta: { title: '班级详情', icon: 'peoples' },
+        hidden: true
       }
     ]
   },
@@ -182,8 +188,8 @@ export const constantRoutes = [
     children: [{
       path: '/detail',
       name: 'AnalyseDetail',
-      component: () => import('@/views/examination/analyse/index.vue'),
-      meta: {title: '成绩分析',icon:'el-icon-data-analysis'}
+      component: () => import('@/views/analyse/index'),
+      meta: { title: '成绩分析', icon: 'el-icon-data-analysis' }
     }]
   },
   {

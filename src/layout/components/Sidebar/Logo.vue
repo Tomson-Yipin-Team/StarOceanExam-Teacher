@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       title: '教考管理系统',
-      logo: 'https://lsky-picture.stdcdn.com/uploads/2022/04/691d45b7b7a4720440f298167678464b.png'
+      logo: 'https://lsky-picture.stdcdn.com/uploads/2022/04/102a06224cfe196d1006bc2221c8de87.png'
     }
   }
 }

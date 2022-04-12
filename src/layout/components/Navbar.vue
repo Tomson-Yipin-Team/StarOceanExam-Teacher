@@ -13,7 +13,7 @@
       <span class="right-menu">
         <el-dropdown class="avatar-container" trigger="click">
           <div class="avatar-wrapper">
-            <img :src="avatar+'?imageView2/1/w/100/h/100'" class="user-avatar">
+            <el-avatar shape="square" :src="avatar+'?imageView2/1/w/100/h/100'" class="user-avatar" />
             <i class="el-icon-caret-bottom" />
           </div>
           <el-dropdown-menu slot="dropdown" class="user-dropdown">

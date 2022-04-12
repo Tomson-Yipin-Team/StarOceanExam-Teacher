@@ -32,6 +32,7 @@ import StudentTable from './components/StudentTable'
 import Action from './components/Action'
 import ClassInfo from '@/api/class-info'
 import Class from './components/Class'
+// import Detail from '@/views/classroom/joined/components/Detail'
 
 export default {
   name: 'Index',

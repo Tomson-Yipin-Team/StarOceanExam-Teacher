@@ -93,7 +93,7 @@ export default {
       date: '2022-03-01',
       name: '2021-2022-2大学英语六级模拟考试（3）',
       origin: '杨涛',
-      join: '--',
+      join: 21,
       waitCorrect: '--',
       finishCorrect: '--',
       status: '即将开始',

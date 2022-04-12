@@ -14,12 +14,17 @@
         {{ scope.row.manager.name }}
       </el-table-column>
       <el-table-column #default="scope" label="操作" width="300px" fixed="right">
-        <el-button @click="onSee(scope.$index,scope.row)">
-          查看
-        </el-button>
-        <el-button @click="onExit(scope.$index,scope.row)">
-          退出
-        </el-button>
+        <el-button-group>
+          <el-button type="primary" plain @click="onSee(scope.$index,scope.row)">
+            查看
+          </el-button>
+          <el-button type="danger" plain @click="onExit(scope.$index,scope.row)">
+            退出
+          </el-button>
+          <el-button @click="onSee(scope.$index,scope.row)">
+            群聊
+          </el-button>
+        </el-button-group>
       </el-table-column>
     </el-table>
 

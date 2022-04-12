@@ -12,7 +12,7 @@
       <div class="manager">
         <span>教师: {{ classInfo.teacher }}</span>
         <span>
-          <el-button type="text">管理</el-button>
+          <el-button type="text" @click="handleManager">管理</el-button>
         </span>
       </div>
     </el-card>
@@ -34,6 +34,13 @@ export default {
           teacher: '教师名称'
         }
       }
+    }
+  },
+  methods: {
+    handleManager() {
+      this.$router.push({
+        name: 'Detail'
+      })
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card>
+    <el-card style="margin: 20px">
       <el-tabs>
         <el-tab-pane label="已加入">
           <Joined />

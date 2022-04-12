@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row type="flex" justify="end">
+    <el-row type="flex" justify="end" style="margin-top: 20px">
       <el-button type="primary" @click="createNewGroup">创建新的群组</el-button>
     </el-row>
 
@@ -55,7 +55,8 @@ export default {
         }
       }
       groups.manager.push(newGroup)
-      console.log(groups.manager)
+      this.dialogTableVisible = false
+      // console.log(groups.manager)
     }
   }
 }

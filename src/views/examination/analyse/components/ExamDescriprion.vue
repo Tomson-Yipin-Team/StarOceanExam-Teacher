@@ -10,9 +10,9 @@
         <el-descriptions-item label="参加人数">19</el-descriptions-item>
         <el-descriptions-item label="最高分">94</el-descriptions-item>
         <el-descriptions-item label="最低分">52</el-descriptions-item>
-        <el-descriptions-item label="平均分" >79.3</el-descriptions-item>
-        <el-descriptions-item label="不及格率" >5.3%</el-descriptions-item>
-        <el-descriptions-item label="不及格人数" >1</el-descriptions-item>
+        <el-descriptions-item label="平均分">79.3</el-descriptions-item>
+        <el-descriptions-item label="不及格率">5.3%</el-descriptions-item>
+        <el-descriptions-item label="不及格人数">1</el-descriptions-item>
       </el-descriptions>
     </el-card>
   </div>

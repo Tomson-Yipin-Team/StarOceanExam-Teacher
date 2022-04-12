@@ -1,18 +1,16 @@
 <template>
   <div>
     <el-card style="height: 450px;margin-right: 20px">
-      <div slot="header">
-        <el-row class="card-title">
-          <span>
-            待审核列表
-          </span>
-          <span>
-            <el-button-group>
-              <el-button>通过全部</el-button>
-              <el-button>拒绝全部</el-button>
-            </el-button-group>
-          </span>
-        </el-row>
+      <div id="card-title" slot="header">
+        <span>
+          待审核列表
+        </span>
+        <span>
+          <el-button-group>
+            <el-button>通过全部</el-button>
+            <el-button>拒绝全部</el-button>
+          </el-button-group>
+        </span>
       </div>
       <el-table
         :data="tableData"
@@ -74,7 +72,7 @@ export default {
 </script>
 
 <style scoped>
-.card-title{
+#card-title{
   display: flex;
   align-items: center;
   justify-content: space-between;

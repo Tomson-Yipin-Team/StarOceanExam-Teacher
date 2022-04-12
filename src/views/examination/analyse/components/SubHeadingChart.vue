@@ -22,7 +22,7 @@ export default {
           data: [
             '班级最低分',
             '班级平均分',
-            '班级最高分',
+            '班级最高分'
           ]
         },
         xAxis: {
@@ -120,7 +120,7 @@ export default {
         series: [
           {
             name: '班级最低分',
-            data: [150, 230, 224, 218, 135, 147, 260,270],
+            data: [150, 230, 224, 218, 135, 147, 260, 270],
             stack: 'BB',
             type: 'bar'
           },
@@ -158,7 +158,7 @@ export default {
             name: '班级最高分',
             data: [50, 130, 124, 18, 35, 47, 160],
             yAxisIndex: 1,
-            type: 'line',
+            type: 'line'
             // markLine: {
             //   symbol: 'none',
             //   itemStyle: {

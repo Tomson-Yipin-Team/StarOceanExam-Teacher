@@ -87,7 +87,7 @@ export default {
           }
         },
         legend: {
-          data: ['完成的考试', '等待进行', '等待批阅']
+          data: ['完成的考试', '即将开始的考试']
         },
         tooltip: {
           trigger: 'axis'
