@@ -177,6 +177,16 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/analyse',
+    component: Layout,
+    children: [{
+      path: '/detail',
+      name: 'AnalyseDetail',
+      component: () => import('@/views/examination/analyse/index.vue'),
+      meta: {title: '成绩分析',icon:'el-icon-data-analysis'}
+    }]
+  },
+  {
     path: '/group',
     component: Layout,
     children: [
