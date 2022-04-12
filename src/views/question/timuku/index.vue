@@ -78,7 +78,7 @@
 
     <!--查看弹出框-->
     <el-dialog
-      title="查看试题"
+      title="听力题库"
       :visible.sync="dialogLook"
       width="60%"
       :before-close="handleClose"

@@ -31,10 +31,11 @@
         <el-table-column #default="scope" label="教师姓名">
           {{ scope.row.name }}
         </el-table-column>
-        <el-table-column #default="scope" label="操作" fixed="right" width="200">
-          <el-button v-if="scope.row.userId !== '1'" @click="passMessage(scope.$index,scope.row)">
+        <el-table-column #default="scope" label="课程组内角色" fixed="right" width="200">
+          <!-- <el-button v-if="scope.row.userId !== '1'" @click="passMessage(scope.$index,scope.row)">
             PM
-          </el-button>
+          </el-button> -->
+          {{ scope.row.role }}
         </el-table-column>
       </el-table>
     </el-dialog>
