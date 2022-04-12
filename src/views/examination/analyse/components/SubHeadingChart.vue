@@ -20,13 +20,9 @@ export default {
       var option = {
         legend: {
           data: [
-            '3-11岁任务数',
-            '3-11岁全程接种量',
-            '60岁任务数',
-            '60岁全程接种量',
-            '80岁任务数',
-            '80岁全程接种量',
-            '班级最高分'
+            '班级最低分',
+            '班级平均分',
+            '班级最高分',
           ]
         },
         xAxis: {
@@ -41,7 +37,7 @@ export default {
             // min: 0,
             // max: 100,
             nameTextStyle: {
-              color: '#ccc',
+              color: '#cca',
               padding: [0, 0, 10, -30]
             },
             splitNumber: 5,
@@ -123,37 +119,37 @@ export default {
 
         series: [
           {
-            name: '3-11岁任务数',
-            data: [150, 230, 224, 218, 135, 147, 260],
+            name: '班级最低分',
+            data: [150, 230, 224, 218, 135, 147, 260,270],
             stack: 'BB',
             type: 'bar'
           },
+          // {
+          //   name: '3-11岁全程接种量',
+          //   data: [150, 230, 224, 218, 135, 147, 260],
+          //   stack: 'BB',
+          //   type: 'bar'
+          // },
           {
-            name: '3-11岁全程接种量',
-            data: [150, 230, 224, 218, 135, 147, 260],
-            stack: 'BB',
-            type: 'bar'
-          },
-          {
-            name: '60岁任务数',
+            name: '班级平均分',
             data: [150, 230, 224, 218, 135, 147, 260],
             stack: 'AA',
             type: 'bar'
           },
+          // {
+          //   name: '60岁全程接种量',
+          //   data: [880, 30, 124, 118, 35, 47, 160],
+          //   stack: 'AA',
+          //   type: 'bar'
+          // },
+          // {
+          //   name: '80岁任务数',
+          //   data: [660, 30, 124, 118, 35, 47, 160],
+          //   stack: 'Ad',
+          //   type: 'bar'
+          // },
           {
-            name: '60岁全程接种量',
-            data: [880, 30, 124, 118, 35, 47, 160],
-            stack: 'AA',
-            type: 'bar'
-          },
-          {
-            name: '80岁任务数',
-            data: [660, 30, 124, 118, 35, 47, 160],
-            stack: 'Ad',
-            type: 'bar'
-          },
-          {
-            name: '80岁全程接种量',
+            name: '班级最高分',
             data: [880, 30, 124, 118, 35, 47, 160],
             stack: 'Ad',
             type: 'bar'
@@ -163,26 +159,26 @@ export default {
             data: [50, 130, 124, 18, 35, 47, 160],
             yAxisIndex: 1,
             type: 'line',
-            markLine: {
-              symbol: 'none',
-              itemStyle: {
-                normal: {
-                  lineStyle: {
-                    type: 'dotted'
-                  }
-                }
-              },
-              data: [{ type: 'average', name: 'Avg' + '%' }]
-            },
+            // markLine: {
             //   symbol: 'none',
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  width: 2,
-                  type: 'solid' // 'dotted'虚线 'solid'实线
-                }
-              }
-            }
+            //   itemStyle: {
+            //     normal: {
+            //       lineStyle: {
+            //         type: 'dotted'
+            //       }
+            //     }
+            //   },
+            //   data: [{ type: 'average', name: 'Avg' + '%' }]
+            // },
+            //   symbol: 'none',
+            // itemStyle: {
+            //   normal: {
+            //     lineStyle: {
+            //       width: 2,
+            //       type: 'solid' // 'dotted'虚线 'solid'实线
+            //     }
+            //   }
+            // }
           }
         ]
       }

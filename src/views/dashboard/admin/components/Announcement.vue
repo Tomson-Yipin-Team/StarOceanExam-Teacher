@@ -41,29 +41,29 @@ export default {
     return {
       announcement: [
         {
-          content: '初始化完成',
+          content: '各位老师，本周日我们将再次进行一场考试来测试系统',
           status: '完成',
-          time: '2022-3-12'
+          time: '2022-3-05'
         },
         {
-          content: '部署完成，欢迎使用考试管理系统',
+          content: '昨晚的考试已圆满完成，感谢大家的参与',
           status: '完成',
-          time: '2022-3-09'
+          time: '2022-3-04'
         },
         {
-          content: '部署完成，欢迎使用考试管理系统',
+          content: '今晚我们将进行第一次系统测试，请各位老师注意查看',
           status: '完成',
-          time: '2022-3-09'
+          time: '2022-3-03'
         },
         {
-          content: '部署完成，欢迎使用考试管理系统',
+          content: '欢迎各位老师使用我们的考试系统',
           status: '完成',
-          time: '2022-3-09'
+          time: '2022-3-02'
         },
         {
-          content: '部署完成，欢迎使用考试管理系统',
+          content: '部署完成，考试管理系统已上线',
           status: '完成',
-          time: '2022-3-09'
+          time: '2022-3-02'
         }
       ],
       currentPage4: 1

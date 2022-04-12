@@ -25,8 +25,8 @@
       </div>
       <el-table :data="singleStudent">
         <el-table-column label="题型" prop="name" />
-        <!-- <el-table-column label="名称" prop="name" /> -->
-        <el-table-column label="该生的该项分数" prop="score" fixed="right" width="200px" />
+        <el-table-column label="该题型的班级平均分" prop="avgscore" />
+        <el-table-column label="该生的该项分数" prop="score"  width="200px" />
         <!-- <el-table-column label="操作" width="200px" fixed="right">
           <el-button>查看原卷</el-button> -->
       </el-table>

@@ -3,14 +3,17 @@ export default {
     id: '1',
     name: '专业英语课程组（2021-2022学年第二学期）',
     users: [{
-      name: '方慧敏',
-      userId: '1'
+      name: '张建国',
+      userId: '20221004',
+      role:'组长'
     }, {
-      name: '徐佳',
-      userId: '2'
+      name: '方慧敏',
+      userId: '20221054',
+      role:'组员'
     }, {
       name: '杨涛',
-      userId: '3'
+      userId: '20221066',
+      role:'组员'
     }],
     manager: {
       name: '张建国',
