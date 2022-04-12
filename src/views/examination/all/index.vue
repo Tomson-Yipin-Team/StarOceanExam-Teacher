@@ -49,7 +49,7 @@
               size="mini"
               type="primary"
               @click="handlePreview(scope.$index, scope.row)"
-            >监考状态</el-button>
+            >监考</el-button>
 
           </template>
         </el-table-column>
