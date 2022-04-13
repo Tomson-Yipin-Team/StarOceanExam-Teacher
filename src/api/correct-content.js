@@ -23,7 +23,7 @@ export default {
   question: [{
     questionId: 0,
     category: 'writing',
-    content: `123123123123123123123123`,
+    content: `Directions: For this part, you are allowed 30 minutes to write a news report to your campus newspaper on a visit to a Hope elementary school organized by your Student Union.You should write at least 120 words but no more than180 words.`,
     trueAnswer: `A two-day visit to Fanhai Hope Elementary School organized by the Student Union of our university has been completed as scheduled this weekend.
 
 Aiming at fostering college students' service awareness and helping pupils of rural areas better understand the colorful college life so as to motivate them to study harder, the Student Union organized an activity named A Trip of Love Seed. A team of 30 college students' participated in this trip. The visit was warmly welcomed by all the students and staff of Fanhai, followed by a range of colorful activities, such as the interaction among students about the fascinating college life, a visit to the school art show of students' works of painting and handicraft and teaching activities focusing on showing the magical science world to the pupils.

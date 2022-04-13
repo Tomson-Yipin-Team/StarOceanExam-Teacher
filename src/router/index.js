@@ -91,7 +91,7 @@ export const constantRoutes = [
         path: 'paper',
         name: 'Paper',
         component: () => import('@/views/examination/paper/index'),
-        meta: { title: '卷库', icon: 'el-icon-s-management' }
+        meta: { title: '卷库管理', icon: 'el-icon-s-management' }
       },
       {
         path: 'create',
@@ -126,7 +126,7 @@ export const constantRoutes = [
       path: 'question-database',
       name: 'QuestionDB',
       component: () => import('@/views/question/timuku/index.vue'),
-      meta: { title: '题库', icon: 'el-icon-tickets' }
+      meta: { title: '题库管理', icon: 'el-icon-tickets' }
     }, {
       path: 'create-question',
       name: 'CreateQuestion',
