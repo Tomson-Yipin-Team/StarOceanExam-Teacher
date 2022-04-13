@@ -3,7 +3,7 @@ export default {
   classrooms: [{
     id: 2,
     date: '2021-2022第一学期',
-    name: '大学英语',
+    name: '大学英语（四）',
     classrooms: ['软工201', '软工202'],
     code: '12edxf2',
     teacher: '方慧敏',
@@ -87,18 +87,17 @@ export default {
   }],
   choices: [{
     value: 1,
-    label: '专业英语',
+    label: '综合英语',
     children: [
-      { value: 2, label: '经管202' },
-      { value: 3, label: '英语202' }
+      { value: 2, label: '英师191' },
+      { value: 3, label: '英师192' }
     ]
   }, {
     value: 4,
     label: '大学英语',
     children: [
-      { value: 5, label: '软嵌201' },
-      { value: 6, label: '软工202' },
-      { value: 7, label: '大数据202' }
+      { value: 5, label: '软工201' },
+      { value: 6, label: '软工202' }
     ]
   }]
 }
