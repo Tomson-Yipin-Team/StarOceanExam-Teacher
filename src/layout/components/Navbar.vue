@@ -5,11 +5,11 @@
     <breadcrumb class="breadcrumb-container" />
 
     <div style="float: right">
-      <span class="message">
-        <el-badge :value="12" class="item">
-          <svg-icon class="message-button" icon-class="message" />
-        </el-badge>
-      </span>
+      <!--<span class="message">-->
+      <!--  <el-badge :value="12" class="item">-->
+      <!--    <svg-icon class="message-button" icon-class="message" />-->
+      <!--  </el-badge>-->
+      <!--</span>-->
       <span class="right-menu">
         <el-dropdown class="avatar-container" trigger="click">
           <div class="avatar-wrapper">
