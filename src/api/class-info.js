@@ -9,7 +9,8 @@ export default {
     teacher: '方慧敏',
     number: '12',
     beginTime: new Date(2022, 2, 3),
-    endTime: new Date(2022, 5, 30)
+    endTime: new Date(2022, 5, 30),
+    url: 'url("https://lsky-picture.stdcdn.com/uploads/2022/04/eb5c30a0ce1ac0429ceb43dd6103814a.png")'
   }, {
     id: 3,
     date: '2021-2022第二学期',
@@ -19,7 +20,8 @@ export default {
     teacher: '方慧敏',
     number: '22',
     beginTime: new Date(2022, 2, 4),
-    endTime: new Date(2022, 5, 30)
+    endTime: new Date(2022, 5, 30),
+    url: 'url("http://lsky.jujuh.top/i/2022/04/03/62497a4626769.png")'
   }],
   students: [{
     id: '2030110123',

@@ -49,10 +49,10 @@ export default {
     return {
       edit: false,
       form: {
-        name: 'wxjjuju0322@gmail.com',
-        realName: '汪星聚',
-        nickname: 'Zerolouis',
-        birthday: '2022-03-22',
+        name: 'example@email.com',
+        realName: '方慧敏',
+        nickname: '一场秋梦',
+        birthday: '1998-02-12',
         password: '12345567',
         intro: '阳光大男孩',
         school: '超星大学',

@@ -65,8 +65,24 @@ export default {
       this.dialogTableVisible = true
       console.log(index, row)
     },
+    // 退出教师群组
     onExit(index, row) {
-      console.log(index, row)
+      this.$confirm('您即将退出该群组， 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.groups.splice(index, 1)
+        this.$message({
+          type: 'success',
+          message: '退出成功!'
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消'
+        })
+      })
     },
     passMessage(index, row) {
       console.log(index, row)

@@ -39,7 +39,7 @@ export default {
       participants: Groups.participants, // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
       titleImageUrl: 'https://lsky-picture.stdcdn.com/uploads/2022/04/0047763afbfa25ffc32a1804d871760c.png',
       messageList: Groups.messageList,
-      newMessagesCount: 12,
+      newMessagesCount: 8,
       isChatOpen: false, // to determine whether the chat window should be open or closed
       showTypingIndicator: '', // when set to a value matching the participant.id it shows the typing indicator for the specific user
       colors: {

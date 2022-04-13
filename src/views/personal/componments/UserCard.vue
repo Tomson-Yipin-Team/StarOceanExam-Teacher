@@ -29,8 +29,16 @@
           <span>社交方式:</span>
         </div>
         <div>
-          <span class="user-social-icon"><svg-icon icon-class="wechat" /></span>
-          <span class="user-social-text">郁闷的酱油瓶</span>
+          <div>
+            <span class="user-social-icon">
+              <svg-icon style="color: #349f59" icon-class="wechat" />
+            </span>
+            <span class="user-social-text">一场秋梦</span>
+          </div>
+          <div style="margin-top: 10px">
+            <span class="user-social-icon"><svg-icon style="color: #23b4e8" icon-class="qq" /></span>
+            <span class="user-social-text">一场秋梦</span>
+          </div>
         </div>
 
       </div>

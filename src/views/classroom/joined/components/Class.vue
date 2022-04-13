@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card class="box-card" :body-style="{padding:'0px'}" shadow="hover">
-      <div class="image-box">
+      <div :style="imageClass">
         <div id="term">{{ classInfo.date }}</div>
         <div id="name">{{ classInfo.name }}</div>
         <div class="classroom">
@@ -31,8 +31,20 @@ export default {
           name: '课程名称',
           classrooms: ['班级1', '班级2'],
           code: '课程码',
-          teacher: '教师名称'
+          teacher: '教师名称',
+          url: 'url("https://lsky-picture.stdcdn.com/uploads/2022/04/eb5c30a0ce1ac0429ceb43dd6103814a.png")'
         }
+      }
+    }
+  },
+  data() {
+    return {
+      imageClass: {
+        backgrounImage: 'url("http://lsky.jujuh.top/i/2022/04/03/62497a4626769.png")',
+        height: '160px',
+        backgroundSize: 'cover',
+        padding: '30px',
+        width: ' 100%'
       }
     }
   },
@@ -41,6 +53,15 @@ export default {
       this.$router.push({
         name: 'Detail'
       })
+    }
+  },
+  watch: {
+    classInfo: {
+      immediate: true,
+      deep: true,
+      handler(newValue) {
+        this.imageClass.backgroundImage = newValue.url
+      }
     }
   }
 }
@@ -71,7 +92,7 @@ export default {
   margin-top: 10px;
 }
 #term{
-  color: #99a9bf;
+  color: #e3eeff;
   font-size: 15px;
 }
 /*.manager{*/
