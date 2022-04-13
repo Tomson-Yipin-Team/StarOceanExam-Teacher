@@ -1,7 +1,7 @@
 export default {
   gourps: [{
     id: '1',
-    name: '专业英语课程组（2021-2022学年第二学期）',
+    name: '大学英语（四）课程组（2021-2022学年第二学期）',
     users: [{
       name: '张建国',
       userId: '20221004',
@@ -51,7 +51,7 @@ export default {
   }],
   manager: [{
     id: '1',
-    name: '大学英语（四）课程组',
+    name: '专业英语课程组',
     value: '高三英语年级组',
     users: [{
       name: '方慧敏(自己)',
@@ -102,59 +102,59 @@ export default {
       type: 'text',
       author: `me`,
       data: {
-        text: `你好！`
+        text: `现在的学生啊，真是一届不如一届了！`
       }
     },
     { type: 'text',
       author: `20221004`,
       data: {
-        text: `早上好，夜之城！`
+        text: `确实啊，一年考得比一年差！`
       }
     },
     { type: 'text',
       author: `20221054`,
       data: {
-        text: `昨天的死人乐透，最后结果是满打满算的整整三十个！`
+        text: `但是上学期我们班上还有不少能考到九十分以上的呢`
       }
     },
     { type: 'text',
       author: `20221066`,
       data: {
-        text: `多亏了没完没了的帮派火并，光海伍德就挂了十个。但有一位警官也挂了，我看你们全得赔钱，因为NCPD肯定咽不下这口气。`
+        text: `前两天班上同学还来问我简单的不能再简单的问题了，哎，我都怀疑是不是我教的不好`
       }
     },
     { type: 'text',
       author: `20221068`,
       data: {
-        text: `圣多明戈再次发生停电。电网遭人破坏，又是网络黑客干的好事。`
+        text: `今天上课提问，学生们又是啥都不会，再这样下去，领导又要给我压力了。`
       }
     },
     { type: 'text',
       author: `20221081`,
       data: {
-        text: `与此同时，威斯特布鲁克的创伤小组还在人行道上替赛博精神病的受害者收尸。`
+        text: `张老师，这次期末考试的试卷得出的简单一点啊`
       }
     },
     { type: 'text',
       author: `20221004`,
       data: {
-        text: `而在太平洲呢…好吧…太平洲还是那个太平洲。`
+        text: `已经够简单啦，试卷我已经出好了`
       }
     },
     { type: 'text',
       author: `20221004`,
       data: {
-        text: `我是你们的铁哥们斯坦。和我一起，开始逐梦夜之城的新一天吧。`
+        text: `我现在把试卷ID发给你们，试卷被我封存了，密码我在考试前再告诉各位`
       }
     },
-    { type: 'file',
+    { type: 'text',
       author: `20221004`,
       data: {
-        file: {
-          name: '新闻听力.mp3',
-          url: 'https://source.jujuh.top/audio/%E6%96%B0%E9%97%BB2.mp3'
-        }
+        // file: {
+          text: '试卷名称：2021-2022-2第二学期四级考试模拟\n\n\n试卷ID：1000075885',
+          // url: 'https://source.jujuh.top/audio/%E6%96%B0%E9%97%BB2.mp3'
+        // }
       }
-    }
+    },
   ]
 }
