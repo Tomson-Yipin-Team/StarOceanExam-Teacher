@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       imageClass: {
-        backgrounImage: 'url("http://lsky.jujuh.top/i/2022/04/03/62497a4626769.png")',
+        backgroundImage: 'url("http://lsky.jujuh.top/i/2022/04/03/62497a4626769.png")',
         height: '160px',
         backgroundSize: 'cover',
         padding: '30px',
