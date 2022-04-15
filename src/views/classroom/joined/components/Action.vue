@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card style="height: 450px;margin-right: 20px">
+    <el-card style="height: 550px;margin-right: 20px">
       <div id="card-title" slot="header">
         <span>
           待审核列表
@@ -15,6 +15,7 @@
       <el-table
         :data="tableData"
         style="width:100%"
+        height="420px"
       >
         <el-table-column
           prop="date"

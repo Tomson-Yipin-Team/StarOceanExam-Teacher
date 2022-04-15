@@ -173,12 +173,12 @@
           </template>
           {{ basicForm.name }}
         </el-descriptions-item>
-        <el-descriptions-item>
+        <!-- <el-descriptions-item>
           <template slot="label">
             试卷类型
           </template>
           {{ basicForm.category }}
-        </el-descriptions-item>
+        </el-descriptions-item> -->
         <el-descriptions-item>
           <template slot="label">
             试卷

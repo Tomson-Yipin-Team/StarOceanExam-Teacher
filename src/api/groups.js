@@ -151,10 +151,10 @@ export default {
       author: `20221004`,
       data: {
         // file: {
-          text: '试卷名称：2021-2022-2第二学期四级考试模拟\n\n\n试卷ID：1000075885',
-          // url: 'https://source.jujuh.top/audio/%E6%96%B0%E9%97%BB2.mp3'
+        text: '试卷名称：2021-2022-2第二学期四级考试模拟\n\n\n试卷ID：1000075885'
+        // url: 'https://source.jujuh.top/audio/%E6%96%B0%E9%97%BB2.mp3'
         // }
       }
-    },
+    }
   ]
 }

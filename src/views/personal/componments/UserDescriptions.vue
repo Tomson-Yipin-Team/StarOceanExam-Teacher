@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <el-descriptions class="description" :column="1" border :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS">
-      <el-descriptions-item label="用户名" >example@email.com</el-descriptions-item>
+      <el-descriptions-item label="用户名">example@email.com</el-descriptions-item>
       <el-descriptions-item label="姓名">方慧敏</el-descriptions-item>
       <el-descriptions-item label="昵称">一场秋梦</el-descriptions-item>
       <el-descriptions-item label="学校">超星大学</el-descriptions-item>

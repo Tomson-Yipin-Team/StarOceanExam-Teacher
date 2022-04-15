@@ -10,12 +10,13 @@
             :data="classrooms"
             style="width: 100%"
             stripe
+            height="420px"
           >
             <el-table-column
               prop="id"
-              lable="编号"
+              label="编号"
               sortable
-              width="100"
+              width="120"
             />
             <el-table-column
               prop="name"
@@ -111,6 +112,6 @@ export default {
 .card-container{
   margin-right: 20px;
   margin-left: 20px;
-  height: 450px;
+  height: 550px;
 }
 </style>

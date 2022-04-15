@@ -167,7 +167,7 @@ export default {
       })
     },
     nowTime() {
-      const timeData = new Date()
+      const timeData = new Date(2022, 5, 6, 16, 1)
       return moment(timeData).format('HH:mm:ss')
     },
     percentage() {

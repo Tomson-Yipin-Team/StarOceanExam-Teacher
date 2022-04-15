@@ -65,7 +65,9 @@
         height="80%"
         class="markdown-editor"
       />
-      <el-button type="primary">保存</el-button>
+      <div id="comment-button">
+        <el-button type="primary">保存</el-button>
+      </div>
     </el-drawer>
   </div>
 </template>
@@ -200,6 +202,11 @@ export default {
 }
 .info-container{
   margin: 10px;
+}
+#comment-button{
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
 }
 </style>
 

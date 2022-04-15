@@ -240,7 +240,7 @@ export default {
 
 <style scoped>
 .container{
-  background-color: rgb(240, 242, 245);
+  /* background-color: rgb(240, 242, 245); */
   margin:0;
   padding-top: 10px;
   padding-bottom: 20px;

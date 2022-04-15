@@ -56,7 +56,8 @@ export default {
       this.$router.push({
         path: '/examination/create',
         query: {
-          name: 'normal'
+          name: this.name,
+          number: 12
         }
       })
     }

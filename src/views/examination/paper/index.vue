@@ -12,7 +12,7 @@
       <el-row type="flex" justify="center">
         <el-col :span="7" class="content">
           <el-card :body-style="{ padding: '0px' }">
-            <el-image src="https://source.jujuh.top/picture/1.jpg" style="width: 100%">
+            <el-image src="https://lsky-picture.stdcdn.com/uploads/2022/04/5a7b56749939b1fd5d6f73bbd4f02cf2.jpg" style="width: 100%">
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
               </div>
@@ -28,7 +28,7 @@
         </el-col>
         <el-col :span="7" :offset="1" class="content">
           <el-card :body-style="{ padding: '0px' }">
-            <el-image src="https://source.jujuh.top/picture/2.jpg" style="width: 100%">
+            <el-image src="https://lsky-picture.stdcdn.com/uploads/2022/04/3e22508cd8e44ee2e3cd1aa09814b640.jpg" style="width: 100%">
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
               </div>
@@ -47,7 +47,7 @@
         </el-col>
         <el-col :span="7" :offset="1" class="content">
           <el-card :body-style="{ padding: '0px' }">
-            <el-image src="https://source.jujuh.top/picture/2.jpg" style="width: 100%">
+            <el-image src="https://lsky-picture.stdcdn.com/uploads/2022/04/8f7cf9c499a856193619575431ae6f3b.jpg" style="width: 100%">
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
               </div>
@@ -121,7 +121,7 @@ export default {
         id: '1000075886',
         date: '2022-03-01',
         name: '2021-2022-2大学英语六级模拟考试（1）',
-        origin: 'CW'
+        origin: '汪美美'
       },
       shareButtonLoading: false,
       paperName: ''

@@ -288,7 +288,7 @@ export default {
       finish: false,
       errorExit: false,
       participate: true
-    },    
+    },
     {
       name: '王鼎',
       classroom: '软工202',

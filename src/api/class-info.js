@@ -1,7 +1,7 @@
 export default {
   // 修改时 classrooms 和 choices 中的 id 需要一一对应
   classrooms: [{
-    id: 2,
+    id: 1,
     date: '2021-2022第一学期',
     name: '大学英语（四）',
     classrooms: ['软工201', '软工202'],
@@ -11,10 +11,11 @@ export default {
     beginTime: new Date(2022, 2, 3),
     endTime: new Date(2022, 5, 30),
     url: 'url("https://snz04pap001files.storage.live.com/y4mxbI_YUQrlmKkkotfrICpyBjV1Wii_HYkJ8LXDK0X2LwEaBgp9gcWHQcn9gI4FjfkJUxZ3xfOxsj3SQo5GC2Z8gRD-WOudLLLKD2BSjWToRrr3WLzD7cRNd74xtQZhiXU0tWBR-xewbpWlyl2Xzb5P_2BrEe57OsAAqUy0ivMXlkJTbe3mPyy4mNg48VTt6pB?width=938&height=626&cropmode=none")'
-  }, {
-    id: 3,
+  },
+  {
+    id: 2,
     date: '2021-2022第二学期',
-    name: '综合英语',
+    name: '英师191',
     classrooms: ['英师191', '英师192'],
     code: '12edxf2',
     teacher: '方慧敏',
@@ -22,7 +23,32 @@ export default {
     beginTime: new Date(2022, 2, 4),
     endTime: new Date(2022, 5, 30),
     url: 'url("http://lsky.jujuh.top/i/2022/04/03/62497a4626769.png")'
-  }],
+  }
+  // ,
+  // {
+  //   id: 2,
+  //   date: '2021-2022第二学期',
+  //   name: '英师191',
+  //   classrooms: ['英师191', '英师192'],
+  //   code: '12edxf2',
+  //   teacher: '方慧敏',
+  //   number: '22',
+  //   beginTime: new Date(2022, 2, 4),
+  //   endTime: new Date(2022, 5, 30),
+  //   url: 'url("http://lsky.jujuh.top/i/2022/04/03/62497a4626769.png")'
+  // },{
+  //   id: 3,
+  //   date: '2021-2022第二学期',
+  //   name: '英师192',
+  //   classrooms: ['英师191', '英师192'],
+  //   code: '12edxf2',
+  //   teacher: '方慧敏',
+  //   number: '22',
+  //   beginTime: new Date(2022, 2, 4),
+  //   endTime: new Date(2022, 5, 30),
+  //   url: 'url("http://lsky.jujuh.top/i/2022/04/03/62497a4626769.png")'
+  // }
+  ],
   students: [{
     id: '2030110123',
     name: '宇文紫'

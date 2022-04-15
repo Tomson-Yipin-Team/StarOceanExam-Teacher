@@ -48,13 +48,6 @@ export default {
       }
     }
   },
-  methods: {
-    handleManager() {
-      this.$router.push({
-        name: 'Detail'
-      })
-    }
-  },
   watch: {
     classInfo: {
       immediate: true,
@@ -62,6 +55,13 @@ export default {
       handler(newValue) {
         this.imageClass.backgroundImage = newValue.url
       }
+    }
+  },
+  methods: {
+    handleManager() {
+      this.$router.push({
+        name: 'Detail'
+      })
     }
   }
 }

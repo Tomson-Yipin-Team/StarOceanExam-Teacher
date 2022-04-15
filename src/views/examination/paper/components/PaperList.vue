@@ -48,8 +48,20 @@ export default {
   data() {
     return {
       tableData: paperContent.papers,
-      search: ''
+      search: '',
+      newPaper: {
+        id: '	1000075886',
+        date: '2022-03-01',
+        name: '2021-2022-2大学英语六级模拟考试（1）',
+        origin: '汪美美',
+        number: 20
+      }
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.tableData.push(this.newPaper)
+    }, 10000)
   },
   methods: {
     // TODO: 补充编辑功能
