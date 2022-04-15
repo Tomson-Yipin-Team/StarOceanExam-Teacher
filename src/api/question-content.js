@@ -39,14 +39,14 @@ export default {
         score: '4',
         difficulty: '中等',
         category: 'listen',
-        content: '在固定分区存储管理中，处理器需设置**（  ）**寄存器以保证进程在所在分区内运行。',
+        content: '在固定分区存储管理中，处理器需设置（  ）寄存器以保证进程在所在分区内运行。',
         knowledge: ['长对话', '日常生活', 'cet6'],
         answers: [{
           content: '这是题干',
-          A: '123',
-          B: '2',
-          C: '3',
-          D: '4',
+          A: '变址',
+          B: '上、下限',
+          C: '基址、限长',
+          D: '空闲区',
           correct: 'A'
         }]
       },
@@ -56,12 +56,12 @@ export default {
         score: '8',
         difficulty: '困难',
         category: 'listen',
-        content: '英语听力',
+        content: ' 采用固定分区的系统中，内存被划分成若干相等大小的固定区域。',
         knowledge: ['听力篇章', '幽默故事', 'cet4'],
 
         answers: [{
-          '对': '12',
-          '错': '2',
+          '对': '对',
+          '错': '错',
           correct: '对'
         }]
         // correct: this.answers.a1
@@ -72,9 +72,9 @@ export default {
         score: '4',
         difficulty: '困难',
         category: 'listen',
-        content: '英语听力',
+        content: '假设有编号为1、2、3、4四个空闲区，大小分别为16K、24K、15K、30K，现要申请15K的主存空间，采用最坏适应算法，则应分割的空闲区编号为______',
         knowledge: ['听力篇章', '西方文化', 'cet6'],
-        correct: '123123'
+        correct: '4'
       },
       {
         id: 104,

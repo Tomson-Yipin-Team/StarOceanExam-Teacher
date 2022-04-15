@@ -5,7 +5,7 @@
         考试结果分析
       </div>
       <el-descriptions :column="1" border :content-style="descriptionsPram.CS" :label-style="descriptionsPram.LS">
-        <el-descriptions-item label="试卷名称">2021-2022-2大学英语六级模拟考试（2）</el-descriptions-item>
+        <el-descriptions-item label="试卷名称">2021-2022-2大学英语六级模拟考试</el-descriptions-item>
         <el-descriptions-item label="试卷ID">1000075885</el-descriptions-item>
         <el-descriptions-item label="参加人数">19</el-descriptions-item>
         <el-descriptions-item label="最高分">94</el-descriptions-item>
