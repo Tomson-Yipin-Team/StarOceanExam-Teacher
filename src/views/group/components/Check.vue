@@ -47,10 +47,10 @@ export default {
   data() {
     return {
       tableData: [{
-        id: '123123123123123',
-        name: '四级模拟卷',
-        origin: '方汇民',
-        time: '2022-3-12',
+        id: '1000075888',
+        name: '2021-2022-2大学英语六级模拟考试（3）',
+        origin: '杨涛',
+        time: '2022-3-01',
         status: '等待审核'
       }]
     }
