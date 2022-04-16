@@ -8,6 +8,9 @@
         <el-tab-pane label="我管理的">
           <Manage />
         </el-tab-pane>
+        <el-tab-pane label="审批试卷">
+          <Check />
+        </el-tab-pane>
       </el-tabs>
       <create-group />
     </el-card>
@@ -18,12 +21,15 @@
 import Joined from '@/views/group/components/Joined'
 import Manage from '@/views/group/components/Manage'
 import CreateGroup from '@/views/group/components/CreateGroup'
+import Check from './components/Check.vue'
+
 export default {
   name: 'Index',
   components: {
     Joined,
     Manage,
-    CreateGroup
+    CreateGroup,
+    Check
   }
 }
 </script>

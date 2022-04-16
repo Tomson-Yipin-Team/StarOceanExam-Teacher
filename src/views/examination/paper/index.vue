@@ -4,7 +4,7 @@
       <el-row type="flex" justify="end">
         <el-button class="button" @click="createDialog =true">创建新的试卷</el-button>
       </el-row>
-      <paper-list @handleLock="handleLock" />
+      <paper-list @handleLock="handleLock" @handleSee="handleSee" />
     </el-card>
     <!--TODO: 修改图片-->
     <el-dialog :visible.sync="createDialog" width="80%" title="创建试卷">
@@ -93,11 +93,19 @@
     <!--封存试卷对话框-->
     <el-dialog
       width="50%"
-      title="分享创建"
+      title="锁定试卷"
       :visible.sync="LockDialog"
       append-to-body
     >
       <LockPaper :name="paperName" @closeDialog="closeDialog" />
+    </el-dialog>
+    <el-dialog
+      width="50%"
+      title="查看试卷"
+      :visible.sync="showSeePaper"
+      append-to-body
+    >
+      <see-paper :name="paperName" @closeDialog="closeDialog" />
     </el-dialog>
   </div>
 </template>
@@ -105,11 +113,14 @@
 <script>
 import PaperList from './components/PaperList'
 import LockPaper from './components/LockPaper'
+import SeePaper from './components/SeePaper.vue'
+
 export default {
   name: 'Index',
   components: {
     PaperList,
-    LockPaper
+    LockPaper,
+    SeePaper
   },
   data() {
     return {
@@ -124,7 +135,8 @@ export default {
         origin: '汪美美'
       },
       shareButtonLoading: false,
-      paperName: ''
+      paperName: '',
+      showSeePaper: false
     }
   },
   methods: {
@@ -165,11 +177,17 @@ export default {
     // 关闭对话框
     closeDialog() {
       this.LockDialog = false
+      this.showSeePaper = false
     },
     // 打开封存
     handleLock(name) {
       this.paperName = name
       this.LockDialog = true
+    },
+    // 查看封存的试卷
+    handleSee(name) {
+      this.paperName = name
+      this.showSeePaper = true
     }
   }
 }
