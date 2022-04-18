@@ -5,32 +5,48 @@
         <span style="text-align: center;display: block">编辑题目</span>
       </div>
       <!--el标签页-->
-      <el-tabs v-model="activeName">
+      <el-tabs v-model="activeName" v-loading="show.tabLoading">
         <!--编辑题目页面-->
         <el-tab-pane label="题目" name="edit">
-          <markdown-editor
-            ref="markdownEditor"
-            v-model="content"
-            language="zh"
-            :options="{hideModeSwitch:true,previewStyle: 'tab'}"
-            height="400px"
-          />
-          <!--答案-->
-          <el-row v-for="(item, index) in answers" :key="index">
-            <!--判断选项-->
-            <el-col :span="2">
-              <el-button>{{ index }}</el-button>
-            </el-col>
-            <el-col :span="16">
-              <markdown-editor
-                ref="markdownEditor"
-                v-model="answers[index]"
-                language="zh"
-                :options="{hideModeSwitch:true,previewStyle: 'tab'}"
-                height="100px"
-              />
-            </el-col>
+          <div class="editor-container">
+            <markdown-editor
+              v-if="show.markdown"
+              ref="markdownEditor"
+              v-model="content"
+              language="zh"
+              :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+              height="400px"
+            />
+          </div>
+
+          <!--编辑答案-->
+          <el-row v-for="(questionItem, questionIndex) in question.answers" :key="questionIndex">
+            <el-divider />
+            <el-row>
+              答案
+            </el-row>
+            <el-divider />
+            <div v-for="(item, index ) in questionItem" :key="index">
+              <el-row v-if="index!=='correct'" style="margin-top: 20px">
+                <el-col :span="2">
+                  <el-radio v-model="questionItem.correct" :label="index" class="answer-radio" />
+                </el-col>
+                <el-col :span="16">
+                  <div class="editor-container">
+                    <markdown-editor
+                      v-if="show.markdown"
+                      ref="markdownEditor"
+                      v-model="questionItem[index]"
+                      language="zh"
+                      :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+                      height="100px"
+                    />
+                  </div>
+                </el-col>
+              </el-row>
+            </div>
           </el-row>
+
         </el-tab-pane>
         <!--预览题目-->
         <el-tab-pane label="预览" name="preview">
@@ -65,24 +81,21 @@ export default {
         hideModeSwitch: false,
         language: 'zh-CN'
       },
-      activeName: 'edit'
+      activeName: 'edit',
+      question: questionContent.timuku[0].questions[1],
+      show: {
+        tabLoading: false,
+        markdown: true
+      }
     }
   },
   computed: {
-    answers: {
-      get() {
-        return questionContent.timuku[0].questions[1].answers
-      },
-      set(value) {
-        questionContent.timuku[0].questions[1].answers = value
-      }
-    },
     previewContent() {
-      let answerContent = '## 选项：\n'
-      for (const key in this.answers) {
-        answerContent += key + ':' + this.answers[key] + '\n'
-      }
-      return '## 题目\n' + this.content + '\n' + answerContent
+      // let answerContent = '## 选项：\n'
+      // for (const key in this.answers) {
+      //   answerContent += key + ':' + this.answers[key] + '\n'
+      // }
+      return '123'
     }
   },
   watch: {
@@ -90,13 +103,28 @@ export default {
       immediate: true,
       handler(newValue) {
         this.content = questionContent.timuku[0].questions[1].content
-        console.log(newValue)
+        // console.log(newValue)
       }
+    }
+  },
+  mounted() {
+    this.updatePage()
+  },
+  methods: {
+    updatePage() {
+      this.show.tabLoading = true
+      this.show.markdown = false
+      setTimeout(() => {
+        this.show.tabLoading = false
+        this.show.markdown = true
+      }, 1000)
     }
   }
 }
 </script>
 
 <style scoped>
+.editor-container{
 
+}
 </style>

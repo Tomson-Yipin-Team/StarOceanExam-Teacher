@@ -1,50 +1,61 @@
 <template>
   <div>
     <el-row type="flex" justify="center" class="table">
-      <el-col :span="23">
-        <el-card>
+      <el-col>
+        <el-card class="card-container">
           <div slot="header">
-            <el-row type="flex" justify="center">
-              已创建班级
-            </el-row>
+            班级列表
           </div>
           <el-table
-            :data="tableData"
+            :data="classrooms"
             style="width: 100%"
             stripe
+            height="420px"
           >
             <el-table-column
               prop="id"
-              lable="编号"
+              label="编号"
               sortable
-              width="100"
-            />
-            <el-table-column
-              prop="subject"
-              label="课程"
-              sortable
-              width="180"
-              column-key="subject"
-            />
-            <el-table-column
-              prop="date"
-              label="创建日期"
-              width="150"
-              sortable
-            />
-            <el-table-column
-              prop="end"
-              label="结束日期"
-              width="150"
-              sortable
+              width="120"
             />
             <el-table-column
               prop="name"
-              label="班级名称"
+              label="课程"
               sortable
+              column-key="name"
             />
             <el-table-column
-              align="center"
+              prop="date"
+              label="学期"
+              width="250"
+            />
+            <el-table-column
+              #default="scope"
+              label="开始日期"
+              width="150"
+            >
+              {{ countTime(scope.row.beginTime) }}
+            </el-table-column>
+            <el-table-column
+              #default="scope"
+              label="结束日期"
+              width="150"
+            >
+              {{ countTime(scope.row.endTime) }}
+            </el-table-column>
+            <el-table-column
+              #default="scope"
+              label="教授班级"
+              width="250"
+              sortable
+            >
+              <span v-for="(item,index) in scope.row.classrooms" :key="index">{{ item }} </span>
+            </el-table-column>
+            <el-table-column
+              prop="number"
+              label="班级人数"
+            />
+            <el-table-column
               fixed="right"
               label="操作"
               width="200"
@@ -67,13 +78,16 @@
 </template>
 
 <script>
-import classrooms from '@/api/classrooms'
+// import classrooms from '@/api/classrooms'
+import ClassInfo from '@/api/class-info'
+import moment from 'moment'
 
 export default {
   name: 'StudentTable',
   data() {
     return {
-      tableData: classrooms.ownClassroom
+      // tableData: classrooms.ownClassroom,
+      classrooms: ClassInfo.classrooms
     }
   },
   methods: {
@@ -86,11 +100,18 @@ export default {
     filterHandler(value, row, column) {
       const property = column['property']
       return row[property] === value
+    },
+    countTime(time) {
+      return moment(time).format('YYYY-MM-DD')
     }
   }
 }
 </script>
 
 <style scoped>
-
+.card-container{
+  margin-right: 20px;
+  margin-left: 20px;
+  height: 550px;
+}
 </style>

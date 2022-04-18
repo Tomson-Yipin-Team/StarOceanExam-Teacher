@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="card-container">
     <el-card>
       <el-row type="flex" justify="end">
-        <el-button @click="createDialog =true">创建新的试卷</el-button>
+        <el-button class="button" @click="createDialog =true">创建新的试卷</el-button>
       </el-row>
-      <paper-list />
+      <paper-list @handleLock="handleLock" @handleSee="handleSee" />
     </el-card>
     <!--TODO: 修改图片-->
     <el-dialog :visible.sync="createDialog" width="80%" title="创建试卷">
@@ -12,14 +12,14 @@
       <el-row type="flex" justify="center">
         <el-col :span="7" class="content">
           <el-card :body-style="{ padding: '0px' }">
-            <el-image src="https://source.jujuh.top/picture/1.jpg" style="width: 100%">
+            <el-image src="https://lsky-picture.stdcdn.com/uploads/2022/04/5a7b56749939b1fd5d6f73bbd4f02cf2.jpg" style="width: 100%">
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
               </div>
             </el-image>
             <!--<img src="https://source.jujuh.top/picture/1.jpg" class="image" style="width: 100%">-->
             <div style="padding: 14px;">
-              <span class="text">智能组卷</span>
+              <div class="text">智能组卷</div>
               <div>
                 <el-button type="text" class="button" @click="toAIPaper">使用</el-button>
               </div>
@@ -28,14 +28,17 @@
         </el-col>
         <el-col :span="7" :offset="1" class="content">
           <el-card :body-style="{ padding: '0px' }">
-            <el-image src="https://source.jujuh.top/picture/2.jpg" style="width: 100%">
+            <el-image src="https://lsky-picture.stdcdn.com/uploads/2022/04/3e22508cd8e44ee2e3cd1aa09814b640.jpg" style="width: 100%">
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
+              </div>
+              <div slot="error" class="image-slot">
+                <i class="el-icon-picture-outline" />
               </div>
             </el-image>
             <!--<img src="https://source.jujuh.top/picture/2.jpg" class="image" style="width: 100%">-->
             <div style="padding: 14px;">
-              <span class="text">手动创建</span>
+              <div class="text">手动创建</div>
               <div>
                 <el-button type="text" class="button" @click="toCreate">使用</el-button>
               </div>
@@ -44,15 +47,15 @@
         </el-col>
         <el-col :span="7" :offset="1" class="content">
           <el-card :body-style="{ padding: '0px' }">
-            <el-image src="https://source.jujuh.top/picture/2.jpg" style="width: 100%">
+            <el-image src="https://lsky-picture.stdcdn.com/uploads/2022/04/8f7cf9c499a856193619575431ae6f3b.jpg" style="width: 100%">
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
               </div>
             </el-image>
             <!--<img src="https://source.jujuh.top/picture/2.jpg" class="image" style="width: 100%">-->
             <div style="padding: 14px;">
-              <span class="text">通过分享导入</span>
-              <el-input v-model="shareId" placeholder="请输入ID" />
+              <div class="text">通过分享导入</div>
+              <el-input v-model="shareId" placeholder="请输入ID" style="width: 50%" />
               <div>
                 <el-button type="text" class="button" @click="toShare">提交</el-button>
               </div>
@@ -60,6 +63,7 @@
           </el-card>
         </el-col>
       </el-row>
+      <!--创建试卷对话框-->
       <el-dialog
         width="50%"
         title="分享创建"
@@ -86,26 +90,53 @@
         <el-button :loading="shareButtonLoading" @click="handleConfirm">确认添加</el-button>
       </el-dialog>
     </el-dialog>
+    <!--封存试卷对话框-->
+    <el-dialog
+      width="50%"
+      title="锁定试卷"
+      :visible.sync="LockDialog"
+      append-to-body
+    >
+      <LockPaper :name="paperName" @closeDialog="closeDialog" />
+    </el-dialog>
+    <el-dialog
+      width="50%"
+      title="查看试卷"
+      :visible.sync="showSeePaper"
+      append-to-body
+    >
+      <see-paper :name="paperName" @closeDialog="closeDialog" />
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import PaperList from './components/PaperList'
+import LockPaper from './components/LockPaper'
+import SeePaper from './components/SeePaper.vue'
+
 export default {
   name: 'Index',
-  components: { PaperList },
+  components: {
+    PaperList,
+    LockPaper,
+    SeePaper
+  },
   data() {
     return {
       createDialog: false,
       shareId: '',
       shareDialog: false,
+      LockDialog: false,
       share: {
         id: '1000075886',
         date: '2022-03-01',
-        name: '2021-2022-2普本C++程序设计基础期末考试',
-        origin: 'CW'
+        name: '2021-2022-2大学英语六级模拟考试（1）',
+        origin: '汪美美'
       },
-      shareButtonLoading: false
+      shareButtonLoading: false,
+      paperName: '',
+      showSeePaper: false
     }
   },
   methods: {
@@ -142,6 +173,21 @@ export default {
           type: 'success'
         })
       }, 3000)
+    },
+    // 关闭对话框
+    closeDialog() {
+      this.LockDialog = false
+      this.showSeePaper = false
+    },
+    // 打开封存
+    handleLock(name) {
+      this.paperName = name
+      this.LockDialog = true
+    },
+    // 查看封存的试卷
+    handleSee(name) {
+      this.paperName = name
+      this.showSeePaper = true
     }
   }
 }
@@ -152,5 +198,16 @@ export default {
   text-align: center;
   margin-top: 10px;
 }
+.card-container{
+  margin: 10px;
+}
 
+.button{
+  margin-bottom: 10px;
+}
+
+.text{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 </style>

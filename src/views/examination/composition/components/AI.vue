@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <el-card style="width: 70%" header="请填写试卷信息">
-      <el-form ref="aiForm" :rules="rules" label-width="120px">
+    <el-card style="width: 70%;margin-top:20px" header="请填写试卷信息">
+      <el-form ref="formData" :model="formData" :rules="rules" label-width="120px">
         <!--试卷名称-->
         <el-form-item label="试卷名称" prop="name">
           <el-col :span="20">
@@ -80,8 +80,7 @@ export default {
       },
       rules: {
         name: [
-          { required: true, message: '请输入试卷名称', trigger: 'blur' },
-          { min: 1, max: 30, message: '长度在 1 到 30 个字符', trigger: 'blur' }
+          { required: true, message: '请输入试卷名称', trigger: 'blur' }
         ],
         difficulty: [
           { required: true, message: '请输入难度系数', trigger: 'blur' }

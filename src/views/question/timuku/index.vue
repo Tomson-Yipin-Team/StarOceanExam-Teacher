@@ -26,7 +26,6 @@
             </el-table-column>
             <el-table-column
               label="试题类型"
-              width="180"
               column-key="name"
               :filters="[{text: '数学', value: '数学'}, {text: '英语', value: '英语'}, {text: '计算机', value: '计算机'}, {text: '物理', value: '物理'}]"
               :filter-method="filterHandler"
@@ -49,11 +48,11 @@
               width="150px"
             />
             <el-table-column
-              label="标签"
+              label="被使用次数"
               width="150px"
             >
               <template #default="scope">
-                <el-tag>{{ scope.row.tag }}</el-tag>
+                {{ scope.row.tag }}
               </template>
             </el-table-column>
 
@@ -79,7 +78,7 @@
 
     <!--查看弹出框-->
     <el-dialog
-      title="查看试题"
+      title="听力题库"
       :visible.sync="dialogLook"
       width="60%"
       :before-close="handleClose"
@@ -87,10 +86,18 @@
       <el-table
         :data="subQuestion"
         style="width: 100%"
+        max-height="500px"
       >
-        <el-table-column #default="scope" label="名称">
-          {{ scope.row.name }}
+        <el-table-column #default="scope" label="序号" width="200">
+          {{ scope.$index +1 }}
         </el-table-column>
+        <el-table-column label="分值" prop="score" />
+        <el-table-column #default="scope" label="标签">
+          <el-tag v-for="(item,index) in scope.row.knowledge" :key="index" class="tag">
+            {{ item }}
+          </el-tag>
+        </el-table-column>
+
         <el-table-column #default="scope" label="难易度" fixed="right" width="100px">
           <el-tag :type="difficultyType(scope.row)">{{ scope.row.difficulty }}</el-tag>
         </el-table-column>
@@ -122,8 +129,36 @@ export default {
       html: '',
       subQuestion: questionContent.timuku[0].questions,
       content: '',
-      questionNumber: ''
+      questionNumber: '',
+      questionExample: {
+        id: 104,
+        name: '42',
+        score: '6',
+        difficulty: '困难',
+        category: 'listen',
+        content: '英语听力',
+        knowledge: ['讲座/演讲', '名人传记', 'cet6'],
+        audio: 'http://source.jujuh.top/audio/test.mp3',
+        answers: [
+          {
+            A: '1',
+            B: '2',
+            C: '3',
+            D: '4',
+            correct: 'A'
+          },
+          {
+            A: '4',
+            B: '5',
+            C: '6',
+            D: '7',
+            correct: 'B'
+          }
+        ]
+      }
     }
+  }, mounted() {
+    this.addQuestion()
   },
   methods: {
     // 重置学科过滤器
@@ -193,6 +228,11 @@ export default {
       } else {
         return ''
       }
+    },
+    addQuestion() {
+      setTimeout(() => {
+        this.subQuestion.push(this.questionExample)
+      }, 5000)
     }
   }
 }
@@ -200,9 +240,12 @@ export default {
 
 <style scoped>
 .container{
-  background-color: rgb(240, 242, 245);
+  /* background-color: rgb(240, 242, 245); */
   margin:0;
   padding-top: 10px;
   padding-bottom: 20px;
+}
+.tag{
+  margin-right: 5px;
 }
 </style>

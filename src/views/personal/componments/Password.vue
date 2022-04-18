@@ -3,7 +3,7 @@
     <el-form label-width="120px">
       <el-form-item label="旧密码">
         <el-input v-model="oldPassword" placeholder="请输入密码" show-password style="width: 300px;" />
-        <span>请输入</span>
+        <!-- <span>请输入</span> -->
       </el-form-item>
       <el-form-item label="新密码">
         <el-input v-model="newPassword" placeholder="请输入密码" show-password style="width: 300px;" />

@@ -29,44 +29,32 @@
 <script>
 import Vue from 'vue'
 import Chat from 'vue-beautiful-chat'
+import Groups from '@/api/groups'
+
 Vue.use(Chat)
 export default {
   name: 'Chat',
   data() {
     return {
-      participants: [
-        {
-          id: 'user1',
-          name: 'Matteo',
-          imageUrl: 'https://avatars3.githubusercontent.com/u/1915989?s=230&v=4'
-        },
-        {
-          id: 'Bot',
-          name: 'Support',
-          imageUrl: 'https://avatars3.githubusercontent.com/u/37018832?s=200&v=4'
-        }
-      ], // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
-      titleImageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
-      messageList: [
-        { type: 'text', author: `me`, data: { text: `你好！` }},
-        { type: 'text', author: `Bot`, data: { text: `早上好，夜之城！` }}
-      ], // the list of the messages to show, can be paginated and adjusted dynamically
+      participants: Groups.participants, // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
+      titleImageUrl: 'https://lsky-picture.stdcdn.com/uploads/2022/04/0047763afbfa25ffc32a1804d871760c.png',
+      messageList: Groups.messageList,
       newMessagesCount: 0,
       isChatOpen: false, // to determine whether the chat window should be open or closed
       showTypingIndicator: '', // when set to a value matching the participant.id it shows the typing indicator for the specific user
       colors: {
         header: {
-          bg: '#4e8cff',
+          bg: 'linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%)',
           text: '#ffffff'
         },
         launcher: {
-          bg: '#4e8cff'
+          bg: '#7367F0'
         },
         messageList: {
           bg: '#ffffff'
         },
         sentMessage: {
-          bg: '#4e8cff',
+          bg: '#7367F0',
           text: '#ffffff'
         },
         receivedMessage: {

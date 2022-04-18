@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row type="flex" justify="end">
+    <el-row type="flex" justify="end" style="margin-top: 20px">
       <el-button type="primary" @click="createNewGroup">创建新的群组</el-button>
     </el-row>
 
@@ -46,16 +46,17 @@ export default {
         id: '114',
         name: this.form.name,
         users: [{
-          name: 'cdw(自己)',
+          name: '方慧敏',
           userId: '1'
         }],
         manager: {
-          name: 'cdw(自己)',
+          name: '方慧敏',
           userId: '1'
         }
       }
       groups.manager.push(newGroup)
-      console.log(groups.manager)
+      this.dialogTableVisible = false
+      // console.log(groups.manager)
     }
   }
 }

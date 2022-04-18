@@ -16,10 +16,10 @@
       </el-table-column>
       <el-table-column #default="scope" label="操作" width="300px" fixed="right">
         <el-button-group>
-          <el-button @click="onSee(scope.$index,scope.row)">
+          <el-button type="primary" plain @click="onSee(scope.$index,scope.row)">
             查看
           </el-button>
-          <el-button @click="onExit(scope.$index,scope.row)">
+          <el-button type="danger" plain @click="onExit(scope.$index,scope.row)">
             退出
           </el-button>
           <el-button @click="shareGroup(scope.$index,scope.row)">

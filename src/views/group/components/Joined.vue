@@ -14,12 +14,17 @@
         {{ scope.row.manager.name }}
       </el-table-column>
       <el-table-column #default="scope" label="操作" width="300px" fixed="right">
-        <el-button @click="onSee(scope.$index,scope.row)">
-          查看
-        </el-button>
-        <el-button @click="onExit(scope.$index,scope.row)">
-          退出
-        </el-button>
+        <el-button-group>
+          <el-button type="primary" plain @click="onSee(scope.$index,scope.row)">
+            查看
+          </el-button>
+          <el-button type="danger" plain @click="onExit(scope.$index,scope.row)">
+            退出
+          </el-button>
+          <el-button @click="onSee(scope.$index,scope.row)">
+            群聊
+          </el-button>
+        </el-button-group>
       </el-table-column>
     </el-table>
 
@@ -31,10 +36,11 @@
         <el-table-column #default="scope" label="教师姓名">
           {{ scope.row.name }}
         </el-table-column>
-        <el-table-column #default="scope" label="操作" fixed="right" width="200">
-          <el-button v-if="scope.row.userId !== '1'" @click="passMessage(scope.$index,scope.row)">
+        <el-table-column #default="scope" label="课程组内角色" fixed="right" width="200">
+          <!-- <el-button v-if="scope.row.userId !== '1'" @click="passMessage(scope.$index,scope.row)">
             PM
-          </el-button>
+          </el-button> -->
+          {{ scope.row.role }}
         </el-table-column>
       </el-table>
     </el-dialog>
@@ -59,8 +65,24 @@ export default {
       this.dialogTableVisible = true
       console.log(index, row)
     },
+    // 退出教师群组
     onExit(index, row) {
-      console.log(index, row)
+      this.$confirm('您即将退出该群组， 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.groups.splice(index, 1)
+        this.$message({
+          type: 'success',
+          message: '退出成功!'
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消'
+        })
+      })
     },
     passMessage(index, row) {
       console.log(index, row)

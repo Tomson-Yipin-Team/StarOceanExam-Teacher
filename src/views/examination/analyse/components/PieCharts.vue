@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card style="height: 450px">
+    <el-card style="height: 425px">
       <div id="pie-charts" style="height: 400px;width: 100%" />
     </el-card>
   </div>
@@ -55,10 +55,11 @@ export default {
               }
             },
             data: [
-              { value: 28, name: '优秀(>=90)', percent: '47.46%' },
-              { value: 6, name: '良好(>=80)', percent: '30.51%' },
-              { value: 4, name: '及格(>=60)', percent: '1.69%' },
-              { value: 2, name: '不及格(<60)', percent: '5.08%' }
+              { value: 2, name: '优秀(>=90)', percent: '10.53%' },
+              { value: 9, name: '良好(>=80)', percent: '47.37%' },
+              { value: 5, name: '中等(>=70)', percent: '26.31%' },
+              { value: 2, name: '及格(>=60)', percent: '10.52%' },
+              { value: 1, name: '不及格(<60)', percent: '5.26%' }
             ]
           }
         ]

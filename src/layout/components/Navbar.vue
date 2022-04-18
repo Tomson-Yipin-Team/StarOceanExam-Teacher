@@ -5,28 +5,68 @@
     <breadcrumb class="breadcrumb-container" />
 
     <div style="float: right">
-      <span class="message">
-        <el-badge :value="12" class="item">
-          <svg-icon class="message-button" icon-class="message" />
-        </el-badge>
-      </span>
+      <!--<span class="message">-->
+      <!--  <el-badge :value="12" class="item">-->
+      <!--    <svg-icon class="message-button" icon-class="message" />-->
+      <!--  </el-badge>-->
+      <!--</span>-->
       <span class="right-menu">
         <el-dropdown class="avatar-container" trigger="click">
           <div class="avatar-wrapper">
-            <img :src="avatar+'?imageView2/1/w/100/h/100'" class="user-avatar">
+            <el-avatar shape="square" :src="avatar+'?imageView2/1/w/100/h/100'" class="user-avatar" />
             <i class="el-icon-caret-bottom" />
           </div>
           <el-dropdown-menu slot="dropdown" class="user-dropdown">
+            <!--个人信息说明-->
+            <div class="user-name">
+              {{ $store.state.user.name }}
+            </div>
+            <div class="user-role">
+              教师
+            </div>
+            <!--跳转首页-->
             <router-link to="/">
-              <el-dropdown-item>
-                主页
+              <el-dropdown-item class="dropdown-item">
+                <span class="link-title">
+                  首页
+                </span>
+                <span class="link-icon">
+                  <svg-icon icon-class="right" />
+                </span>
               </el-dropdown-item>
             </router-link>
+            <!--跳转监考-->
             <router-link to="/personal/personal">
-              <el-dropdown-item>个人中心</el-dropdown-item>
+              <el-dropdown-item class="dropdown-item">
+                <span class="link-title">
+                  监考
+                </span>
+                <span class="link-icon">
+                  <svg-icon icon-class="right" />
+                </span>
+              </el-dropdown-item>
             </router-link>
+            <!--跳转批改-->
+            <router-link to="/personal/personal">
+              <el-dropdown-item class="dropdown-item">
+                <span class="link-title">
+                  批改
+                </span>
+                <span class="link-icon">
+                  <svg-icon icon-class="right" />
+                </span>
+              </el-dropdown-item>
+            </router-link>
+            <!--跳转个人中心-->
             <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-              <el-dropdown-item>消息</el-dropdown-item>
+              <el-dropdown-item class="dropdown-item">
+                <span class="link-title">
+                  个人中心
+                </span>
+                <span class="link-icon">
+                  <svg-icon icon-class="right" />
+                </span>
+              </el-dropdown-item>
             </a>
             <el-dropdown-item divided @click.native="logout">
               <span style="display:block;">登出</span>
@@ -141,6 +181,11 @@ export default {
         }
       }
     }
+    .user-dropdown{
+      .user-name{
+        font-size: 20px;
+      }
+    }
   }
   .message{
     position: relative;
@@ -152,5 +197,25 @@ export default {
     color: #1f434f;
   }
 }
-
+.user-name{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin: 10px;
+}
+.user-role{
+  text-align: center;
+  font-size: 13px;
+  color: #99a9bf;
+  margin: 10px;
+}
+.link-icon{
+  color: #99a9bf;
+}
+.dropdown-item{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 </style>

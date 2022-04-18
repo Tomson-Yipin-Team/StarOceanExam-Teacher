@@ -62,11 +62,18 @@ export const constantRoutes = [
   },
 
   {
+    path: '/preview',
+    name: 'Preview',
+    component: () => import('@/views/preview/index'),
+    meta: { title: '预览考试' },
+    hidden: true
+  },
+  {
     path: '/examination',
     component: Layout,
-    redirect: '/examination/see',
+    redirect: '/examination/all',
     name: 'Exam',
-    meta: { title: '管理考试', icon: 'el-icon-s-help' },
+    meta: { title: '考试管理', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'all',
@@ -78,13 +85,13 @@ export const constantRoutes = [
         path: 'release',
         name: 'Release',
         component: () => import('@/views/examination/release/index'),
-        meta: { title: '发布考试', icon: 'edit' }
+        meta: { title: '发布考试', icon: 'el-icon-upload2' }
       },
       {
         path: 'paper',
         name: 'Paper',
         component: () => import('@/views/examination/paper/index'),
-        meta: { title: '卷库', icon: 'edit' }
+        meta: { title: '卷库管理', icon: 'el-icon-s-management' }
       },
       {
         path: 'create',
@@ -114,17 +121,18 @@ export const constantRoutes = [
     path: '/question',
     component: Layout,
     redirect: '/question/question-database',
-    meta: { title: '管理题目', icon: 'list' },
+    meta: { title: '管理题目', icon: 'el-icon-document' },
     children: [{
       path: 'question-database',
       name: 'QuestionDB',
       component: () => import('@/views/question/timuku/index.vue'),
-      meta: { title: '题库', icon: 'edit' }
+      meta: { title: '题库管理', icon: 'el-icon-tickets' }
     }, {
       path: 'create-question',
       name: 'CreateQuestion',
       component: () => import('@/views/question/upload/index.vue'),
-      meta: { title: '编辑题目', icon: 'edit' }
+      meta: { title: '编辑题目', icon: 'edit' },
+      hidden: true
     }]
   },
 
@@ -132,19 +140,26 @@ export const constantRoutes = [
     path: '/classroom',
     component: Layout,
     redirect: '/classroom/joined',
-    meta: { title: '管理班级', icon: 'list' },
+    meta: { title: '管理班级', icon: 'peoples' },
     children: [
       {
         path: 'joined',
         name: 'Joined',
         component: () => import('@/views/classroom/joined/index'),
-        meta: { title: '已创建班级', icon: 'education' }
+        meta: { title: '班级管理', icon: 'education' }
       },
       {
         path: 'join',
         name: 'Join',
         component: () => import('@/views/classroom/join/index'),
-        meta: { title: '创建班级', icon: 'peoples' }
+        meta: { title: '创建班级', icon: 'peoples' },
+        hidden: true
+      }, {
+        path: 'detail',
+        name: 'Detail',
+        component: () => import('@/views/classroom/joined/components/Detail'),
+        meta: { title: '班级详情', icon: 'peoples' },
+        hidden: true
       }
     ]
   },
@@ -168,6 +183,16 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/analyse',
+    component: Layout,
+    children: [{
+      path: '/detail',
+      name: 'AnalyseDetail',
+      component: () => import('@/views/analyse/index'),
+      meta: { title: '成绩分析', icon: 'el-icon-data-analysis' }
+    }]
+  },
+  {
     path: '/group',
     component: Layout,
     children: [
@@ -175,7 +200,7 @@ export const constantRoutes = [
         path: 'teacher-group',
         name: 'TeacherGroup',
         component: () => import('@/views/group/index'),
-        meta: { title: '教师组', icon: 'peoples' }
+        meta: { title: '教师组', icon: 'el-icon-chat-line-square' }
       }
     ]
   },

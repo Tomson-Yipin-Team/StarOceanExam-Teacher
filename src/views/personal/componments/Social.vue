@@ -5,13 +5,13 @@
         <div slot="label">
           <svg-icon icon-class="wechat" />微信
         </div>
-        郁闷酱油瓶
+        一场秋梦
       </el-descriptions-item>
       <el-descriptions-item>
         <div slot="label">
           <svg-icon icon-class="wechat" />QQ
         </div>
-        <a href="www.wechat.com">点击绑定</a>
+        <a href="www.wechat.com">一场秋梦</a>
       </el-descriptions-item>
       <el-descriptions-item>
         <div slot="label">

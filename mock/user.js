@@ -10,10 +10,10 @@ const tokens = {
 
 const users = {
   'admin-token': {
-    roles: ['admin'],
+    roles: ['教师'],
     introduction: 'I am a super administrator',
-    avatar: 'https://source.jujuh.top/picture/93388262_p7_or.jpg',
-    name: 'admin'
+    avatar: 'https://lsky-picture.stdcdn.com/uploads/2022/04/3a0a8e75734f1bd42e2f20b64786d888.jpg',
+    name: '方慧敏'
   },
   'editor-token': {
     roles: ['editor'],

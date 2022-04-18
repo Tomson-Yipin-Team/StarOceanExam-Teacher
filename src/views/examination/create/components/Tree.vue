@@ -185,7 +185,7 @@ export default {
       })
     },
     handleAdd(_node, _data) { // 新增节点
-      this.showDialog = true,
+      this.showDialog = true
       console.log(_node, _data)
       // 判断层级
       if (_node.level >= this.MAX_LEVEL) {

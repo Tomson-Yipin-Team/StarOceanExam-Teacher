@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-card :body-style="{padding:'0px'}">
-      <div id="sub-heading-charts" style="height: 450px;width: 100%" />
+    <el-card :body-style="{ padding: '0px' }">
+      <div id="sub-heading-charts" style="height: 450px; width: 100%" />
     </el-card>
   </div>
 </template>
@@ -14,172 +14,162 @@ export default {
   },
   methods: {
     myEcharts() {
-      var myChart = this.$echarts.init(document.getElementById('sub-heading-charts'))
+      var myChart = this.$echarts.init(
+        document.getElementById('sub-heading-charts')
+      )
       // 配置图表
+      // 创建数据
+      var data = [
+        {
+          name: '听力sectionA', // 班级名称
+          excellent: '7', // 优秀人数
+          good: '6.15', // 良好人数
+          medium: '4' // 中等人数
+        },
+        {
+          name: '听力sectionB', // 班级名称
+          excellent: '8', // 优秀人数
+          good: '6.63', // 良好人数
+          medium: '3' // 中等人数
+        },
+        {
+          name: '听力sectionC', // 班级名称
+          excellent: '20', // 优秀人数
+          good: '17.36', // 良好人数
+          medium: '10' // 中等人数
+        },
+        {
+          name: '十五选十', // 题目
+          excellent: '5', // 最高分
+          good: '4.15', // 平均分
+          medium: '2.5' // 最低分
+        },
+        {
+          name: '段落信息匹配题', // 题目
+          excellent: '10', // 最高分
+          good: '8', // 平均分
+          medium: '6' // 最低分
+        },
+        {
+          name: '阅读理解', // 题目
+          excellent: '20', // 最高分
+          good: '16.42', // 平均分
+          medium: '12' // 最低分
+        },
+        {
+          name: '句子翻译', // 题目
+          excellent: '13', // 最高分
+          good: '9.73', // 平均分
+          medium: '4' // 最低分
+        },
+        {
+          name: '书面表达', // 题目
+          excellent: '13', // 最高分
+          good: '10.78', // 平均分
+          medium: '5' // 最低分
+        }
+      ]
+
+      var dataList = []
+      var excellentdata = []
+      var gooddata = []
+      var mediumdata = []
+      var passdata = []
+      var faileddata = []
+
+      var lengendData = ['最高分', '平均分', '最低分']
+      data.forEach(function(item, index) {
+        dataList.push(item.name)
+        excellentdata.push(item.excellent)
+        gooddata.push(item.good)
+        mediumdata.push(item.medium)
+        passdata.push(item.pass)
+        faileddata.push(item.failed)
+      })
 
       var option = {
-        legend: {
-          data: [
-            '3-11岁任务数',
-            '3-11岁全程接种量',
-            '60岁任务数',
-            '60岁全程接种量',
-            '80岁任务数',
-            '80岁全程接种量',
-            '完成率'
-          ]
-        },
-        xAxis: {
-          type: 'category',
-          data: ['街道1', '街道2', '街道3', '街道4', '街道5', '街道6', '街道7']
-        },
-        yAxis: [
-          { type: 'value' },
-          {
-            type: 'value',
-            name: '%',
-            // min: 0,
-            // max: 100,
-            nameTextStyle: {
-              color: '#ccc',
-              padding: [0, 0, 10, -30]
-            },
-            splitNumber: 5,
-            splitLine: {
-              show: true,
-              lineStyle: {
-                type: 'dashed',
-                width: 1,
-                // 使用深浅的间隔色
-                color: ['#566471', '#566471']
-              }
-            },
-            axisLabel: {
-              show: true,
-              textStyle: {
-                fontSize: 12
-              }
-            }
-          }
-        ],
-        // tooltip: {
-        //   trigger: 'axis',
-
-        // },
+        color: ['#0cb4d7', '#80d5ac', '#eb7c6f'],
         tooltip: {
           trigger: 'axis',
           axisPointer: {
             type: 'shadow'
-          },
-          textStyle: {
-            color: '#fff',
-            align: 'left',
-            fontSize: 14
-          },
-          axisLine: { // x坐标轴轴线
-            show: true,
-            lineStyle: { // x坐标轴轴线样式
-              color: '#000'// '#ccc' | 'rgb(128, 128, 128)' | 'rgba(128, 128, 128, 0.5)'，设置标签颜色
-            }
-          },
-
-          backgroundColor: 'rgba(0,0,0,0.8)',
-          formatter: function(params) {
-            console.log(params)
-            let str = params[0].name + '<br />'
-            console.log(str)
-            params.forEach((item) => {
-              console.log(item.seriesName)
-              if (item.value) {
-                if (item.seriesName.indexOf('岁全程接种量') !== -1) {
-                  str += `<span style="display:inline-block;margin-right:5px;border-radius:50%;width:10px;height:10px;left:5px;background-color: ${item.color}
-                                    "></span>
-                                         ${item.seriesName}
-                                         :
-                                       ${item.value}人  <br/>
-                                         &nbsp; &nbsp;  全程完成率
-                                       : ${item.value / 100}%
-                                        <br/><br/>`
-                } else if (item.seriesName.indexOf('岁任务数') !== -1) {
-                  str += `<span style="display:inline-block;margin-right:5px;border-radius:50%;width:10px;height:10px;left:5px;background-color: ${item.color}
-                                    "></span>
-                                         ${item.seriesName}
-                                         :
-                                       ${item.value}人
-                                        <br/>`
-                } else {
-                  str += `<span style="display:inline-block;margin-right:5px;border-radius:50%;width:10px;height:10px;left:5px;background-color: ${item.color}
-                                    "></span>
-                                        ${item.seriesName}
-                                        :
-                                      ${item.value}%
-                                        <br/>`
-                }
-              }
-            })
-            return str
           }
         },
-
+        legend: {
+          data: lengendData
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        yAxis: [
+          {
+            name: '分数',
+            type: 'value'
+          }
+        ],
+        xAxis: [
+          {
+            type: 'category',
+            data: dataList,
+            axisLine: {
+              show: true
+            },
+            axisTick: {
+              show: true
+            }
+          }
+        ],
         series: [
           {
-            name: '3-11岁任务数',
-            data: [150, 230, 224, 218, 135, 147, 260],
-            stack: 'BB',
-            type: 'bar'
-          },
-          {
-            name: '3-11岁全程接种量',
-            data: [150, 230, 224, 218, 135, 147, 260],
-            stack: 'BB',
-            type: 'bar'
-          },
-          {
-            name: '60岁任务数',
-            data: [150, 230, 224, 218, 135, 147, 260],
-            stack: 'AA',
-            type: 'bar'
-          },
-          {
-            name: '60岁全程接种量',
-            data: [880, 30, 124, 118, 35, 47, 160],
-            stack: 'AA',
-            type: 'bar'
-          },
-          {
-            name: '80岁任务数',
-            data: [660, 30, 124, 118, 35, 47, 160],
-            stack: 'Ad',
-            type: 'bar'
-          },
-          {
-            name: '80岁全程接种量',
-            data: [880, 30, 124, 118, 35, 47, 160],
-            stack: 'Ad',
-            type: 'bar'
-          },
-          {
-            name: '完成率',
-            data: [50, 130, 124, 18, 35, 47, 160],
-            yAxisIndex: 1,
-            type: 'line',
-            markLine: {
-              symbol: 'none',
-              itemStyle: {
-                normal: {
-                  lineStyle: {
-                    type: 'dotted'
-                  }
-                }
-              },
-              data: [{ type: 'average', name: 'Avg' + '%' }]
-            },
-            //   symbol: 'none',
+            name: lengendData[0],
+            type: 'bar',
+            barWidth: 24,
+            data: excellentdata,
             itemStyle: {
               normal: {
-                lineStyle: {
-                  width: 2,
-                  type: 'solid' // 'dotted'虚线 'solid'实线
+                show: true,
+                label: {
+                  show: true,
+                  textStyle: {
+                    color: '#FFF'
+                  }
+                }
+              }
+            }
+          },
+          {
+            name: lengendData[1],
+            type: 'bar',
+            barWidth: 24,
+            data: gooddata,
+            itemStyle: {
+              normal: {
+                show: true,
+                label: {
+                  show: true,
+                  textStyle: {
+                    color: '#FFF'
+                  }
+                }
+              }
+            }
+          },
+          {
+            name: lengendData[2],
+            type: 'bar',
+            barWidth: 24,
+            data: mediumdata,
+            itemStyle: {
+              normal: {
+                show: true,
+                label: {
+                  show: true,
+                  textStyle: {
+                    color: '#FFF'
+                  }
                 }
               }
             }
@@ -194,5 +184,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

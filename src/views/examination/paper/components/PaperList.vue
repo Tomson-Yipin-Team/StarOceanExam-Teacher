@@ -22,6 +22,11 @@
           >查看</el-button>
           <el-button
             size="mini"
+            type="primary"
+            @click="handleLock(scope.$index, scope.row)"
+          >封存</el-button>
+          <el-button
+            size="mini"
             @click="handleEdit(scope.$index, scope.row)"
           >编辑</el-button>
           <el-button
@@ -43,8 +48,20 @@ export default {
   data() {
     return {
       tableData: paperContent.papers,
-      search: ''
+      search: '',
+      newPaper: {
+        id: '	1000075886',
+        date: '2022-03-01',
+        name: '2021-2022-2大学英语六级模拟考试（1）',
+        origin: '汪美美',
+        number: 20
+      }
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.tableData.push(this.newPaper)
+    }, 10000)
   },
   methods: {
     // TODO: 补充编辑功能
@@ -58,7 +75,14 @@ export default {
     // 跳转试卷查看
     handleSee(index, row) {
       console.log('正在查看试卷' + row.id)
-      this.$router.push({ path: '/examination/create', query: { name: row.name }})
+      this.$router.push({
+        path: '/examination/create',
+        query: {
+          name: row.name,
+          number: row.number
+        }
+      })
+      this.$emit('handleSee', row.name)
     },
     // 状态颜色
     tableRowClassName(index, row) {
@@ -68,6 +92,10 @@ export default {
         return 'success-row'
       }
       return ''
+    },
+    // 封存试卷
+    handleLock(index, row) {
+      this.$emit('handleLock', row.name)
     }
   }
 }

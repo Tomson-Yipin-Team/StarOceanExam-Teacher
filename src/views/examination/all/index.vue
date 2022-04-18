@@ -6,6 +6,7 @@
         :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         style="width: 100%"
         border="border"
+        height="440px"
       >
         <el-table-column label="发布时间" prop="date" align="center" width="100" fixed />
         <el-table-column label="ID" align="center" width="100">
@@ -34,10 +35,12 @@
         <el-table-column label="操作" align="center" width="250" fixed="right">
           <template #default="scope">
             <el-button
+              v-if="showButton(scope.$index,scope.row)"
               size="mini"
               @click="handleEdit(scope.$index, scope.row)"
             >编辑</el-button>
             <el-button
+              v-if="showButton(scope.$index,scope.row)"
               size="mini"
               type="danger"
               @click="handleDelete(scope.$index, scope.row)"
@@ -46,7 +49,7 @@
               size="mini"
               type="primary"
               @click="handlePreview(scope.$index, scope.row)"
-            >考试状态</el-button>
+            >监考</el-button>
 
           </template>
         </el-table-column>
@@ -103,7 +106,12 @@ export default {
   methods: {
     // TODO: 补充编辑功能
     handleEdit(index, row) {
-      console.log(index, row.id)
+      this.$router.push({
+        name: 'Release',
+        params: {
+          paperInfo: row.paperInfo
+        }
+      })
     },
     // TODO: 补充删除功能
     handleDelete(index, row) {
@@ -123,6 +131,7 @@ export default {
         console.log('error')
       }
     },
+    // 控制按钮
     tagColor(index, row) {
       if (row.status === '已结束') {
         return 'success'
@@ -143,11 +152,20 @@ export default {
           joinNumber: row.join
         }
       })
+    },
+    showButton(index, row) {
+      if (row.status === '即将开始') {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-
+.container{
+  margin:10px
+}
 </style>

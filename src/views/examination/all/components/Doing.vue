@@ -92,10 +92,10 @@
         </el-row>
         <el-divider />
         <el-row class="text">
-          考试已经进行了
+          考试剩余时间
         </el-row>
         <el-row type="flex" justify="center" class="restTime">
-          1:42:21
+          <CountDown />
         </el-row>
         <el-row type="flex" justify="center">
           <el-progress type="circle" :text-inside="false" :stroke-width="12" :percentage="percentage" />
@@ -127,11 +127,15 @@
 import moment from 'moment'
 import paperContent from '@/api/paper-content'
 import notify from '@/views/examination/all/components/Notify'
+import CountDown from '@/views/preview/components/CountDown'
 
 export default {
   name: 'Doing',
-  components: { notify },
-  props: ['seeId', 'seeName'],
+  components: { notify, CountDown },
+  props: {
+    seeId: String || Number,
+    seeName: String
+  },
   data() {
     return {
       activeName: 'first',
@@ -163,7 +167,7 @@ export default {
       })
     },
     nowTime() {
-      const timeData = new Date()
+      const timeData = new Date(2022, 5, 6, 16, 1)
       return moment(timeData).format('HH:mm:ss')
     },
     percentage() {

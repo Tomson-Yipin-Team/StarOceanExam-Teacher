@@ -15,7 +15,7 @@ export default {
   name: 'Welcome',
   data() {
     return {
-      name: '张三',
+      name: '方慧敏',
       cardStyle: {
         padding: '0px'
       }
@@ -57,14 +57,14 @@ export default {
         series: [
           {
             name: '已加入学生',
-            data: [150, 156, 160, 168, 182, 192, 203],
+            data: [23, 27, 42, 45, 48, 63, 63],
             type: 'bar',
             smooth: true,
             itemStyle: { normal: { label: { show: true }}}
           },
           {
             name: '待审核学生',
-            data: [3, 4, 3, 2, 1, 5, 6],
+            data: [23, 4, 15, 3, 3, 15, 2],
             type: 'bar',
             smooth: true,
             itemStyle: { normal: { label: { show: true }}}
@@ -87,7 +87,7 @@ export default {
           }
         },
         legend: {
-          data: ['完成的考试', '等待进行', '等待批阅']
+          data: ['完成的考试', '即将开始的考试']
         },
         tooltip: {
           trigger: 'axis'
@@ -110,19 +110,20 @@ export default {
             itemStyle: { normal: { label: { show: true }}}
           },
           {
-            name: '等待进行',
+            name: '即将开始的考试',
             data: [3, 4, 3, 2, 1, 5, 6],
             type: 'line',
             smooth: true,
             itemStyle: { normal: { label: { show: true }}}
-          },
-          {
-            name: '等待批阅',
-            data: [1, 3, 4, 1, 2, 0, 1],
-            type: 'line',
-            smooth: true,
-            itemStyle: { normal: { label: { show: true }}}
           }
+          // ,
+          // {
+          //   name: '等待批阅',
+          //   data: [1, 3, 4, 1, 2, 0, 1],
+          //   type: 'line',
+          //   smooth: true,
+          //   itemStyle: { normal: { label: { show: true }}}
+          // }
         ]
       }
       myChart.setOption(option)

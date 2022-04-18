@@ -5,33 +5,41 @@
         <span style="text-align: center;display: block">编辑题目</span>
       </div>
       <!--el标签页-->
-      <el-tabs v-model="activeName">
+      <el-tabs v-model="activeName" v-loading="show.tabLoading">
         <!--编辑题目页面-->
         <el-tab-pane label="编辑题目" name="edit">
           <!--题目-->
-          <markdown-editor
-            ref="markdownEditor"
-            v-model="content"
-            language="zh"
-            :options="{hideModeSwitch:true,previewStyle: 'tab'}"
-            height="400px"
-          />
+          <div class="markdown-container">
+            <markdown-editor
+              v-if="show.markdown"
+              ref="markdownEditor"
+              v-model="content"
+              language="zh"
+              :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+              height="400px"
+            />
+          </div>
           <el-divider />
           <el-row>答案</el-row>
           <!--编辑答案-->
-          <markdown-editor
-            ref="markdownEditor"
-            v-model="correct"
-            language="zh"
-            :options="{hideModeSwitch:true,previewStyle: 'tab'}"
-            height="200px"
-          />
+          <div class="markdown-container">
+            <markdown-editor
+              v-if="show.markdown"
+              ref="markdownEditor"
+              v-model="correct"
+              language="zh"
+              :options="{hideModeSwitch:true,previewStyle: 'tab'}"
+              height="200px"
+              class="markdown"
+            />
+          </div>
+
         </el-tab-pane>
 
         <!--预览题目-->
         <el-tab-pane label="预览" name="preview">
           <div class="editor-container">
-            <Viewer :initial-value="previewContent" height="500px" />
+            <Viewer v-if="show.markdown" :initial-value="previewContent" height="500px" />
           </div>
         </el-tab-pane>
       </el-tabs>
@@ -62,16 +70,21 @@ export default {
         hideModeSwitch: false,
         language: 'zh-CN'
       },
-      activeName: 'edit'
+      activeName: 'edit',
+      show: {
+        tabLoading: false,
+        markdown: true
+      },
+      question: questionContent.timuku[0].questions[2]
     }
   },
   computed: {
     correct: {
       get() {
-        return questionContent.timuku[0].questions[2].correct
+        return this.question.correct
       },
       set(value) {
-        questionContent.timuku[0].questions[2].correct = value
+        this.question.correct = value
       }
     },
     previewContent() {
@@ -82,14 +95,25 @@ export default {
     content: {
       immediate: true,
       handler(newValue) {
-        this.content = questionContent.timuku[0].questions[2].content
-        console.log(newValue)
+        this.content = this.question.content
+        // console.log(newValue)
       }
     }
+  },
+  mounted() {
+    this.updatePage()
   },
   methods: {
     saveQuestion() {
       console.log('保存')
+    },
+    updatePage() {
+      this.show.tabLoading = true
+      this.show.markdown = false
+      setTimeout(() => {
+        this.show.tabLoading = false
+        this.show.markdown = true
+      }, 1000)
     }
   }
 }
@@ -97,6 +121,9 @@ export default {
 
 <style scoped>
 .button{
+  margin-top: 20px;
+}
+.markdown-container{
   margin-top: 20px;
 }
 </style>
